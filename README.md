@@ -20,3 +20,9 @@ This repo **will** contain in future:
 - my fork of PyArrow in which I will make changes to improve the performance.
 - scripts to test the performance upgrades
 - a small blog about the work during GSoC project time.
+
+## Blogs
+
+Check out the blogs [here](./blogs)
+
+- [Day 1](/blogs/02-05-2026.md)
