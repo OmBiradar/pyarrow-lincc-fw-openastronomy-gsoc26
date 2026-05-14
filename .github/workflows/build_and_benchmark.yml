@@ -71,12 +71,15 @@ jobs:
         run: |
           # Ensure ccache is in the PATH so CMake picks it up automatically
           export PATH="/usr/lib/ccache:$PATH"
+          
+          # NOTE: Ensure your python file is named run.py, 
+          # or change the line below to match your filename.
           chmod +x ./run.py
           
           echo "Starting build and test orchestrator..."
           START_TIME=$(date +%s)
           
-          # Run the Python script
+          # Run the Python script (this now generates benchmark_results.md)
           python3 ./run.py
           
           END_TIME=$(date +%s)
@@ -87,13 +90,30 @@ jobs:
           
           echo "BUILD_TIME=$BUILD_TIME" >> $GITHUB_ENV
           
-          echo "### 🚀 Build & Test Metrics" >> $GITHUB_STEP_SUMMARY
+          # Publish the table to the GitHub Actions workflow summary UI
+          echo "### 🚀 Benchmark Execution Times" >> $GITHUB_STEP_SUMMARY
           echo "- **Time to execute all phases:** $BUILD_TIME" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          cat benchmark_results.md >> $GITHUB_STEP_SUMMARY
 
-      - name: Comment Build Time on PR
+      - name: Comment Benchmark Results on PR
         if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.fork == false
         run: |
-          gh pr comment ${{ github.event.pull_request.number }} \
-            --body "🚀 **Build & Benchmark Completed!**
-            ⏱️ **Total Time:** ${{ env.BUILD_TIME }}
-            _Commit: ${{ github.sha }}_"
+          # Create a temporary file combining your header, the table, and the footer
+          cat << EOF > pr_comment.md
+          🚀 **Benchmark Execution Completed!**
+          ⏱️ **Total Workflow Time:** ${{ env.BUILD_TIME }}
+          
+          EOF
+          
+          # Append the generated table
+          cat benchmark_results.md >> pr_comment.md
+          
+          # Append the commit hash footer
+          cat << EOF >> pr_comment.md
+          
+          _Commit: ${{ github.sha }}_
+          EOF
+          
+          # Post the comment using the file we just built
+          gh pr comment ${{ github.event.pull_request.number }} --body-file pr_comment.md

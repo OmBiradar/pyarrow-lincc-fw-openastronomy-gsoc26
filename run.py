@@ -2,6 +2,7 @@
 
 import subprocess
 import sys
+import time
 from pathlib import Path
 import yaml
 
@@ -16,9 +17,8 @@ def run_command(cmd, cwd=None, env=None):
 
 
 def setup_arrow_branch(arrow_repo_dir, branch):
-    """Fetches and checks out the specified branch from the same repository."""
+    """Fetches and checks out the specified branch."""
     print(f"\n==> Checking out Arrow branch: {branch}")
-    # Fetching ensures we have the latest remote refs if the branch isn't local yet
     subprocess.run(
         ["git", "fetch", "origin", branch], cwd=arrow_repo_dir, capture_output=True
     )
@@ -26,9 +26,8 @@ def setup_arrow_branch(arrow_repo_dir, branch):
 
 
 def build_arrow(arrow_cpp_dir, build_dir):
-    """Configures and compiles Arrow C++ using CMake and Ninja."""
+    """Configures and compiles Arrow C++."""
     build_dir.mkdir(parents=True, exist_ok=True)
-
     cmake_cmd = [
         "cmake",
         str(arrow_cpp_dir),
@@ -41,10 +40,8 @@ def build_arrow(arrow_cpp_dir, build_dir):
         "-DARROW_DATASET=ON",
         "-DARROW_PARQUET=ON",
     ]
-
     print("==> Configuring CMake")
     run_command(cmake_cmd, cwd=build_dir)
-
     print("==> Compiling Arrow with Ninja")
     run_command(["ninja"], cwd=build_dir)
 
@@ -52,9 +49,8 @@ def build_arrow(arrow_cpp_dir, build_dir):
 def compile_and_run_test(
     test_dir, test_name, arrow_cpp_dir, build_dir, run_type="baseline"
 ):
-    """Compiles the test.cpp against the local Arrow build and executes it."""
+    """Compiles and executes the test, returning the execution time in seconds."""
     test_cpp = test_dir / "test.cpp"
-    # Differentiate the binary name based on whether it's a baseline or feature run
     test_bin = test_dir / f"{test_name}_{run_type}.out"
 
     include_dir_src = arrow_cpp_dir / "src"
@@ -62,7 +58,6 @@ def compile_and_run_test(
     lib_dir = build_dir / "debug"
 
     print(f"==> Compiling test executable: {test_bin.name}")
-
     compile_cmd = [
         "g++",
         "-std=c++17",
@@ -85,7 +80,13 @@ def compile_and_run_test(
     run_command(compile_cmd, cwd=test_dir)
 
     print(f"==> Executing test: {test_bin.name}")
+    start_time = time.time()
     run_command([str(test_bin)], cwd=test_dir)
+    end_time = time.time()
+
+    execution_time = end_time - start_time
+    print(f"==> Execution finished in {execution_time:.4f} seconds")
+    return execution_time
 
 
 def main():
@@ -95,35 +96,29 @@ def main():
     arrow_cpp_dir = arrow_src_dir / "cpp"
     build_dir = root_dir / "build"
 
-    # Pre-flight checks
     if not arrow_cpp_dir.exists():
         print(f"Error: Arrow C++ directory not found at {arrow_cpp_dir}")
         sys.exit(1)
 
     global_config_file = scripts_dir / "config.yml"
-    if not global_config_file.exists():
-        print(
-            f"Error: Global config not found at {global_config_file}. Needed for baseline branch."
-        )
-        sys.exit(1)
-
     with open(global_config_file, "r") as f:
         global_config = yaml.safe_load(f)
-
     base_branch = global_config.get("base_branch", "main")
 
-    # Discover valid test directories
     valid_tests = []
     for test_dir in sorted(scripts_dir.iterdir()):
-        if test_dir.is_dir():
-            test_config = test_dir / "config.yml"
-            test_cpp = test_dir / "test.cpp"
-            if test_config.exists() and test_cpp.exists():
-                valid_tests.append(test_dir)
+        if (
+            test_dir.is_dir()
+            and (test_dir / "config.yml").exists()
+            and (test_dir / "test.cpp").exists()
+        ):
+            valid_tests.append(test_dir)
 
-    if not valid_tests:
-        print("No valid test directories found.")
-        sys.exit(0)
+    # Dictionary to hold the execution times
+    results = {
+        test.name: {"baseline_time": None, "feature_time": None, "branch": None}
+        for test in valid_tests
+    }
 
     # ==========================================
     # PHASE 1: Baseline Execution
@@ -137,9 +132,10 @@ def main():
 
     for test_dir in valid_tests:
         print(f"\n--- Baseline Run: {test_dir.name} ---")
-        compile_and_run_test(
+        duration = compile_and_run_test(
             test_dir, test_dir.name, arrow_cpp_dir, build_dir, run_type="baseline"
         )
+        results[test_dir.name]["baseline_time"] = duration
 
     # ==========================================
     # PHASE 2: Feature Branch Execution
@@ -150,33 +146,55 @@ def main():
 
     for test_dir in valid_tests:
         test_name = test_dir.name
-        print(f"\n--- Feature Run: {test_name} ---")
-
         with open(test_dir / "config.yml", "r") as f:
             test_config = yaml.safe_load(f)
 
         feature_branch = test_config.get("branch")
-        if not feature_branch:
-            print(f"Error: 'branch' not specified in {test_dir}/config.yml. Skipping.")
-            continue
+        results[test_name]["branch"] = feature_branch
 
-        # Skip if the feature branch is exactly the base branch (redundant)
         if feature_branch == base_branch:
-            print(
-                f"Feature branch matches base branch ({base_branch}). Skipping redundant build."
-            )
+            results[test_name]["feature_time"] = "Skipped (Same as base)"
             continue
 
+        print(f"\n--- Feature Run: {test_name} ---")
         setup_arrow_branch(arrow_src_dir, feature_branch)
         build_arrow(arrow_cpp_dir, build_dir)
-        compile_and_run_test(
+        duration = compile_and_run_test(
             test_dir, test_name, arrow_cpp_dir, build_dir, run_type="feature"
         )
+        results[test_name]["feature_time"] = duration
 
-    # Optional: Return repository to baseline state at the end
-    print("\n==> Restoring repository to baseline branch...")
-    setup_arrow_branch(arrow_src_dir, base_branch)
-    print("All tests completed successfully.")
+    # ==========================================
+    # PHASE 3: Generate Markdown Report
+    # ==========================================
+    report_lines = [
+        f"| Script | Baseline (`{base_branch}`) | Modified Branch | Branch Name |",
+        "|---|---|---|---|",
+    ]
+
+    for test, data in results.items():
+        # Format baseline time
+        b_time = (
+            f"{data['baseline_time']:.4f}s"
+            if isinstance(data["baseline_time"], float)
+            else "N/A"
+        )
+
+        # Format feature time
+        if isinstance(data["feature_time"], float):
+            f_time = f"{data['feature_time']:.4f}s"
+        else:
+            f_time = str(data["feature_time"])  # Handles "Skipped" text
+
+        branch_name = data["branch"] or "N/A"
+
+        report_lines.append(f"| `{test}` | {b_time} | {f_time} | `{branch_name}` |")
+
+    # Write the table to a file that GitHub Actions can read
+    with open(root_dir / "benchmark_results.md", "w") as f:
+        f.write("\n".join(report_lines) + "\n")
+
+    print("\n==> Benchmark complete. Results written to benchmark_results.md")
 
 
 if __name__ == "__main__":
