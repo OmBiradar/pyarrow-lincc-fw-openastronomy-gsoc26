@@ -65,7 +65,6 @@ jobs:
           echo "### 🚀 Build Metrics" >> $GITHUB_STEP_SUMMARY
           echo "- **Time to compile:** $BUILD_TIME" >> $GITHUB_STEP_SUMMARY
 
-      # 4. Output the result to the Pull Request
       - name: Comment Build Time on PR
         if: github.event_name == 'pull_request'
         run: |
