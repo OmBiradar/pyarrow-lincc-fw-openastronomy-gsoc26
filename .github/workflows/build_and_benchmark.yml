@@ -47,7 +47,7 @@ jobs:
       - name: Purge old cache
         run: |
           echo "Cleaning up old caches..."
-          gh cache list --key "${{ runner.os }}-arrow-ccache-" --json databaseId -q '.[].databaseId' \
+          gh cache list --key "${{ runner.os }}-arrow-ccache-" --json id -q '.[].id' \
           | xargs -I{} gh cache delete {} || echo "Locker is already empty."
 
       - name: Execute build script
