@@ -19,6 +19,8 @@ jobs:
       CCACHE_MAXSIZE: 8G
       CCACHE_COMPRESS: "true"
       GH_TOKEN: ${{ github.token }}
+      # Dynamic branch variable: head_ref for PRs, ref_name for main pushes
+      CACHE_BRANCH: ${{ github.head_ref || github.ref_name }}
 
     steps:
       - name: Checkout benchmark repository
@@ -40,15 +42,25 @@ jobs:
         uses: actions/cache@v4
         with:
           path: .ccache
-          key: ${{ runner.os }}-arrow-ccache-${{ github.run_id }}
+          # Unique key scoped to the current branch, => main for main branch
+          key: ${{ runner.os }}-arrow-ccache-${{ env.CACHE_BRANCH }}-${{ github.run_id }}
           restore-keys: |
-            ${{ runner.os }}-arrow-ccache-
+            ${{ runner.os }}-arrow-ccache-${{ env.CACHE_BRANCH }}-
+            ${{ runner.os }}-arrow-ccache-main-
 
       - name: Purge old cache
         run: |
-          echo "Cleaning up old caches..."
-          gh cache list --key "${{ runner.os }}-arrow-ccache-" --json id -q '.[].id' \
-          | xargs -I{} gh cache delete {} || echo "Locker is already empty."
+          echo "Cleaning up old caches for branch: ${{ env.CACHE_BRANCH }}..."
+          
+          # Only fetch and delete caches that belong to the current branch
+          CACHE_IDS=$(gh cache list --key "${{ runner.os }}-arrow-ccache-${{ env.CACHE_BRANCH }}-" --json id -q '.[].id')
+          
+          if [ -n "$CACHE_IDS" ]; then
+            echo "$CACHE_IDS" | xargs -I{} gh cache delete {}
+            echo "Old caches cleared."
+          else
+            echo "Locker is already empty for this branch."
+          fi
 
       - name: Execute build script
         run: |
