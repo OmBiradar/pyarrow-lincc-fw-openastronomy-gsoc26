@@ -19,6 +19,8 @@ jobs:
       CCACHE_MAXSIZE: 8G
       CCACHE_COMPRESS: "true"
       GH_TOKEN: ${{ github.token }}
+      # Dynamic branch variable: head_ref for PRs, ref_name for main pushes
+      CACHE_BRANCH: ${{ github.head_ref || github.ref_name }}
 
     steps:
       - name: Checkout benchmark repository
@@ -36,29 +38,46 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y ccache ninja-build
 
+      - name: Install Python Dependencies
+        run: |
+          python3 -m pip install --upgrade pip
+          python3 -m pip install pyyaml
+
       - name: ccache Storage
         uses: actions/cache@v4
         with:
           path: .ccache
-          key: ${{ runner.os }}-arrow-ccache-${{ github.run_id }}
+          # Unique key scoped to the current branch, => main for main branch
+          key: ${{ runner.os }}-arrow-ccache-${{ env.CACHE_BRANCH }}-${{ github.run_id }}
           restore-keys: |
-            ${{ runner.os }}-arrow-ccache-
+            ${{ runner.os }}-arrow-ccache-${{ env.CACHE_BRANCH }}-
+            ${{ runner.os }}-arrow-ccache-main-
 
       - name: Purge old cache
         run: |
-          echo "Cleaning up old caches..."
-          gh cache list --key "${{ runner.os }}-arrow-ccache-" --json id -q '.[].id' \
-          | xargs -I{} gh cache delete {} || echo "Locker is already empty."
-
-      - name: Execute build script
-        run: |
-          export PATH="/usr/lib/ccache:$PATH"
-          chmod +x ./build.sh
+          echo "Cleaning up old caches for branch: ${{ env.CACHE_BRANCH }}..."
           
-          echo "Starting build..."
+          # Only fetch and delete caches that belong to the current branch
+          CACHE_IDS=$(gh cache list --key "${{ runner.os }}-arrow-ccache-${{ env.CACHE_BRANCH }}-" --json id -q '.[].id')
+          
+          if [ -n "$CACHE_IDS" ]; then
+            echo "$CACHE_IDS" | xargs -I{} gh cache delete {}
+            echo "Old caches cleared."
+          else
+            echo "Locker is already empty for this branch."
+          fi
+            
+      - name: Execute Python orchestrator
+        run: |
+          # Ensure ccache is in the PATH so CMake picks it up automatically
+          export PATH="/usr/lib/ccache:$PATH"
+          chmod +x ./run.py
+          
+          echo "Starting build and test orchestrator..."
           START_TIME=$(date +%s)
           
-          ./build.sh
+          # Run the Python script
+          python3 ./run.py
           
           END_TIME=$(date +%s)
           DURATION=$((END_TIME - START_TIME))
@@ -68,13 +87,13 @@ jobs:
           
           echo "BUILD_TIME=$BUILD_TIME" >> $GITHUB_ENV
           
-          echo "### 🚀 Build Metrics" >> $GITHUB_STEP_SUMMARY
-          echo "- **Time to compile:** $BUILD_TIME" >> $GITHUB_STEP_SUMMARY
+          echo "### 🚀 Build & Test Metrics" >> $GITHUB_STEP_SUMMARY
+          echo "- **Time to execute all phases:** $BUILD_TIME" >> $GITHUB_STEP_SUMMARY
 
       - name: Comment Build Time on PR
         if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.fork == false
         run: |
           gh pr comment ${{ github.event.pull_request.number }} \
-            --body "🚀 **Build Completed!**
-            ⏱️ **Build Time:** ${{ env.BUILD_TIME }}
+            --body "🚀 **Build & Benchmark Completed!**
+            ⏱️ **Total Time:** ${{ env.BUILD_TIME }}
             _Commit: ${{ github.sha }}_"

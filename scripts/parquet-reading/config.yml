@@ -1,0 +1,2 @@
+# Specific branch testing against the baseline
+branch: "feature/fast-hash-join"
