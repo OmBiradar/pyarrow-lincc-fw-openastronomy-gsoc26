@@ -1,0 +1,75 @@
+name: Build and Benchmark
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    
+    env:
+      CCACHE_DIR: ${{ github.workspace }}/.ccache
+      CCACHE_MAXSIZE: 8G
+      GH_TOKEN: ${{ github.token }} # permission to comment
+
+    steps:
+      - name: Checkout benchmark repository
+        uses: actions/checkout@v4
+
+      - name: Checkout Arrow fork
+        uses: actions/checkout@v4
+        with:
+          repository: 'OmBiradar/arrow'
+          path: 'arrow-src'
+          filter: 'blob:none' 
+
+      - name: Install Build Dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ccache ninja-build
+
+      - name: ccache Storage
+        uses: actions/cache@v4
+        with:
+          path: .ccache
+          key: ${{ runner.os }}-ccache-v1-${{ github.sha }}
+          restore-keys: |
+            ${{ runner.os }}-ccache-v1-
+
+      - name: Execute build script
+        run: |
+          export PATH="/usr/lib/ccache:$PATH"
+          chmod +x ./build.sh
+          
+          echo "Starting build..."
+          START_TIME=$(date +%s)
+          
+          # Execute your script
+          ./build.sh
+          
+          # Calculate duration
+          END_TIME=$(date +%s)
+          DURATION=$((END_TIME - START_TIME))
+          MINUTES=$((DURATION / 60))
+          SECONDS=$((DURATION % 60))
+          BUILD_TIME="${MINUTES}m ${SECONDS}s"
+          
+          echo "Build completed in $BUILD_TIME"
+          
+          # Save the time to a GitHub Environment variable for the next step
+          echo "BUILD_TIME=$BUILD_TIME" >> $GITHUB_ENV
+          
+          # (Bonus) Add it to the visual GitHub Actions Job Summary page
+          echo "### 🚀 Build Metrics" >> $GITHUB_STEP_SUMMARY
+          echo "- **Time to compile:** $BUILD_TIME" >> $GITHUB_STEP_SUMMARY
+
+      # 4. Output the result to the Pull Request
+      - name: Comment Build Time on PR
+        if: github.event_name == 'pull_request'
+        run: |
+          gh pr comment ${{ github.event.pull_request.number }} \
+            --body "🚀 **Build Completed!**
+            ⏱️ **Build Time:** ${{ env.BUILD_TIME }}
+            _Commit: ${{ github.sha }}_"
