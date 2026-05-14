@@ -86,7 +86,7 @@ def compile_and_run_test(
     print(f"==> Compiling test executable: {test_bin.name}")
     compile_cmd = [
         "g++",
-        "-std=c++17",
+        "-std=c++23",
         "-g",
         "-O0",
         "-I",
