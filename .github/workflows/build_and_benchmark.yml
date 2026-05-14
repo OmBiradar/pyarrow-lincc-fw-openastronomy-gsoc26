@@ -7,6 +7,7 @@ on:
 permissions:
   contents: read
   pull-requests: write
+  actions: write # Required: 'gh cache delete'
 
 jobs:
   build:
@@ -16,7 +17,8 @@ jobs:
     env:
       CCACHE_DIR: ${{ github.workspace }}/.ccache
       CCACHE_MAXSIZE: 8G
-      GH_TOKEN: ${{ github.token }} # permission to comment
+      CCACHE_COMPRESS: "true"
+      GH_TOKEN: ${{ github.token }}
 
     steps:
       - name: Checkout benchmark repository
@@ -38,9 +40,15 @@ jobs:
         uses: actions/cache@v4
         with:
           path: .ccache
-          key: ${{ runner.os }}-ccache-v1-${{ github.sha }}
+          key: ${{ runner.os }}-arrow-ccache-${{ github.run_id }}
           restore-keys: |
-            ${{ runner.os }}-ccache-v1-
+            ${{ runner.os }}-arrow-ccache-
+
+      - name: Purge old cache
+        run: |
+          echo "Cleaning up old caches..."
+          gh cache list --key "${{ runner.os }}-arrow-ccache-" --json databaseId -q '.[].databaseId' \
+          | xargs -I{} gh cache delete {} || echo "Locker is already empty."
 
       - name: Execute build script
         run: |
@@ -50,22 +58,16 @@ jobs:
           echo "Starting build..."
           START_TIME=$(date +%s)
           
-          # Execute your script
           ./build.sh
           
-          # Calculate duration
           END_TIME=$(date +%s)
           DURATION=$((END_TIME - START_TIME))
           MINUTES=$((DURATION / 60))
           SECONDS=$((DURATION % 60))
           BUILD_TIME="${MINUTES}m ${SECONDS}s"
           
-          echo "Build completed in $BUILD_TIME"
-          
-          # Save the time to a GitHub Environment variable for the next step
           echo "BUILD_TIME=$BUILD_TIME" >> $GITHUB_ENV
           
-          # (Bonus) Add it to the visual GitHub Actions Job Summary page
           echo "### 🚀 Build Metrics" >> $GITHUB_STEP_SUMMARY
           echo "- **Time to compile:** $BUILD_TIME" >> $GITHUB_STEP_SUMMARY
 
