@@ -8,20 +8,46 @@ import yaml
 
 
 def run_command(cmd, cwd=None, env=None):
-    """Executes a shell command with real-time output stream."""
+    """Executes a shell command. Streams stdout in real-time and captures stderr for error reporting."""
     print(f"==> Running: {' '.join(cmd)}")
-    result = subprocess.run(cmd, cwd=cwd, env=env, text=True)
-    if result.returncode != 0:
-        print(f"Error: Command failed with exit code {result.returncode}")
+
+    # Let stdout flow directly to the terminal for real-time progress,
+    # but explicitly capture stderr so we can format it on failure.
+    process = subprocess.Popen(
+        cmd, cwd=cwd, env=env, text=True, stdout=sys.stdout, stderr=subprocess.PIPE
+    )
+
+    # Wait for the process to finish and collect the error stream
+    _, stderr_output = process.communicate()
+
+    if process.returncode != 0:
+        print("\n" + "!" * 60)
+        print(f" ERROR FATAL: Command failed with exit code {process.returncode}")
+        print(f" DIRECTORY:   {cwd or 'Current Directory'}")
+        print(f" COMMAND:     {' '.join(cmd)}")
+        print("!" * 60)
+
+        if stderr_output and stderr_output.strip():
+            print("\n" + "-" * 20 + " ERROR DETAILS (stderr) " + "-" * 20)
+            print(stderr_output)
+            print("-" * 64 + "\n")
+        else:
+            print("\n(No output found in standard error stream)\n")
+
         sys.exit(1)
+
+    # If the command succeeded but still produced warnings in stderr,
+    # we print them out so they aren't completely hidden from the logs.
+    if stderr_output and stderr_output.strip():
+        sys.stderr.write(stderr_output)
+        sys.stderr.flush()
 
 
 def setup_arrow_branch(arrow_repo_dir, branch):
     """Fetches and checks out the specified branch."""
     print(f"\n==> Checking out Arrow branch: {branch}")
-    subprocess.run(
-        ["git", "fetch", "origin", branch], cwd=arrow_repo_dir, capture_output=True
-    )
+    # Changed to use run_command so git fetch errors are also explicitly caught
+    run_command(["git", "fetch", "origin", branch], cwd=arrow_repo_dir)
     run_command(["git", "checkout", branch], cwd=arrow_repo_dir)
 
 
