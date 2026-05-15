@@ -12,7 +12,7 @@
 // Adjustable Generation Parameters
 // =========================================================
 constexpr int64_t GENERATE_NUM_ROWS = 100;
-constexpr int64_t GENERATE_LIST_LENGTH = 200000;
+constexpr int64_t GENERATE_LIST_LENGTH = 2000000;
 
 // =========================================================
 // Data Generation Phase
