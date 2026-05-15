@@ -1,2 +1,0 @@
-# Specific branch testing against the baseline
-branch: "parquet-reader-multithreaded-for-list-struct"

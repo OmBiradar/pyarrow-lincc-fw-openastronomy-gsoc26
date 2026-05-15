@@ -3,11 +3,8 @@
 import subprocess
 import sys
 import time
-import statistics
 from pathlib import Path
 import yaml
-
-NUM_RUNS = 100
 
 
 def run_command(cmd, cwd=None, env=None):
@@ -41,6 +38,20 @@ def run_command(cmd, cwd=None, env=None):
         sys.stderr.flush()
 
 
+def run_benchmark_and_capture(test_bin, test_dir):
+    """Runs the Google Benchmark binary and captures its stdout."""
+    print(f"==> Running Benchmark: {test_bin.name}")
+    process = subprocess.run(
+        [str(test_bin)], cwd=test_dir, text=True, capture_output=True
+    )
+
+    if process.returncode != 0:
+        print(f"ERROR running {test_bin.name}:\n{process.stderr}")
+        sys.exit(1)
+
+    return process.stdout.strip()
+
+
 def setup_arrow_branch(arrow_repo_dir, branch):
     """Fetches and checks out the specified branch."""
     print(f"\n==> Checking out Arrow branch: {branch}")
@@ -56,19 +67,18 @@ def build_arrow(arrow_cpp_dir, build_dir):
         str(arrow_cpp_dir),
         "-G",
         "Ninja",
-        "-DCMAKE_BUILD_TYPE=Release",  # Changed from Debug to Release
+        "-DCMAKE_BUILD_TYPE=Release",
         "-DARROW_USE_CCACHE=ON",
         "-DARROW_BUILD_BENCHMARKS=ON",
         "-DARROW_COMPUTE=ON",
         "-DARROW_DATASET=ON",
         "-DARROW_PARQUET=ON",
         "-DARROW_WITH_SNAPPY=ON",
-        # --- Performance Boosters ---
-        "-DARROW_SIMD_LEVEL=AVX2",  # Or 'AVX512' if your CPU supports it
-        "-DARROW_RUNTIME_SIMD_LEVEL=MAX",  # Enables dynamic dispatch for best available SIMD
-        "-DARROW_ENABLE_LTO=ON",  # Link Time Optimization (Interprocedural Optimization)
-        "-DARROW_JEMALLOC=ON",  # Uses jemalloc, which is generally faster for Arrow workloads
-        "-DCMAKE_CXX_FLAGS=-march=native",  # Enable all CPU-specific optimizations
+        "-DARROW_SIMD_LEVEL=AVX2",
+        "-DARROW_RUNTIME_SIMD_LEVEL=MAX",
+        "-DARROW_ENABLE_LTO=ON",
+        "-DARROW_JEMALLOC=ON",
+        "-DCMAKE_CXX_FLAGS=-march=native",
     ]
     print("==> Configuring CMake")
     run_command(cmake_cmd, cwd=build_dir)
@@ -77,7 +87,7 @@ def build_arrow(arrow_cpp_dir, build_dir):
 
 
 def compile_test(test_dir, test_name, arrow_cpp_dir, build_dir, run_type="baseline"):
-    """Compiles the test binary only (without running it)."""
+    """Compiles the Google Benchmark test binary using g++."""
     test_cpp = test_dir / "test.cpp"
     test_bin = test_dir / f"{test_name}_{run_type}.out"
 
@@ -99,38 +109,14 @@ def compile_test(test_dir, test_name, arrow_cpp_dir, build_dir, run_type="baseli
         str(test_bin),
         "-L",
         str(lib_dir),
-        "-larrow",
-        "-larrow_dataset",
         "-lparquet",
+        "-larrow",
+        "-lbenchmark",
+        "-lpthread",
         f"-Wl,-rpath,{lib_dir}",
     ]
     run_command(compile_cmd, cwd=test_dir)
     return test_bin
-
-
-def run_test_n_times(test_bin, test_dir, n=NUM_RUNS):
-    """Runs the compiled test binary n times, returning list of execution times."""
-    times = []
-    for i in range(1, n + 1):
-        print(f"==> Run {i}/{n}: {test_bin.name}")
-        start_time = time.time()
-        run_command([str(test_bin)], cwd=test_dir)
-        end_time = time.time()
-        elapsed = end_time - start_time
-        times.append(elapsed)
-        print(f"    Finished in {elapsed:.4f}s")
-    return times
-
-
-def format_time_stat(mean_s, stddev_s):
-    """Formats mean and stddev as human-readable strings.
-    Mean: e.g. '4.0000s'
-    Stddev: e.g. 'σ 0.0500s (1.25%)'
-    """
-    mean_str = f"{mean_s:.4f}s"
-    pct = (stddev_s / mean_s * 100) if mean_s > 0 else 0.0
-    stddev_str = f"σ {stddev_s:.4f}s ({pct:.2f}%)"
-    return mean_str, stddev_str
 
 
 def main():
@@ -158,13 +144,10 @@ def main():
         ):
             valid_tests.append(test_dir)
 
-    # Results: mean and stddev for baseline and feature
     results = {
         test.name: {
-            "baseline_mean": None,
-            "baseline_stddev": None,
-            "feature_mean": None,
-            "feature_stddev": None,
+            "baseline_output": None,
+            "feature_output": None,
             "branch": None,
             "skipped": False,
         }
@@ -176,33 +159,25 @@ def main():
     # ==========================================
     print("\n" + "=" * 50)
     print(f" PHASE 1: Building and Running Baseline ({base_branch})")
-    print(f"          Each test will run {NUM_RUNS} times")
     print("=" * 50)
 
     setup_arrow_branch(arrow_src_dir, base_branch)
     build_arrow(arrow_cpp_dir, build_dir)
 
     for test_dir in valid_tests:
-        print(f"\n--- Baseline Runs: {test_dir.name} ---")
+        print(f"\n--- Baseline Run: {test_dir.name} ---")
         test_bin = compile_test(
             test_dir, test_dir.name, arrow_cpp_dir, build_dir, run_type="baseline"
         )
-        times = run_test_n_times(test_bin, test_dir, n=NUM_RUNS)
-        results[test_dir.name]["baseline_mean"] = statistics.mean(times)
-        results[test_dir.name]["baseline_stddev"] = (
-            statistics.stdev(times) if len(times) > 1 else 0.0
-        )
-        print(
-            f"==> Baseline complete: mean={results[test_dir.name]['baseline_mean']:.4f}s, "
-            f"σ={results[test_dir.name]['baseline_stddev']:.4f}s"
-        )
+        output = run_benchmark_and_capture(test_bin, test_dir)
+        results[test_dir.name]["baseline_output"] = output
+        print("==> Baseline benchmark captured.")
 
     # ==========================================
     # PHASE 2: Feature Branch Execution
     # ==========================================
     print("\n" + "=" * 50)
     print(" PHASE 2: Building and Running Feature Branches")
-    print(f"          Each test will run {NUM_RUNS} times")
     print("=" * 50)
 
     for test_dir in valid_tests:
@@ -217,55 +192,46 @@ def main():
             results[test_name]["skipped"] = True
             continue
 
-        print(f"\n--- Feature Runs: {test_name} ---")
+        print(f"\n--- Feature Run: {test_name} ({feature_branch}) ---")
         setup_arrow_branch(arrow_src_dir, feature_branch)
         build_arrow(arrow_cpp_dir, build_dir)
+
         test_bin = compile_test(
             test_dir, test_name, arrow_cpp_dir, build_dir, run_type="feature"
         )
-        times = run_test_n_times(test_bin, test_dir, n=NUM_RUNS)
-        results[test_name]["feature_mean"] = statistics.mean(times)
-        results[test_name]["feature_stddev"] = (
-            statistics.stdev(times) if len(times) > 1 else 0.0
-        )
-        print(
-            f"==> Feature complete: mean={results[test_name]['feature_mean']:.4f}s, "
-            f"σ={results[test_name]['feature_stddev']:.4f}s"
-        )
+        output = run_benchmark_and_capture(test_bin, test_dir)
+        results[test_name]["feature_output"] = output
+        print("==> Feature benchmark captured.")
 
     # ==========================================
     # PHASE 3: Generate Markdown Report
     # ==========================================
-    report_lines = [
-        f"| Script | Baseline Mean (`{base_branch}`) | Baseline σ | Modified Mean | Modified σ | Branch |",
-        "|---|---|---|---|---|---|",
-    ]
+    report_lines = []
 
     for test, data in results.items():
-        # Baseline columns
-        if data["baseline_mean"] is not None:
-            b_mean_str, b_stddev_str = format_time_stat(
-                data["baseline_mean"], data["baseline_stddev"]
-            )
-        else:
-            b_mean_str, b_stddev_str = "N/A", "N/A"
+        report_lines.append(f"### 📊 `{test}`")
 
-        # Feature columns
-        if data["skipped"]:
-            f_mean_str = "Skipped (same as base)"
-            f_stddev_str = "—"
-        elif data["feature_mean"] is not None:
-            f_mean_str, f_stddev_str = format_time_stat(
-                data["feature_mean"], data["feature_stddev"]
-            )
-        else:
-            f_mean_str, f_stddev_str = "N/A", "N/A"
-
-        branch_name = data["branch"] or "N/A"
-
+        # Baseline
+        report_lines.append(f"**Baseline (`{base_branch}`)**")
+        report_lines.append("```text")
         report_lines.append(
-            f"| `{test}` | {b_mean_str} | {b_stddev_str} | {f_mean_str} | {f_stddev_str} | `{branch_name}` |"
+            data["baseline_output"] if data["baseline_output"] else "N/A"
         )
+        report_lines.append("```")
+
+        # Feature
+        branch_name = data["branch"] or "Unknown"
+        report_lines.append(f"**Feature (`{branch_name}`)**")
+        if data["skipped"]:
+            report_lines.append("_Skipped (Feature branch matches baseline branch)_")
+        else:
+            report_lines.append("```text")
+            report_lines.append(
+                data["feature_output"] if data["feature_output"] else "N/A"
+            )
+            report_lines.append("```")
+
+        report_lines.append("---\n")
 
     with open(root_dir / "benchmark_results.md", "w") as f:
         f.write("\n".join(report_lines) + "\n")

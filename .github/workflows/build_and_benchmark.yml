@@ -7,7 +7,7 @@ on:
 permissions:
   contents: read
   pull-requests: write
-  actions: write # Required: 'gh cache delete'
+  actions: write
 
 jobs:
   build:
@@ -19,7 +19,6 @@ jobs:
       CCACHE_MAXSIZE: 8G
       CCACHE_COMPRESS: "true"
       GH_TOKEN: ${{ github.token }}
-      # Dynamic branch variable: head_ref for PRs, ref_name for main pushes
       CACHE_BRANCH: ${{ github.head_ref || github.ref_name }}
 
     steps:
@@ -36,7 +35,7 @@ jobs:
       - name: Install Build Dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y ccache ninja-build libsnappy-dev
+          sudo apt-get install -y ccache ninja-build libsnappy-dev libbenchmark-dev
 
       - name: Install Python Dependencies
         run: |
@@ -47,7 +46,6 @@ jobs:
         uses: actions/cache@v4
         with:
           path: .ccache
-          # Unique key scoped to the current branch, => main for main branch
           key: ${{ runner.os }}-arrow-ccache-${{ env.CACHE_BRANCH }}-${{ github.run_id }}
           restore-keys: |
             ${{ runner.os }}-arrow-ccache-${{ env.CACHE_BRANCH }}-
@@ -56,8 +54,6 @@ jobs:
       - name: Purge old cache
         run: |
           echo "Cleaning up old caches for branch: ${{ env.CACHE_BRANCH }}..."
-          
-          # Only fetch and delete caches that belong to the current branch
           CACHE_IDS=$(gh cache list --key "${{ runner.os }}-arrow-ccache-${{ env.CACHE_BRANCH }}-" --json id -q '.[].id')
           
           if [ -n "$CACHE_IDS" ]; then
@@ -69,17 +65,12 @@ jobs:
             
       - name: Execute Python orchestrator
         run: |
-          # Ensure ccache is in the PATH so CMake picks it up automatically
           export PATH="/usr/lib/ccache:$PATH"
-          
-          # NOTE: Ensure your python file is named run.py, 
-          # or change the line below to match your filename.
           chmod +x ./run.py
           
           echo "Starting build and test orchestrator..."
           START_TIME=$(date +%s)
           
-          # Run the Python script (this now generates benchmark_results.md)
           python3 ./run.py
           
           END_TIME=$(date +%s)
@@ -90,30 +81,26 @@ jobs:
           
           echo "BUILD_TIME=$BUILD_TIME" >> $GITHUB_ENV
           
-          # Publish the table to the GitHub Actions workflow summary UI
-          echo "### 🚀 Benchmark Execution Times" >> $GITHUB_STEP_SUMMARY
-          echo "- **Time to execute all phases:** $BUILD_TIME" >> $GITHUB_STEP_SUMMARY
+          # Publish results to GitHub Actions Summary UI
+          echo "### 🚀 Google Benchmark Execution Times" >> $GITHUB_STEP_SUMMARY
+          echo "- **Total Workflow Time:** $BUILD_TIME" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           cat benchmark_results.md >> $GITHUB_STEP_SUMMARY
 
       - name: Comment Benchmark Results on PR
         if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.fork == false
         run: |
-          # Create a temporary file combining your header, the table, and the footer
           cat << EOF > pr_comment.md
           🚀 **Benchmark Execution Completed!**
           ⏱️ **Total Workflow Time:** ${{ env.BUILD_TIME }}
           
           EOF
           
-          # Append the generated table
           cat benchmark_results.md >> pr_comment.md
           
-          # Append the commit hash footer
           cat << EOF >> pr_comment.md
           
           _Commit: ${{ github.sha }}_
           EOF
           
-          # Post the comment using the file we just built
           gh pr comment ${{ github.event.pull_request.number }} --body-file pr_comment.md
