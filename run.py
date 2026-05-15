@@ -62,6 +62,7 @@ def build_arrow(arrow_cpp_dir, build_dir):
         "-DARROW_COMPUTE=ON",
         "-DARROW_DATASET=ON",
         "-DARROW_PARQUET=ON",
+        "-DARROW_WITH_SNAPPY=ON",
     ]
     print("==> Configuring CMake")
     run_command(cmake_cmd, cwd=build_dir)
