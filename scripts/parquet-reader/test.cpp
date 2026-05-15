@@ -140,13 +140,15 @@ static void BM_ListStorage_SingleThread(benchmark::State &state)
 {
   BM_ParquetWorker(state, "list_parquet.parquet", false);
 }
-BENCHMARK(BM_ListStorage_SingleThread)->Unit(benchmark::kMillisecond)->MeasureProcessCPUTime();
+BENCHMARK(BM_ListStorage_SingleThread)->Unit(benchmark::kMillisecond)->MeasureProcessCPUTime()->Iterations(10);
+;
 
 static void BM_ListStorage_MultiThread(benchmark::State &state)
 {
   BM_ParquetWorker(state, "list_parquet.parquet", true);
 }
-BENCHMARK(BM_ListStorage_MultiThread)->Unit(benchmark::kMillisecond)->MeasureProcessCPUTime();
+BENCHMARK(BM_ListStorage_MultiThread)->Unit(benchmark::kMillisecond)->MeasureProcessCPUTime()->Iterations(10);
+;
 
 // =========================================================
 // Benchmarks for Struct Format (replaces Nested)
@@ -155,13 +157,15 @@ static void BM_StructStorage_SingleThread(benchmark::State &state)
 {
   BM_ParquetWorker(state, "nested_parquet.parquet", false);
 }
-BENCHMARK(BM_StructStorage_SingleThread)->Unit(benchmark::kMillisecond)->MeasureProcessCPUTime();
+BENCHMARK(BM_StructStorage_SingleThread)->Unit(benchmark::kMillisecond)->MeasureProcessCPUTime()->Iterations(10);
+;
 
 static void BM_StructStorage_MultiThread(benchmark::State &state)
 {
   BM_ParquetWorker(state, "nested_parquet.parquet", true);
 }
-BENCHMARK(BM_StructStorage_MultiThread)->Unit(benchmark::kMillisecond)->MeasureProcessCPUTime();
+BENCHMARK(BM_StructStorage_MultiThread)->Unit(benchmark::kMillisecond)->MeasureProcessCPUTime()->Iterations(10);
+;
 
 // =========================================================
 // Custom Main Entry Point
