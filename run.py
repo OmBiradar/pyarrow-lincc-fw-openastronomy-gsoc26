@@ -56,13 +56,19 @@ def build_arrow(arrow_cpp_dir, build_dir):
         str(arrow_cpp_dir),
         "-G",
         "Ninja",
-        "-DCMAKE_BUILD_TYPE=Debug",
+        "-DCMAKE_BUILD_TYPE=Release",  # Changed from Debug to Release
         "-DARROW_USE_CCACHE=ON",
         "-DARROW_BUILD_BENCHMARKS=ON",
         "-DARROW_COMPUTE=ON",
         "-DARROW_DATASET=ON",
         "-DARROW_PARQUET=ON",
         "-DARROW_WITH_SNAPPY=ON",
+        # --- Performance Boosters ---
+        "-DARROW_SIMD_LEVEL=AVX2",  # Or 'AVX512' if your CPU supports it
+        "-DARROW_RUNTIME_SIMD_LEVEL=MAX",  # Enables dynamic dispatch for best available SIMD
+        "-DARROW_ENABLE_LTO=ON",  # Link Time Optimization (Interprocedural Optimization)
+        "-DARROW_JEMALLOC=ON",  # Uses jemalloc, which is generally faster for Arrow workloads
+        "-DCMAKE_CXX_FLAGS=-march=native",  # Enable all CPU-specific optimizations
     ]
     print("==> Configuring CMake")
     run_command(cmake_cmd, cwd=build_dir)
@@ -77,14 +83,13 @@ def compile_test(test_dir, test_name, arrow_cpp_dir, build_dir, run_type="baseli
 
     include_dir_src = arrow_cpp_dir / "src"
     include_dir_build = build_dir / "src"
-    lib_dir = build_dir / "debug"
+    lib_dir = build_dir / "release"
 
     print(f"==> Compiling test executable: {test_bin.name}")
     compile_cmd = [
         "g++",
         "-std=c++23",
-        "-g",
-        "-O0",
+        "-O3",
         "-I",
         str(include_dir_src),
         "-I",
