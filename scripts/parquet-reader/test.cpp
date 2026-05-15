@@ -17,8 +17,8 @@
 // =========================================================
 // Parameters
 // =========================================================
-constexpr int64_t GENERATE_NUM_ROWS    = 100;
-constexpr int64_t GENERATE_LIST_LENGTH = 2'000'000;
+constexpr int64_t GENERATE_NUM_ROWS    = 200'000;
+constexpr int64_t GENERATE_LIST_LENGTH = 1'000;
 
 // 4 row groups across 100 rows. Parquet skips at row-group granularity,
 // so at least a handful of groups gives the format room to breathe.
