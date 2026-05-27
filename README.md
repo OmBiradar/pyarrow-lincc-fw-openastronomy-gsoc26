@@ -24,5 +24,3 @@ This repo **will** contain in future:
 ## Blogs
 
 Check out the blogs [here](./blogs)
-
-- [Day 1](/blogs/02-05-2026.md)
