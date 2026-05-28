@@ -62,9 +62,9 @@ func main() {
 		fmt.Printf("Error installing packages %v: %v", packages, err)
 	}
 
-	// Start Jupyter (This will block execution until you stop the server)
-	if err := pythonHandler.StartJupyter(notebooksDir); err != nil {
-		fmt.Printf("Jupyter Server Error: %v\n", err)
-		return
-	}
+	// Start Jupyter
+	// if err := pythonHandler.StartJupyter(notebooksDir); err != nil {
+	// 	fmt.Printf("Jupyter Server Error: %v\n", err)
+	// 	return
+	// }
 }

@@ -1,0 +1,33 @@
+name: "Manage cache"
+description: "Restores cache and prunes older cache entries for current branch. In case of a new branch, it uses the main branch cache."
+inputs:
+  cache_branch:
+    description: "The branch used for scoping the cache"
+    required: true
+  github_token:
+    description: "GitHub token for github cli cache access"
+    required: true
+runs:
+  using: "composite"
+  steps:
+    - name: Pull cache from storage
+      uses: actions/cache@v4
+      with:
+        path: .ccache
+        key: ${{ runner.os }}-arrow-ccache-${{ inputs.cache_branch }}-${{ github.run_id }}
+        restore-keys: |
+          ${{ runner.os }}-arrow-ccache-${{ inputs.cache_branch }}-
+          ${{ runner.os }}-arrow-ccache-main-
+    - name: Delete old cache
+      shell: bash
+      env:
+        GITHUB_TOKEN: ${{ inputs.github_token }}
+      run: |
+        echo "Cleaning up old cache for branch (If it exists) : ${{ inputs.cache_branch }}"
+        CACHE_IDS=$(gh cache list --key "${{ runner.os }}-arrow-ccache-${{ inputs.cache_branch }}-" --json id -q '.[].id')
+        if [ -n "$CACHE_IDS" ]; then
+          echo "$CACHE_IDS" | xargs -I{} gh cache delete {}
+          echo "Old caches cleared."
+        else
+          echo "Cache storage is already empty for this branch."
+        fi
