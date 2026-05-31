@@ -76,7 +76,7 @@ func (p *PythonHandler) Setup() error {
 	return nil
 }
 
-func (p *PythonHandler) Run(scriptPath string) error {
+func (p *PythonHandler) Run(scriptPath string, args ...string) error {
 	if p.VenvDir == "" || p.ArrowHome == "" {
 		return fmt.Errorf("handler not initialized: run Setup() before Run()")
 	}
@@ -86,7 +86,8 @@ func (p *PythonHandler) Run(scriptPath string) error {
 		return fmt.Errorf("failed to resolve script path: %w", err)
 	}
 
-	fmt.Printf("▶️ Running Python script: %s\n", absScriptPath)
+	// Optional: Update the print statement to show the arguments being passed
+	fmt.Printf("▶️ Running Python script: %s with args: %v\n", absScriptPath, args)
 
 	pythonExe := filepath.Join(p.VenvDir, "bin", "python")
 
@@ -96,7 +97,11 @@ func (p *PythonHandler) Run(scriptPath string) error {
 
 	scriptDir := filepath.Dir(absScriptPath)
 
-	if err := p.runCmd(scriptDir, envVars, pythonExe, absScriptPath); err != nil {
+	// 1. Combine the script path and the arguments into a single slice
+	cmdArgs := append([]string{absScriptPath}, args...)
+
+	// 2. Unpack the cmdArgs slice into the runCmd method
+	if err := p.runCmd(scriptDir, envVars, pythonExe, cmdArgs...); err != nil {
 		return fmt.Errorf("script execution failed: %w", err)
 	}
 

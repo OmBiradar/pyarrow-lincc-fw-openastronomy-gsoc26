@@ -1,8 +1,9 @@
 import os
 import gc
-import time
 import sqlite3
+import argparse
 import subprocess
+import timeit
 from datetime import datetime
 import pyarrow.parquet as pq
 from nested_pandas.datasets import generate_data
@@ -20,13 +21,14 @@ def GENERATE_DATA(b, n, file_path, algo, is_flat):
         nf.to_parquet(file_path, compression=algo)
 
 
-def SAVE_ALGO_TO_SQLITE3(sqlite3_path, file_obj, algo_key):
-    """Saves individual benchmark runs for a SINGLE algorithm to the database."""
+def INIT_DB(sqlite3_path):
+    """Initiates the database and creates the table if it doesn't exist."""
     conn = sqlite3.connect(sqlite3_path)
     cursor = conn.cursor()
 
     cursor.execute("""
         CREATE TABLE IF NOT EXISTS benchmark_results (
+            version TEXT,
             file_type TEXT,
             base_rows INTEGER,
             nested_rows INTEGER,
@@ -37,6 +39,14 @@ def SAVE_ALGO_TO_SQLITE3(sqlite3_path, file_obj, algo_key):
             run_time_sec REAL
         )
     """)
+    conn.commit()
+    conn.close()
+
+
+def SAVE_ALGO_TO_SQLITE3(sqlite3_path, file_obj, algo_key, version):
+    """Saves individual benchmark runs for a SINGLE algorithm to the database."""
+    conn = sqlite3.connect(sqlite3_path)
+    cursor = conn.cursor()
 
     file_type = "FlatFile" if file_obj.is_flat else "NestedFile"
     file_size = file_obj.file_sizes.get(algo_key, 0)
@@ -48,10 +58,11 @@ def SAVE_ALGO_TO_SQLITE3(sqlite3_path, file_obj, algo_key):
             cursor.execute(
                 """
                 INSERT INTO benchmark_results 
-                (file_type, base_rows, nested_rows, compression, file_size_bytes, run_number, run_timestamp, run_time_sec)
-                VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+                (version, file_type, base_rows, nested_rows, compression, file_size_bytes, run_number, run_timestamp, run_time_sec)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
             """,
                 (
+                    version,
                     file_type,
                     file_obj.b,
                     file_obj.n,
@@ -104,7 +115,7 @@ class File:
                 ["vmtouch", "-t", self.file_path], check=True, stdout=subprocess.DEVNULL
             )
 
-    def run_benchmark_loop(self, db_path, num_runs=10):
+    def run_benchmark_loop(self, db_path, version, num_runs=1000):
         """Executes the complete granular lifecycle per algorithm sequentially."""
         for algo in compressions:
             self.current_algo = "None" if algo is None else algo
@@ -116,15 +127,19 @@ class File:
             # 3. Load file completely into OS page cache
             self.pre_benchmark()
 
+            # Define timeit setup and statement
+            setup_code = "import pyarrow.parquet as pq"
+            stmt_code = f"pq.read_table('{self.file_path}', use_threads=True)"
+
             # 4. Benchmark the file for the specified number of runs
             for run_idx in range(1, num_runs + 1):
                 run_timestamp = datetime.now().isoformat()
 
-                start_time = time.perf_counter()
-                table = pq.read_table(self.file_path, use_threads=True)
-                run_time = time.perf_counter() - start_time
-
-                del table
+                # Execute strictly 1 read inside the timeit isolated environment
+                run_time = timeit.timeit(stmt=stmt_code, setup=setup_code, number=1)
+                
+                # timeit handles scoping internally, but we force GC here 
+                # to ensure lingering Arrow/Pandas objects are swept between runs
                 gc.collect()
 
                 self.benchmarking_times[self.current_algo].append(
@@ -135,7 +150,7 @@ class File:
             self.post_benchmark()
 
             # 7. Save this specific algorithm's run data immediately to SQL
-            SAVE_ALGO_TO_SQLITE3(db_path, self, self.current_algo)
+            SAVE_ALGO_TO_SQLITE3(db_path, self, self.current_algo, version)
 
     def post_benchmark(self):
         """Evicts the file from the OS page cache and deletes it from disk."""
@@ -163,7 +178,14 @@ class NestedFile(File):
 # Main Execution Pipeline
 # ==========================================
 if __name__ == "__main__":
-    db_path = "benchmarks.db"
+    parser = argparse.ArgumentParser(description="Parquet Read Benchmark Script")
+    parser.add_argument("version", type=str, help="Version meta name of branch")
+    args = parser.parse_args()
+
+    version = args.version
+    db_path = f"database-{version}.db"
+
+    INIT_DB(db_path)
 
     size_configs = [
         # ==========================================
@@ -215,17 +237,6 @@ if __name__ == "__main__":
         (100000, 1000),  # Slightly Wide
         (1000000, 100),  # Wide
         (10000000, 10),  # Extremely Wide
-        # ==========================================
-        # 10^9 (1 Billion items) ~ Approx 8 GB uncompressed
-        # DANGER: Requires massive system RAM!
-        # ==========================================
-        # (10, 100000000),  # Extremely Deep
-        # (100, 10000000),  # Deep
-        # (1000, 1000000),  # Slightly Deep
-        # (31622, 31622),   # Balanced (sqrt of 10^9)
-        # (1000000, 1000),  # Slightly Wide
-        # (10000000, 100),  # Wide
-        # (100000000, 10),  # Extremely Wide
     ]
 
     total_configs = len(size_configs)
@@ -233,21 +244,20 @@ if __name__ == "__main__":
     for idx, (base_rows, nested_rows) in enumerate(size_configs, 1):
         print(f"\n========================================================")
         print(
-            f"[{idx}/{total_configs}] Processing Dataset Configuration: {base_rows}x{nested_rows}"
+            f"[{idx}/{total_configs}] Processing Dataset Configuration: {base_rows}x{nested_rows} (Version: {version})"
         )
         print(f"========================================================")
 
         # --- Task 1: Pipeline loop for Flat representation ---
         print("  -> Starting FlatFile Sequence...")
         flat = FlatFile(base_rows, nested_rows, "temp_flat.parquet")
-        # Adjust num_runs as needed (e.g., 5-10 runs)
-        flat.run_benchmark_loop(db_path, num_runs=5)
+        flat.run_benchmark_loop(db_path, version, num_runs=1000)
 
         # --- Task 2: Pipeline loop for Native Nested representation ---
         print("  -> Starting NestedFile Sequence...")
         nested = NestedFile(base_rows, nested_rows, "temp_nested.parquet")
-        nested.run_benchmark_loop(db_path, num_runs=5)
+        nested.run_benchmark_loop(db_path, version, num_runs=1000)
 
     print(
-        "\nAll tasks in size matrix successfully processed. All run metrics saved directly to SQLite3."
+        f"\nAll tasks in size matrix successfully processed. All run metrics saved to {db_path}."
     )

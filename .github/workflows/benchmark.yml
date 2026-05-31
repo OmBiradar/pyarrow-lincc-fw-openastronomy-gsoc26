@@ -22,6 +22,9 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
+        with:
+          # Explicitly checkout the branch so we can push commits back to it
+          ref: ${{ github.head_ref || github.ref_name }}
       - name: System setup
         run: |
           # Update packages
@@ -37,3 +40,18 @@ jobs:
         run: |
           cd runner
           go run .
+      - name: Commit and push database files
+        run: |
+          # 1. Configure Git as the GitHub Actions bot
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          # 2. Stage the new database files (adjust the path if they aren't in the root/runner dir)
+          git add "**/*.db"
+          # 3. Commit and push ONLY if there are actually changes
+          if ! git diff-index --quiet HEAD; then
+            # The [skip ci] flag is crucial so this commit doesn't trigger an infinite loop of workflows
+            git commit -m "chore: auto-update benchmark database [skip ci]"
+            git push
+          else
+            echo "No database changes detected. Skipping commit."
+          fi
