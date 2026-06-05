@@ -1,5 +1,5 @@
 # Milestones
 
-- [ ] Apache community meeting introduction
-- [ ] Warm up - Good first issues
-- [ ] Internal PRs updates to the mentors
+- [*] Apache community meeting introduction
+- [ ] Complete PR 1 - Parquet reader optimizations
+- [ ] Complete PR 2 - Struct field selection in list
