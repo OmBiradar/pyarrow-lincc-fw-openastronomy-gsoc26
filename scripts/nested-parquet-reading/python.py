@@ -9,10 +9,55 @@
 #   * https://linuxvox.com/blog/what-is-a-pid-file-and-what-does-it-contain/
 #
 
-from nested_pandas.datasets import generate_data
+
+# Inbuilt modules
 import os
 import subprocess
-import pyarrow as pa
+import timeit
+import sys
+import sqlite3
+from string import Template
+
+# External modules
+from nested_pandas.datasets import generate_data
+import pyarrow as pa  # noqa: F401
+
+PYARROW_VERSION = ""
+CONFIG = ""
+
+# Benchmark config variables
+# Defaults
+FILE_ORDER_START = 1
+FILE_ORDER_END = 8
+NESTED = True
+FLAT = True
+MULTI = True
+SINGLE = True
+RUNS = 1000
+
+
+def read_config():
+    """
+    Reads the shorthand config from the global variable `PYARROW_OPENASTRONOMY_BENCHMARK`
+    """
+
+    ## ENV VAR FOR BENCHMARK CONFIG
+    # export PYARROW_OPENASTRONOMY_BENCHMARK=S1E8N1F1M1S1R10000
+    # index refrence                         012345678901234567
+
+    global CONFIG, FILE_ORDER_START, FILE_ORDER_END, NESTED, FLAT, MULTI, SINGLE, RUNS
+
+    CONFIG = os.getenv("PYARROW_OPENASTRONOMY_BENCHMARK")
+    if not CONFIG:
+        return
+
+    FILE_ORDER_START = int(CONFIG[1])
+    FILE_ORDER_END = int(CONFIG[3])
+    NESTED = int(CONFIG[5]) == 1
+    FLAT = int(CONFIG[7]) == 1
+    MULTI = int(CONFIG[9]) == 1
+    SINGLE = int(CONFIG[11]) == 1
+    RUNS = int(CONFIG[13:])
 
 
 def generate_parquet_file(n: int, b: int, nested=False) -> None:
@@ -79,7 +124,7 @@ def unload_file_in_ram() -> None:
     subprocess.run("kill $(cat vmtouch.pid)", shell=True)
 
 
-def read_file(file_name: str, multi: bool = False) -> None:
+def read_file(file_name: str, multi: bool = False) -> list[float]:
     """
     Read the given file and return the `timeit` result.
 
@@ -90,8 +135,57 @@ def read_file(file_name: str, multi: bool = False) -> None:
         Timeit object: results of reading the file
     """
 
-    # TODO: Measure the time to execute this function
-    pa.parquet.read_table(file_name, use_threads=multi)
+    code = f"pa.parquet.read_table('{file_name}', use_threads={multi})"
+
+    list_of_times = timeit.repeat(
+        stmt=code, setup="import pyarrow as pa", repeat=RUNS, number=1
+    )
+
+    return list_of_times
+
+
+def save_to_db(data: list) -> None:
+    """
+    Saves the data to a sqtlie3 database
+    """
+    con = sqlite3.connect(f"{PYARROW_VERSION}-{CONFIG}.db")
+    cur = con.cursor()
+
+    # To create a table
+    create_table_query = """
+    CREATE TABLE IF NOT EXISTS times(
+        file_order INTEGER,
+        n INTEGER,
+        b INTEGER,
+        nested INTEGER,
+        multi INTEGER,
+        time REAL
+    )
+    """
+    cur.execute(create_table_query)
+
+    insert_table_query = Template("""INSERT INTO times VALUES
+    ($f, $n, $b, $nest, $multi, $t)
+    """)
+
+    for d in data:
+        for t in d[5]:
+            nest_val = 1 if d[3] else 0
+            mult_val = 1 if d[4] else 0
+            cur.execute(
+                insert_table_query.substitute(
+                    {
+                        "f": d[0],
+                        "n": d[1],
+                        "b": d[2],
+                        "nest": nest_val,
+                        "multi": mult_val,
+                        "t": t,
+                    }
+                )
+            )
+
+    con.commit()
 
 
 def demo_workflow():
@@ -103,6 +197,46 @@ def demo_workflow():
 
 
 if __name__ == "__main__":
-    demo_workflow()
-    # TODO: Orchestrate a complete workflow for the matrix
-    # [Normal PyArrow, Updated PyArrow] x [single thread, multi thread]
+    """
+    Orchestrates a complete benchmark for the matrix
+    [Normal PyArrow, Updated PyArrow] x [single thread, multi thread]
+    """
+
+    # demo_workflow()
+    # Just an identifier used to name the database file
+    PYARROW_VERSION = sys.argv[1]
+
+    # DEBUG
+    # print(PYARROW_VERSION)
+
+    read_config()
+
+    nested_config = []
+    if NESTED is True:
+        nested_config.append(True)
+        if FLAT is True:
+            nested_config.append(False)
+
+    multi_config = []
+    if MULTI is True:
+        multi_config.append(True)
+        if SINGLE is True:
+            multi_config.append(False)
+
+    data = []
+    for file_order in range(FILE_ORDER_START, FILE_ORDER_END + 1):
+        for N in range(file_order):
+            B = file_order - N
+            n = 10**N
+            b = 10**B
+            for nested in nested_config:
+                generate_parquet_file(n, b, nested=nested)
+                file_name = "nested.parquet" if nested else "flat.parquet"
+                load_file_in_ram(file_name)
+                for multi in multi_config:
+                    times = read_file(file_name, multi)
+                    data.append([file_order, n, b, nested, multi, times])
+                unload_file_in_ram()
+                clean_parquet_file()
+
+    save_to_db(data)

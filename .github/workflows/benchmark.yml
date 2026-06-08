@@ -8,9 +8,14 @@ permissions:
   pull-requests: write
   actions: write
 jobs:
-  benchmark:
-    name: Benchmark
+  run_benchmarks:
+    name: Benchmark (${{ matrix.branch }}-${{ matrix.config }})
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false # Doesn't fail everything if something fails
+      matrix:
+        branch: ["OPTIMIZED", "MAIN"]
+        config: ["S1E5N1F1M1S1R1000", "S6E6N1F1M1S1R1000", "S7E7N1F1M1S1R1000"]
     env:
       CCACHE_DIR: ${{ github.workspace }}/.ccache
       CCACHE_MAXSIZE: 8G
@@ -39,17 +44,33 @@ jobs:
       - name: Run the golang automated runner
         run: |
           cd runner
-          go run .
+          sudo bash -c "ulimit -l \$(grep MemTotal /proc/meminfo | awk '{print \$2}') && export PYARROW_OPENASTRONOMY_BENCHMARK_BRANCH=${{ matrix.branch }} && export PYARROW_OPENASTRONOMY_BENCHMARK=${{ matrix.config }} && go run ."      
+      - name: Upload database artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: db-artifact-${{ matrix.branch }}-${{ matrix.config }}
+          path: "**/*.db"
+          retention-days: 1
+  commit-results:
+    name: Commit all databases
+    needs: run_benchmarks
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with: 
+          ref: ${{ github.head_ref || github.ref_name }}
+      - name: Download all DB artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: benchmark_results/
+          merge-multiple: true
       - name: Commit and push database files
         run: |
-          # 1. Configure Git as the GitHub Actions bot
           git config --global user.name 'github-actions[bot]'
           git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          # 2. Stage the new database files (adjust the path if they aren't in the root/runner dir)
           git add "**/*.db"
-          # 3. Commit and push ONLY if there are actually changes
           if ! git diff-index --quiet HEAD; then
-            # The [skip ci] flag is crucial so this commit doesn't trigger an infinite loop of workflows
             git commit -m "chore: auto-update benchmark database [skip ci]"
             git push
           else
