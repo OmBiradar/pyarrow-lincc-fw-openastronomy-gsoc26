@@ -9,6 +9,7 @@
 #   * https://linuxvox.com/blog/what-is-a-pid-file-and-what-does-it-contain/
 #
 
+# TODO: Update to have all 7 compression algorithms
 
 # Inbuilt modules
 import os
@@ -34,6 +35,9 @@ FLAT = True
 MULTI = True
 SINGLE = True
 RUNS = 1000
+COMPRESSION = 0
+
+COMPRESSION_ALGORITHMS = ["SNAPPY", "ZSTD", "GZIP", "BROTLI", "LZ4", "NONE"]
 
 
 def read_config():
@@ -42,25 +46,41 @@ def read_config():
     """
 
     ## ENV VAR FOR BENCHMARK CONFIG
-    # export PYARROW_OPENASTRONOMY_BENCHMARK=S1E8N1F1M1S1R10000
-    # index refrence                         012345678901234567
+    # export PYARROW_OPENASTRONOMY_BENCHMARK=S15N1M1C1R1000
+    # index refrence                         01234567890123456789
 
-    global CONFIG, FILE_ORDER_START, FILE_ORDER_END, NESTED, FLAT, MULTI, SINGLE, RUNS
+    global \
+        CONFIG, \
+        FILE_ORDER_START, \
+        FILE_ORDER_END, \
+        NESTED, \
+        FLAT, \
+        MULTI, \
+        SINGLE, \
+        COMPRESSION, \
+        RUNS
 
     CONFIG = os.getenv("PYARROW_OPENASTRONOMY_BENCHMARK")
     if not CONFIG:
         return
 
     FILE_ORDER_START = int(CONFIG[1])
-    FILE_ORDER_END = int(CONFIG[3])
-    NESTED = int(CONFIG[5]) == 1
-    FLAT = int(CONFIG[7]) == 1
-    MULTI = int(CONFIG[9]) == 1
-    SINGLE = int(CONFIG[11]) == 1
-    RUNS = int(CONFIG[13:])
+    FILE_ORDER_END = int(CONFIG[2])
+    NESTED = int(CONFIG[4]) == 1
+    FLAT = True if NESTED == 0 else False
+    MULTI = int(CONFIG[6]) == 1
+    SINGLE = True if MULTI == 0 else False
+    COMPRESSION = CONFIG[8]
+    if COMPRESSION == "A":
+        COMPRESSION = -1
+    else:
+        COMPRESSION = int(COMPRESSION)
+    RUNS = int(CONFIG[10:])
 
 
-def generate_parquet_file(n: int, b: int, nested=False) -> None:
+def generate_parquet_file(
+    n: int, b: int, nested=False, compression=COMPRESSION_ALGORITHMS[0]
+) -> None:
     """
     Generates a nested/flat parquet file with name
     "nested.parquet"/"flat.parquet"with n rows and
@@ -77,9 +97,17 @@ def generate_parquet_file(n: int, b: int, nested=False) -> None:
 
     nf = generate_data(n, b, seed=1)[["nested"]]
     if not nested:
-        nf["nested"].to_lists().to_parquet("flat.parquet")  # type: ignore
+        nf["nested"].to_lists().to_parquet(  # type: ignore
+            "flat.parquet",
+            engine="pyarrow",
+            compression=compression,
+        )
     else:
-        nf.to_parquet("nested.parquet")
+        nf.to_parquet(
+            "nested.parquet",
+            engine="pyarrow",
+            compression=compression,
+        )
 
 
 def clean_parquet_file() -> None:
@@ -159,17 +187,18 @@ def save_to_db(data: list) -> None:
         b INTEGER,
         nested INTEGER,
         multi INTEGER,
+        compression TEXT,
         time REAL
     )
     """
     cur.execute(create_table_query)
 
     insert_table_query = Template("""INSERT INTO times VALUES
-    ($f, $n, $b, $nest, $multi, $t)
+    ($f, $n, $b, $nest, $multi, $comp, $t)
     """)
 
     for d in data:
-        for t in d[5]:
+        for t in d[6]:
             nest_val = 1 if d[3] else 0
             mult_val = 1 if d[4] else 0
             cur.execute(
@@ -180,6 +209,7 @@ def save_to_db(data: list) -> None:
                         "b": d[2],
                         "nest": nest_val,
                         "multi": mult_val,
+                        "comp": f"'{d[5]}'",
                         "t": t,
                     }
                 )
@@ -189,7 +219,7 @@ def save_to_db(data: list) -> None:
 
 
 def demo_workflow():
-    generate_parquet_file(100, 10000, False)
+    generate_parquet_file(100, 10000, False, compression=COMPRESSION_ALGORITHMS[0])
     load_file_in_ram("flat.parquet")
     read_file("flat.parquet", multi=False)
     unload_file_in_ram()
@@ -214,29 +244,47 @@ if __name__ == "__main__":
     nested_config = []
     if NESTED is True:
         nested_config.append(True)
-        if FLAT is True:
-            nested_config.append(False)
+    else:
+        nested_config.append(False)
 
     multi_config = []
     if MULTI is True:
         multi_config.append(True)
-        if SINGLE is True:
-            multi_config.append(False)
+    else:
+        multi_config.append(False)
 
     data = []
-    for file_order in range(FILE_ORDER_START, FILE_ORDER_END + 1):
-        for N in range(file_order):
-            B = file_order - N
-            n = 10**N
-            b = 10**B
-            for nested in nested_config:
-                generate_parquet_file(n, b, nested=nested)
-                file_name = "nested.parquet" if nested else "flat.parquet"
-                load_file_in_ram(file_name)
-                for multi in multi_config:
-                    times = read_file(file_name, multi)
-                    data.append([file_order, n, b, nested, multi, times])
-                unload_file_in_ram()
-                clean_parquet_file()
+    compressions = []
+    if COMPRESSION == -1:
+        compressions = COMPRESSION_ALGORITHMS
+    else:
+        compressions.append(COMPRESSION_ALGORITHMS[COMPRESSION])
+    for current_compression in compressions:
+        for file_order in range(FILE_ORDER_START, FILE_ORDER_END + 1):
+            for N in range(file_order):
+                B = file_order - N
+                n = 10**N
+                b = 10**B
+                for nested in nested_config:
+                    generate_parquet_file(
+                        n, b, nested=nested, compression=current_compression
+                    )
+                    file_name = "nested.parquet" if nested else "flat.parquet"
+                    load_file_in_ram(file_name)
+                    for multi in multi_config:
+                        times = read_file(file_name, multi)
+                        data.append(
+                            [
+                                file_order,
+                                n,
+                                b,
+                                nested,
+                                multi,
+                                current_compression,
+                                times,
+                            ]
+                        )
+                    unload_file_in_ram()
+                    clean_parquet_file()
 
     save_to_db(data)

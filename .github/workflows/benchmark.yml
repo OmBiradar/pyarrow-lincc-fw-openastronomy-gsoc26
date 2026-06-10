@@ -9,13 +9,17 @@ permissions:
   actions: write
 jobs:
   run_benchmarks:
-    name: Benchmark (${{ matrix.branch }}-${{ matrix.config }})
+    name: Benchmark (${{ matrix.branch }}-${{ env.CONFIG }})
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false # Doesn't fail everything if something fails
       matrix:
         branch: ["OPTIMIZED", "MAIN"]
-        config: ["S1E5N1F1M1S1R1000", "S6E6N1F1M1S1R1000", "S7E7N1F1M1S1R1000"]
+        order: ["15", "66", "77"]
+        compression: ["A"]
+        multi: ["1", "0"]
+        nested: ["1", "0"]
+        runs: ["1000"]
     env:
       CCACHE_DIR: ${{ github.workspace }}/.ccache
       CCACHE_MAXSIZE: 8G
@@ -24,6 +28,7 @@ jobs:
       # head_ref is the branch name on Pull Requests.
       # ref_name is the branch name on direct pushes.
       CACHE_BRANCH: ${{ github.head_ref || github.ref_name }}
+      CONFIG: S${{ matrix.order }}N${{ matrix.nested }}M${{ matrix.multi }}C${{ matrix.compression }}R${{ matrix.runs }}
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
@@ -44,11 +49,11 @@ jobs:
       - name: Run the golang automated runner
         run: |
           cd runner
-          sudo bash -c "ulimit -l \$(grep MemTotal /proc/meminfo | awk '{print \$2}') && export PYARROW_OPENASTRONOMY_BENCHMARK_BRANCH=${{ matrix.branch }} && export PYARROW_OPENASTRONOMY_BENCHMARK=${{ matrix.config }} && go run ."      
+          sudo bash -c "ulimit -l \$(grep MemTotal /proc/meminfo | awk '{print \$2}') && export PYARROW_OPENASTRONOMY_BENCHMARK_BRANCH=${{ matrix.branch }} && export PYARROW_OPENASTRONOMY_BENCHMARK=${{ env.CONFIG }} && go run ."
       - name: Upload database artifact
         uses: actions/upload-artifact@v4
         with:
-          name: db-artifact-${{ matrix.branch }}-${{ matrix.config }}
+          name: db-artifact-${{ matrix.branch }}-${{ env.CONFIG }}
           path: "**/*.db"
           retention-days: 1
   commit-results:
