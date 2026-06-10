@@ -99,13 +99,11 @@ def generate_parquet_file(
     if not nested:
         nf["nested"].to_lists().to_parquet(  # type: ignore
             "flat.parquet",
-            engine="pyarrow",
             compression=compression,
         )
     else:
         nf.to_parquet(
             "nested.parquet",
-            engine="pyarrow",
             compression=compression,
         )
 

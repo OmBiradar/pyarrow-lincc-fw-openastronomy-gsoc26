@@ -9,7 +9,7 @@ permissions:
   actions: write
 jobs:
   run_benchmarks:
-    name: Benchmark (${{ matrix.branch }}-${{ env.CONFIG }})
+    name: Benchmark (${{ matrix.branch }}-S${{ matrix.order }}N${{ matrix.nested }}M${{ matrix.multi }}C${{ matrix.compression }}R${{ matrix.runs }})
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false # Doesn't fail everything if something fails
@@ -49,11 +49,11 @@ jobs:
       - name: Run the golang automated runner
         run: |
           cd runner
-          sudo bash -c "ulimit -l \$(grep MemTotal /proc/meminfo | awk '{print \$2}') && export PYARROW_OPENASTRONOMY_BENCHMARK_BRANCH=${{ matrix.branch }} && export PYARROW_OPENASTRONOMY_BENCHMARK=${{ env.CONFIG }} && go run ."
+          sudo bash -c "ulimit -l \$(grep MemTotal /proc/meminfo | awk '{print \$2}') && export PYARROW_OPENASTRONOMY_BENCHMARK_BRANCH=${{ matrix.branch }} && export PYARROW_OPENASTRONOMY_BENCHMARK=S${{ matrix.order }}N${{ matrix.nested }}M${{ matrix.multi }}C${{ matrix.compression }}R${{ matrix.runs }} && go run ."
       - name: Upload database artifact
         uses: actions/upload-artifact@v4
         with:
-          name: db-artifact-${{ matrix.branch }}-${{ env.CONFIG }}
+          name: db-artifact-${{ matrix.branch }}-S${{ matrix.order }}N${{ matrix.nested }}M${{ matrix.multi }}C${{ matrix.compression }}R${{ matrix.runs }}          
           path: "**/*.db"
           retention-days: 1
   commit-results:
