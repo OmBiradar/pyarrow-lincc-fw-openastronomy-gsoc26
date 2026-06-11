@@ -1,0 +1,32 @@
+name: archery_benchmark
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+permissions:
+  contents: write
+  pull-requests: write
+  actions: write
+jobs:
+  run_benchmarks:
+    name: Run archery bechmarks for Struct reading
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref || github.ref_name }}
+      - name: System setup
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ccache ninja-build libsnappy-dev libbenchmark-dev
+      - name: Run the benchmark and save to file
+        run: |
+          bash ./scripts/bash/run_archery_benchmarks.sh
+      - name: Push log to repo
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add .
+          git commit -m "chore: push logs to repo [skip ci]"
+          git push
