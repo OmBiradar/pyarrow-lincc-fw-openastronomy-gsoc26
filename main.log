@@ -228,7 +228,7 @@ Call Stack (most recent call first):
 
 -- Could NOT find gflagsAlt (missing: gflags_LIB GFLAGS_INCLUDE_DIR) (Required is at least version "2.1.0")
 -- Building gflags from source
--- Added static library dependency gflags::gflags_static: /tmp/arrow-archery-79edvwkw/WORKSPACE/build/gflags_ep-prefix/src/gflags_ep/lib/libgflags.a
+-- Added static library dependency gflags::gflags_static: /tmp/arrow-archery-fobawdej/WORKSPACE/build/gflags_ep-prefix/src/gflags_ep/lib/libgflags.a
 CMake Warning at cmake_modules/FindThriftAlt.cmake:42 (find_package):
   By not providing "FindThrift.cmake" in CMAKE_MODULE_PATH this project has
   asked CMake to find a package configuration file provided by "Thrift", but
@@ -257,22 +257,22 @@ Call Stack (most recent call first):
 -- Thrift: Configuring arrow 0.22.0
 -- Thrift: libevent NOT found.
 -- Thrift: Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.13")
-CMake Warning (dev) at /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/build/cmake/DefineOptions.cmake:120 (find_package):
+CMake Warning (dev) at /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/build/cmake/DefineOptions.cmake:120 (find_package):
   Policy CMP0148 is not set: The FindPythonInterp and FindPythonLibs modules
   are removed.  Run "cmake --help-policy CMP0148" for policy details.  Use
   the cmake_policy command to set the policy and suppress this warning.
 
 Call Stack (most recent call first):
-  /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/CMakeLists.txt:44 (include)
+  /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/CMakeLists.txt:44 (include)
 This warning is for project developers.  Use -Wno-dev to suppress it.
 
-CMake Warning (dev) at /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/build/cmake/DefineOptions.cmake:121 (find_package):
+CMake Warning (dev) at /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/build/cmake/DefineOptions.cmake:121 (find_package):
   Policy CMP0148 is not set: The FindPythonInterp and FindPythonLibs modules
   are removed.  Run "cmake --help-policy CMP0148" for policy details.  Use
   the cmake_policy command to set the policy and suppress this warning.
 
 Call Stack (most recent call first):
-  /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/CMakeLists.txt:44 (include)
+  /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/CMakeLists.txt:44 (include)
 This warning is for project developers.  Use -Wno-dev to suppress it.
 
 CMake Warning (dev) at /usr/local/share/cmake-3.31/Modules/FindPackageHandleStandardArgs.cmake:441 (message):
@@ -281,9 +281,9 @@ CMake Warning (dev) at /usr/local/share/cmake-3.31/Modules/FindPackageHandleStan
   to problems in calling code that expects `find_package` result variables
   (e.g., `_FOUND`) to follow a certain pattern.
 Call Stack (most recent call first):
-  /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/build/cmake/FindClangTools.cmake:16 (find_package_handle_standard_args)
-  /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/build/cmake/StaticCodeAnalysis.cmake:1 (find_package)
-  /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/CMakeLists.txt:51 (include)
+  /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/build/cmake/FindClangTools.cmake:16 (find_package_handle_standard_args)
+  /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/build/cmake/StaticCodeAnalysis.cmake:1 (find_package)
+  /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/CMakeLists.txt:51 (include)
 This warning is for project developers.  Use -Wno-dev to suppress it.
 
 -- Thrift: Found clang-tidy: /usr/bin/clang-tidy
@@ -294,9 +294,9 @@ CMake Warning (dev) at /usr/local/share/cmake-3.31/Modules/FindPackageHandleStan
   `find_package` result variables (e.g., `_FOUND`) to follow a certain
   pattern.
 Call Stack (most recent call first):
-  /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/build/cmake/FindClangTools.cmake:16 (find_package_handle_standard_args)
-  /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/build/cmake/StaticCodeAnalysis.cmake:1 (find_package)
-  /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/CMakeLists.txt:51 (include)
+  /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/build/cmake/FindClangTools.cmake:16 (find_package_handle_standard_args)
+  /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/build/cmake/StaticCodeAnalysis.cmake:1 (find_package)
+  /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/CMakeLists.txt:51 (include)
 This warning is for project developers.  Use -Wno-dev to suppress it.
 
 -- Thrift: Could NOT find clang-apply-replacements (missing: clang-apply-replacements_BINARY) 
@@ -307,9 +307,9 @@ CMake Warning (dev) at /usr/local/share/cmake-3.31/Modules/FindPackageHandleStan
   `find_package` result variables (e.g., `_FOUND`) to follow a certain
   pattern.
 Call Stack (most recent call first):
-  /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/build/cmake/FindClangTools.cmake:24 (find_package_handle_standard_args)
-  /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/build/cmake/StaticCodeAnalysis.cmake:1 (find_package)
-  /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/CMakeLists.txt:51 (include)
+  /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/build/cmake/FindClangTools.cmake:24 (find_package_handle_standard_args)
+  /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/build/cmake/StaticCodeAnalysis.cmake:1 (find_package)
+  /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/CMakeLists.txt:51 (include)
 This warning is for project developers.  Use -Wno-dev to suppress it.
 
 -- Thrift: Found run-clang-tidy: /usr/bin/run-clang-tidy
@@ -528,7 +528,7 @@ Call Stack (most recent call first):
 -- CMAKE_CXX_FLAGS:  -Wno-noexcept-type -Wno-self-move -Wno-subobject-linkage  -fdiagnostics-color=always  -Wall -fno-semantic-interposition -msse4.2 
 -- CMAKE_C_FLAGS_RELEASE: -O3 -DNDEBUG -O2 -ftree-vectorize 
 -- CMAKE_CXX_FLAGS_RELEASE: -O3 -DNDEBUG -O2 -ftree-vectorize 
--- Creating bundled static library target arrow_bundled_dependencies at /tmp/arrow-archery-79edvwkw/WORKSPACE/build/release/libarrow_bundled_dependencies.a
+-- Creating bundled static library target arrow_bundled_dependencies at /tmp/arrow-archery-fobawdej/WORKSPACE/build/release/libarrow_bundled_dependencies.a
 CMake Warning (dev) at src/arrow/CMakeLists.txt:1198 (install):
   Policy CMP0177 is not set: install() DESTINATION paths are normalized.  Run
   "cmake --help-policy CMP0177" for policy details.  Use the cmake_policy
@@ -547,7 +547,7 @@ This warning is for project developers.  Use -Wno-dev to suppress it.
 --   Build type: release
 --   Source directory: /home/runner/work/pyarrow-lincc-fw-openastronomy-gsoc26/pyarrow-lincc-fw-openastronomy-gsoc26/arrow/cpp
 --   Install prefix: /usr/local
---   Compile commands: /tmp/arrow-archery-79edvwkw/WORKSPACE/build/compile_commands.json
+--   Compile commands: /tmp/arrow-archery-fobawdej/WORKSPACE/build/compile_commands.json
 -- 
 -- Compile and link options:
 -- 
@@ -785,49 +785,49 @@ This warning is for project developers.  Use -Wno-dev to suppress it.
 --       In general, you don't need to specify this because the default
 --       (CMAKE_INSTALL_FULL_BINDIR on Windows, CMAKE_INSTALL_FULL_LIBDIR otherwise)
 --       is reasonable.
---   Outputting build configuration summary to /tmp/arrow-archery-79edvwkw/WORKSPACE/build/cmake_summary.json
--- Configuring done (13.4s)
+--   Outputting build configuration summary to /tmp/arrow-archery-fobawdej/WORKSPACE/build/cmake_summary.json
+-- Configuring done (12.9s)
 -- Generating done (0.4s)
--- Build files have been written to: /tmp/arrow-archery-79edvwkw/WORKSPACE/build
-[1/475] Creating directories for 'brotli_ep'
+-- Build files have been written to: /tmp/arrow-archery-fobawdej/WORKSPACE/build
+[1/475] Creating directories for 'xsimd_ep'
 [2/475] Creating directories for 'jemalloc_ep'
-[3/475] Creating directories for 'mimalloc_ep'
-[4/475] Creating directories for 'rapidjson_ep'
-[5/475] Creating directories for 'xsimd_ep'
-[6/475] Creating directories for 'bzip2_ep'
-[7/475] Performing download step (download, verify and extract) for 'jemalloc_ep'
-[8/475] No update step for 'jemalloc_ep'
+[3/475] Creating directories for 'bzip2_ep'
+[4/475] Creating directories for 'mimalloc_ep'
+[5/475] Creating directories for 'brotli_ep'
+[6/475] Creating directories for 'rapidjson_ep'
+[7/475] Performing download step (download, verify and extract) for 'bzip2_ep'
+[8/475] No update step for 'bzip2_ep'
 [9/475] Creating directories for 'utf8proc_ep'
-[10/475] Performing patch step for 'jemalloc_ep'
-[11/475] Performing download step (download, verify and extract) for 'bzip2_ep'
-[12/475] No update step for 'bzip2_ep'
-[13/475] No patch step for 'bzip2_ep'
-[14/475] Performing download step (download, verify and extract) for 'xsimd_ep'
-[15/475] Performing download step (download, verify and extract) for 'brotli_ep'
-[16/475] No update step for 'xsimd_ep'
-[17/475] No update step for 'brotli_ep'
-[18/475] No patch step for 'xsimd_ep'
-[19/475] No patch step for 'brotli_ep'
-[20/475] Performing download step (download, verify and extract) for 'mimalloc_ep'
-[21/475] No update step for 'mimalloc_ep'
-[22/475] No patch step for 'mimalloc_ep'
-[23/475] Performing download step (download, verify and extract) for 'rapidjson_ep'
-[24/475] No update step for 'rapidjson_ep'
-[25/475] No patch step for 'rapidjson_ep'
-[26/475] Performing configure step for 'xsimd_ep'
-[27/475] No configure step for 'bzip2_ep'
-[28/475] Performing configure step for 'brotli_ep'
-[29/475] Performing build step for 'xsimd_ep'
-[30/475] Performing download step (download, verify and extract) for 'utf8proc_ep'
-[31/475] No update step for 'utf8proc_ep'
-[32/475] No patch step for 'utf8proc_ep'
-[33/475] Performing install step for 'xsimd_ep'
-[34/475] Performing configure step for 'rapidjson_ep'
-[35/475] Performing build step for 'rapidjson_ep'
-[36/475] Performing install step for 'rapidjson_ep'
-[37/475] Performing configure step for 'mimalloc_ep'
+[10/475] No patch step for 'bzip2_ep'
+[11/475] Performing download step (download, verify and extract) for 'xsimd_ep'
+[12/475] No update step for 'xsimd_ep'
+[13/475] No patch step for 'xsimd_ep'
+[14/475] Performing download step (download, verify and extract) for 'mimalloc_ep'
+[15/475] No update step for 'mimalloc_ep'
+[16/475] Performing download step (download, verify and extract) for 'rapidjson_ep'
+[17/475] No patch step for 'mimalloc_ep'
+[18/475] No update step for 'rapidjson_ep'
+[19/475] No patch step for 'rapidjson_ep'
+[20/475] Performing download step (download, verify and extract) for 'jemalloc_ep'
+[21/475] No update step for 'jemalloc_ep'
+[22/475] Performing patch step for 'jemalloc_ep'
+[23/475] Performing download step (download, verify and extract) for 'utf8proc_ep'
+[24/475] No configure step for 'bzip2_ep'
+[25/475] No update step for 'utf8proc_ep'
+[26/475] Performing download step (download, verify and extract) for 'brotli_ep'
+[27/475] No update step for 'brotli_ep'
+[28/475] No patch step for 'brotli_ep'
+[29/475] Performing configure step for 'rapidjson_ep'
+[30/475] Performing build step for 'rapidjson_ep'
+[31/475] No patch step for 'utf8proc_ep'
+[32/475] Performing install step for 'rapidjson_ep'
+[33/475] Performing configure step for 'xsimd_ep'
+[34/475] Performing build step for 'xsimd_ep'
+[35/475] Performing configure step for 'mimalloc_ep'
+[36/475] Performing install step for 'xsimd_ep'
+[37/475] Performing build step for 'bzip2_ep'
 [38/475] Performing configure step for 'utf8proc_ep'
-[39/475] Performing build step for 'bzip2_ep'
+[39/475] Performing configure step for 'brotli_ep'
 [40/475] Building CXX object _deps/boost-build/libs/container/CMakeFiles/boost_container.dir/src/dlmalloc.cpp.o
 [41/475] Performing install step for 'bzip2_ep'
 [42/475] Building CXX object _deps/boost-build/libs/container/CMakeFiles/boost_container.dir/src/global_resource.cpp.o
@@ -844,38 +844,40 @@ This warning is for project developers.  Use -Wno-dev to suppress it.
 [53/475] Performing build step for 'mimalloc_ep'
 [54/475] Performing install step for 'mimalloc_ep'
 [55/475] Completed 'mimalloc_ep'
-[56/475] Building C object _deps/boost-build/libs/container/CMakeFiles/boost_container.dir/src/alloc_lib.c.o
-[57/475] Building CXX object _deps/boost-build/libs/context/CMakeFiles/boost_context.dir/src/fcontext.cpp.o
-[58/475] Linking CXX static library _deps/boost-build/libs/container/libboost_container.a
-[59/475] Building CXX object _deps/boost-build/libs/date_time/CMakeFiles/boost_date_time.dir/src/gregorian/greg_month.cpp.o
+[56/475] Building CXX object _deps/boost-build/libs/context/CMakeFiles/boost_context.dir/src/fcontext.cpp.o
+[57/475] Building CXX object _deps/boost-build/libs/date_time/CMakeFiles/boost_date_time.dir/src/gregorian/greg_month.cpp.o
+[58/475] Building C object _deps/boost-build/libs/container/CMakeFiles/boost_container.dir/src/alloc_lib.c.o
+[59/475] Linking CXX static library _deps/boost-build/libs/container/libboost_container.a
 [60/475] Building CXX object _deps/boost-build/libs/context/CMakeFiles/boost_context.dir/src/posix/stack_traits.cpp.o
 [61/475] Building CXX object _deps/boost-build/libs/atomic/CMakeFiles/boost_atomic.dir/src/find_address_sse2.cpp.o
 [62/475] Building CXX object _deps/boost-build/libs/atomic/CMakeFiles/boost_atomic.dir/src/lock_pool.cpp.o
 [63/475] Building CXX object _deps/boost-build/libs/atomic/CMakeFiles/boost_atomic.dir/src/find_address_sse41.cpp.o
-[64/475] Performing build step for 'utf8proc_ep'
-[65/475] Performing install step for 'utf8proc_ep'
-[66/475] Building CXX object _deps/boost-build/libs/random/CMakeFiles/boost_random.dir/src/random_device.cpp.o
+[64/475] Building CXX object _deps/boost-build/libs/random/CMakeFiles/boost_random.dir/src/random_device.cpp.o
+[65/475] Performing build step for 'utf8proc_ep'
+[66/475] Performing install step for 'utf8proc_ep'
 [67/475] Linking CXX static library _deps/boost-build/libs/context/libboost_context.a
 [68/475] Linking CXX static library _deps/boost-build/libs/date_time/libboost_date_time.a
 [69/475] Linking CXX static library _deps/boost-build/libs/random/libboost_random.a
 [70/475] Building CXX object _deps/boost-build/libs/chrono/CMakeFiles/boost_chrono.dir/src/chrono.cpp.o
 [71/475] Building CXX object _deps/boost-build/libs/chrono/CMakeFiles/boost_chrono.dir/src/process_cpu_clocks.cpp.o
 [72/475] Building CXX object _deps/boost-build/libs/chrono/CMakeFiles/boost_chrono.dir/src/thread_clock.cpp.o
-[73/475] Performing configure step for 'jemalloc_ep'
-[74/475] Performing build step for 'brotli_ep'
-[75/475] Performing install step for 'brotli_ep'
-[76/475] Completed 'brotli_ep'
-[77/475] Building CXX object src/arrow/CMakeFiles/arrow_io.dir/Unity/unity_1_cxx.cxx.o
-[78/475] Building CXX object src/arrow/CMakeFiles/arrow_vendored.dir/Unity/unity_1_cxx.cxx.o
+[73/475] Performing build step for 'brotli_ep'
+[74/475] Performing install step for 'brotli_ep'
+[75/475] Completed 'brotli_ep'
+[76/475] Building CXX object src/arrow/CMakeFiles/arrow_io.dir/Unity/unity_1_cxx.cxx.o
+[77/475] Building CXX object src/arrow/CMakeFiles/arrow_vendored.dir/Unity/unity_1_cxx.cxx.o
+[78/475] Performing configure step for 'jemalloc_ep'
 [79/475] Building CXX object src/arrow/CMakeFiles/arrow_vendored.dir/Unity/unity_0_cxx.cxx.o
 [80/475] Building C object src/arrow/CMakeFiles/arrow_vendored.dir/Unity/unity_1_c.c.o
 [81/475] Building C object src/arrow/CMakeFiles/arrow_vendored.dir/Unity/unity_0_c.c.o
 [82/475] Building CXX object src/arrow/CMakeFiles/arrow_vendored.dir/vendored/datetime.cpp.o
-[83/475] Building CXX object src/arrow/CMakeFiles/arrow_array.dir/Unity/unity_1_cxx.cxx.o
+[83/475] Building CXX object src/arrow/CMakeFiles/arrow_io.dir/Unity/unity_0_cxx.cxx.o
+[84/475] Building CXX object src/arrow/CMakeFiles/arrow_util.dir/Unity/unity_7_cxx.cxx.o
+[85/475] Building CXX object src/arrow/CMakeFiles/arrow_array.dir/Unity/unity_1_cxx.cxx.o
 In file included from /usr/include/c++/13/algorithm:60,
                  from /home/runner/work/pyarrow-lincc-fw-openastronomy-gsoc26/pyarrow-lincc-fw-openastronomy-gsoc26/arrow/cpp/src/arrow/array/builder_base.h:20,
                  from /home/runner/work/pyarrow-lincc-fw-openastronomy-gsoc26/pyarrow-lincc-fw-openastronomy-gsoc26/arrow/cpp/src/arrow/array/builder_base.cc:18,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/src/arrow/CMakeFiles/arrow_array.dir/Unity/unity_1_cxx.cxx:4:
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/src/arrow/CMakeFiles/arrow_array.dir/Unity/unity_1_cxx.cxx:4:
 In static member function ‘static constexpr _Up* std::__copy_move<_IsMove, true, std::random_access_iterator_tag>::__copy_m(_Tp*, _Tp*, _Up*) [with _Tp = long unsigned int; _Up = long unsigned int; bool _IsMove = false]’,
     inlined from ‘constexpr _OI std::__copy_move_a2(_II, _II, _OI) [with bool _IsMove = false; _II = long unsigned int*; _OI = long unsigned int*]’ at /usr/include/c++/13/bits/stl_algobase.h:506:30,
     inlined from ‘constexpr _OI std::__copy_move_a1(_II, _II, _OI) [with bool _IsMove = false; _II = long unsigned int*; _OI = long unsigned int*]’ at /usr/include/c++/13/bits/stl_algobase.h:533:42,
@@ -891,47 +893,42 @@ In static member function ‘static constexpr _Up* std::__copy_move<_IsMove, tru
 /usr/include/c++/13/bits/stl_algobase.h:437:30: warning: ‘void* __builtin_memmove(void*, const void*, long unsigned int)’ forming offset 8 is out of the bounds [0, 8] [-Warray-bounds=]
   437 |             __builtin_memmove(__result, __first, sizeof(_Tp) * _Num);
       |             ~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-[84/475] Building CXX object src/arrow/CMakeFiles/arrow_io.dir/Unity/unity_0_cxx.cxx.o
-[85/475] Building CXX object src/arrow/CMakeFiles/arrow_util.dir/Unity/unity_7_cxx.cxx.o
 [86/475] Building CXX object src/arrow/CMakeFiles/arrow_util.dir/Unity/unity_5_cxx.cxx.o
 [87/475] Building CXX object src/arrow/CMakeFiles/arrow_array.dir/Unity/unity_2_cxx.cxx.o
 [88/475] Building CXX object src/arrow/CMakeFiles/arrow_util.dir/Unity/unity_6_cxx.cxx.o
 [89/475] Building CXX object src/arrow/CMakeFiles/arrow_util.dir/Unity/unity_4_cxx.cxx.o
 [90/475] Building CXX object src/arrow/CMakeFiles/arrow_array.dir/Unity/unity_0_cxx.cxx.o
-[91/475] Building CXX object src/arrow/CMakeFiles/arrow_util.dir/Unity/unity_2_cxx.cxx.o
-[92/475] Building CXX object src/arrow/CMakeFiles/arrow_util.dir/Unity/unity_0_cxx.cxx.o
-[93/475] Building CXX object src/arrow/CMakeFiles/arrow_util.dir/util/byte_stream_split_internal_avx2.cc.o
-[94/475] Performing build step for 'jemalloc_ep'
-[95/475] Performing install step for 'jemalloc_ep'
-[96/475] Completed 'jemalloc_ep'
-[97/475] Building CXX object src/arrow/CMakeFiles/arrow_util.dir/Unity/unity_3_cxx.cxx.o
-[98/475] Building CXX object src/arrow/CMakeFiles/arrow_memory_pool.dir/memory_pool_jemalloc.cc.o
-[99/475] Building CXX object src/arrow/CMakeFiles/arrow_memory_pool.dir/Unity/unity_0_cxx.cxx.o
-[100/475] Building CXX object src/arrow/CMakeFiles/arrow_util.dir/Unity/unity_1_cxx.cxx.o
-[101/475] Building CXX object src/arrow/CMakeFiles/arrow_util.dir/util/bpacking_simd_avx512.cc.o
+[91/475] Building CXX object src/arrow/CMakeFiles/arrow_util.dir/util/byte_stream_split_internal_avx2.cc.o
+[92/475] Building CXX object src/arrow/CMakeFiles/arrow_util.dir/Unity/unity_2_cxx.cxx.o
+[93/475] Building CXX object src/arrow/CMakeFiles/arrow_util.dir/Unity/unity_0_cxx.cxx.o
+[94/475] Building CXX object src/arrow/CMakeFiles/arrow_util.dir/Unity/unity_3_cxx.cxx.o
+[95/475] Performing build step for 'jemalloc_ep'
+[96/475] Performing install step for 'jemalloc_ep'
+[97/475] Completed 'jemalloc_ep'
+[98/475] Building CXX object src/arrow/CMakeFiles/arrow_memory_pool.dir/Unity/unity_0_cxx.cxx.o
+[99/475] Building CXX object src/arrow/CMakeFiles/arrow_memory_pool.dir/memory_pool_jemalloc.cc.o
+[100/475] Building CXX object src/arrow/CMakeFiles/arrow_util.dir/util/bpacking_simd_avx512.cc.o
+[101/475] Building CXX object src/arrow/CMakeFiles/arrow_util.dir/Unity/unity_1_cxx.cxx.o
 [102/475] Building CXX object src/arrow/CMakeFiles/arrow_util.dir/util/bpacking_simd_256.cc.o
 [103/475] Building CXX object src/arrow/CMakeFiles/arrow_compute_core.dir/Unity/unity_1_cxx.cxx.o
 [104/475] Building CXX object src/arrow/CMakeFiles/arrow_filesystem.dir/Unity/unity_0_cxx.cxx.o
 [105/475] Building CXX object src/arrow/CMakeFiles/arrow_csv.dir/Unity/unity_0_cxx.cxx.o
-[106/475] Building CXX object src/arrow/CMakeFiles/arrow_compute_core.dir/Unity/unity_3_cxx.cxx.o
-[107/475] Building CXX object src/arrow/CMakeFiles/arrow_ipc.dir/Unity/unity_0_cxx.cxx.o
+[106/475] Building CXX object src/arrow/CMakeFiles/arrow_ipc.dir/Unity/unity_0_cxx.cxx.o
+[107/475] Building CXX object src/arrow/CMakeFiles/arrow_compute_core.dir/Unity/unity_3_cxx.cxx.o
 [108/475] Building CXX object src/arrow/CMakeFiles/arrow_compute_core.dir/Unity/unity_0_cxx.cxx.o
 [109/475] Building CXX object src/arrow/CMakeFiles/arrow_json.dir/Unity/unity_0_cxx.cxx.o
-[110/475] Building CXX object src/arrow/CMakeFiles/arrow_objlib.dir/Unity/unity_1_cxx.cxx.o
+[110/475] Building CXX object src/arrow/CMakeFiles/arrow_objlib.dir/Unity/unity_3_cxx.cxx.o
 [111/475] Creating directories for 'gflags_ep'
 [112/475] Completed 'utf8proc_ep'
 [113/475] Linking CXX static library _deps/boost-build/libs/atomic/libboost_atomic.a
 [114/475] Building CXX object src/arrow/CMakeFiles/arrow_json.dir/Unity/unity_1_cxx.cxx.o
-[115/475] Building CXX object _deps/boost-build/libs/charconv/CMakeFiles/boost_charconv.dir/src/to_chars.cpp.o
-[116/475] Linking CXX static library _deps/boost-build/libs/chrono/libboost_chrono.a
-[117/475] Building CXX object _deps/boost-build/libs/charconv/CMakeFiles/boost_charconv.dir/src/from_chars.cpp.o
-[118/475] Building CXX object src/arrow/CMakeFiles/arrow_compute_core.dir/Unity/unity_2_cxx.cxx.o
+[115/475] Building CXX object src/arrow/CMakeFiles/arrow_compute_core.dir/Unity/unity_2_cxx.cxx.o
 In file included from /usr/include/c++/13/bits/stl_uninitialized.h:63,
                  from /usr/include/c++/13/memory:69,
                  from /home/runner/work/pyarrow-lincc-fw-openastronomy-gsoc26/pyarrow-lincc-fw-openastronomy-gsoc26/arrow/cpp/src/arrow/compute/api_vector.h:20,
                  from /home/runner/work/pyarrow-lincc-fw-openastronomy-gsoc26/pyarrow-lincc-fw-openastronomy-gsoc26/arrow/cpp/src/arrow/compute/kernels/scalar_cast_internal.h:20,
                  from /home/runner/work/pyarrow-lincc-fw-openastronomy-gsoc26/pyarrow-lincc-fw-openastronomy-gsoc26/arrow/cpp/src/arrow/compute/kernels/scalar_cast_internal.cc:18,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/src/arrow/CMakeFiles/arrow_compute_core.dir/Unity/unity_2_cxx.cxx:4:
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/src/arrow/CMakeFiles/arrow_compute_core.dir/Unity/unity_2_cxx.cxx:4:
 In static member function ‘static constexpr _Up* std::__copy_move<_IsMove, true, std::random_access_iterator_tag>::__copy_m(_Tp*, _Tp*, _Up*) [with _Tp = long unsigned int; _Up = long unsigned int; bool _IsMove = false]’,
     inlined from ‘constexpr _OI std::__copy_move_a2(_II, _II, _OI) [with bool _IsMove = false; _II = long unsigned int*; _OI = long unsigned int*]’ at /usr/include/c++/13/bits/stl_algobase.h:506:30,
     inlined from ‘constexpr _OI std::__copy_move_a1(_II, _II, _OI) [with bool _IsMove = false; _II = long unsigned int*; _OI = long unsigned int*]’ at /usr/include/c++/13/bits/stl_algobase.h:533:42,
@@ -944,82 +941,85 @@ In static member function ‘static constexpr _Up* std::__copy_move<_IsMove, tru
 /usr/include/c++/13/bits/stl_algobase.h:437:30: warning: ‘void* __builtin_memmove(void*, const void*, long unsigned int)’ forming offset 8 is out of the bounds [0, 8] [-Warray-bounds=]
   437 |             __builtin_memmove(__result, __first, sizeof(_Tp) * _Num);
       |             ~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-[119/475] Building CXX object _deps/boost-build/libs/thread/CMakeFiles/boost_thread.dir/src/pthread/once.cpp.o
-[120/475] Building CXX object _deps/re2-build/CMakeFiles/re2.dir/re2/bitmap256.cc.o
-[121/475] Building CXX object _deps/boost-build/libs/thread/CMakeFiles/boost_thread.dir/src/future.cpp.o
-[122/475] Building CXX object _deps/re2-build/CMakeFiles/re2.dir/re2/bitstate.cc.o
-[123/475] Building CXX object _deps/re2-build/CMakeFiles/re2.dir/re2/compile.cc.o
-[124/475] Building CXX object src/arrow/CMakeFiles/arrow_objlib.dir/Unity/unity_3_cxx.cxx.o
+[116/475] Linking CXX static library _deps/boost-build/libs/chrono/libboost_chrono.a
+[117/475] Building CXX object _deps/boost-build/libs/charconv/CMakeFiles/boost_charconv.dir/src/from_chars.cpp.o
+[118/475] Building CXX object src/arrow/CMakeFiles/arrow_objlib.dir/Unity/unity_1_cxx.cxx.o
+[119/475] Building CXX object _deps/boost-build/libs/charconv/CMakeFiles/boost_charconv.dir/src/to_chars.cpp.o
+[120/475] Building CXX object _deps/boost-build/libs/thread/CMakeFiles/boost_thread.dir/src/pthread/once.cpp.o
+[121/475] Building CXX object _deps/re2-build/CMakeFiles/re2.dir/re2/bitmap256.cc.o
+[122/475] Building CXX object _deps/boost-build/libs/thread/CMakeFiles/boost_thread.dir/src/future.cpp.o
+[123/475] Building CXX object _deps/re2-build/CMakeFiles/re2.dir/re2/bitstate.cc.o
+[124/475] Building CXX object _deps/re2-build/CMakeFiles/re2.dir/re2/compile.cc.o
 [125/475] Building CXX object _deps/boost-build/libs/thread/CMakeFiles/boost_thread.dir/src/pthread/thread.cpp.o
-[126/475] Building CXX object _deps/re2-build/CMakeFiles/re2.dir/re2/mimics_pcre.cc.o
-[127/475] Building CXX object _deps/re2-build/CMakeFiles/re2.dir/re2/filtered_re2.cc.o
-[128/475] Building CXX object _deps/re2-build/CMakeFiles/re2.dir/re2/dfa.cc.o
+[126/475] Building CXX object _deps/re2-build/CMakeFiles/re2.dir/re2/filtered_re2.cc.o
+[127/475] Building CXX object _deps/re2-build/CMakeFiles/re2.dir/re2/mimics_pcre.cc.o
+[128/475] Building CXX object _deps/re2-build/CMakeFiles/re2.dir/re2/nfa.cc.o
 [129/475] Building CXX object _deps/re2-build/CMakeFiles/re2.dir/re2/perl_groups.cc.o
-[130/475] Building CXX object _deps/re2-build/CMakeFiles/re2.dir/re2/nfa.cc.o
+[130/475] Building CXX object _deps/re2-build/CMakeFiles/re2.dir/re2/dfa.cc.o
 [131/475] Building CXX object _deps/re2-build/CMakeFiles/re2.dir/re2/onepass.cc.o
 [132/475] Building CXX object _deps/re2-build/CMakeFiles/re2.dir/re2/parse.cc.o
 [133/475] Building CXX object _deps/re2-build/CMakeFiles/re2.dir/re2/prefilter.cc.o
-[134/475] Building CXX object _deps/re2-build/CMakeFiles/re2.dir/re2/prefilter_tree.cc.o
-[135/475] Building CXX object _deps/re2-build/CMakeFiles/re2.dir/re2/prog.cc.o
-[136/475] Building CXX object _deps/re2-build/CMakeFiles/re2.dir/re2/re2.cc.o
-[137/475] Building CXX object _deps/re2-build/CMakeFiles/re2.dir/re2/set.cc.o
-[138/475] Building CXX object _deps/re2-build/CMakeFiles/re2.dir/re2/regexp.cc.o
+[134/475] Building CXX object _deps/re2-build/CMakeFiles/re2.dir/re2/prog.cc.o
+[135/475] Building CXX object _deps/re2-build/CMakeFiles/re2.dir/re2/prefilter_tree.cc.o
+[136/475] Building CXX object _deps/re2-build/CMakeFiles/re2.dir/re2/regexp.cc.o
+[137/475] Building CXX object _deps/re2-build/CMakeFiles/re2.dir/re2/re2.cc.o
+[138/475] Building CXX object _deps/re2-build/CMakeFiles/re2.dir/re2/stringpiece.cc.o
 [139/475] Building CXX object _deps/re2-build/CMakeFiles/re2.dir/re2/unicode_casefold.cc.o
-[140/475] Building CXX object _deps/re2-build/CMakeFiles/re2.dir/re2/simplify.cc.o
-[141/475] Building CXX object _deps/re2-build/CMakeFiles/re2.dir/re2/unicode_groups.cc.o
-[142/475] Building CXX object _deps/re2-build/CMakeFiles/re2.dir/re2/stringpiece.cc.o
-[143/475] Building CXX object _deps/re2-build/CMakeFiles/re2.dir/util/rune.cc.o
-[144/475] Linking CXX static library _deps/boost-build/libs/charconv/libboost_charconv.a
-[145/475] Performing download step (download, verify and extract) for 'gflags_ep'
+[140/475] Building CXX object _deps/re2-build/CMakeFiles/re2.dir/re2/unicode_groups.cc.o
+[141/475] Building CXX object _deps/re2-build/CMakeFiles/re2.dir/util/rune.cc.o
+[142/475] Building CXX object _deps/re2-build/CMakeFiles/re2.dir/re2/simplify.cc.o
+[143/475] Performing download step (download, verify and extract) for 'gflags_ep'
+[144/475] Building CXX object _deps/re2-build/CMakeFiles/re2.dir/re2/set.cc.o
+[145/475] Linking CXX static library _deps/boost-build/libs/charconv/libboost_charconv.a
 [146/475] Building CXX object _deps/re2-build/CMakeFiles/re2.dir/util/strutil.cc.o
 [147/475] Building CXX object _deps/re2-build/CMakeFiles/re2.dir/re2/tostring.cc.o
-[148/475] Building CXX object _deps/boost-build/libs/locale/CMakeFiles/boost_locale.dir/src/shared/format.cpp.o
-[149/475] Building CXX object _deps/boost-build/libs/locale/CMakeFiles/boost_locale.dir/src/shared/formatting.cpp.o
+[148/475] Building CXX object _deps/boost-build/libs/locale/CMakeFiles/boost_locale.dir/src/shared/formatting.cpp.o
+[149/475] Building CXX object _deps/boost-build/libs/locale/CMakeFiles/boost_locale.dir/src/shared/format.cpp.o
 [150/475] Building CXX object _deps/boost-build/libs/locale/CMakeFiles/boost_locale.dir/src/encoding/codepage.cpp.o
 [151/475] Building CXX object _deps/boost-build/libs/locale/CMakeFiles/boost_locale.dir/src/shared/date_time.cpp.o
 [152/475] Building CXX object _deps/boost-build/libs/locale/CMakeFiles/boost_locale.dir/src/shared/iconv_codecvt.cpp.o
 [153/475] Building CXX object _deps/boost-build/libs/locale/CMakeFiles/boost_locale.dir/src/shared/ids.cpp.o
 [154/475] Building CXX object _deps/boost-build/libs/locale/CMakeFiles/boost_locale.dir/src/shared/generator.cpp.o
 [155/475] Building CXX object _deps/boost-build/libs/locale/CMakeFiles/boost_locale.dir/src/shared/mo_lambda.cpp.o
-[156/475] Building CXX object _deps/boost-build/libs/locale/CMakeFiles/boost_locale.dir/src/util/codecvt_converter.cpp.o
+[156/475] Building CXX object _deps/boost-build/libs/locale/CMakeFiles/boost_locale.dir/src/shared/localization_backend.cpp.o
 [157/475] Building CXX object _deps/boost-build/libs/locale/CMakeFiles/boost_locale.dir/src/util/default_locale.cpp.o
-[158/475] Building CXX object _deps/boost-build/libs/locale/CMakeFiles/boost_locale.dir/src/shared/message.cpp.o
-[159/475] Building CXX object _deps/boost-build/libs/locale/CMakeFiles/boost_locale.dir/src/shared/localization_backend.cpp.o
-[160/475] Building CXX object _deps/boost-build/libs/locale/CMakeFiles/boost_locale.dir/src/util/info.cpp.o
-[161/475] Building CXX object _deps/boost-build/libs/locale/CMakeFiles/boost_locale.dir/src/util/encoding.cpp.o
-[162/475] Building CXX object src/arrow/CMakeFiles/arrow_objlib.dir/Unity/unity_2_cxx.cxx.o
-[163/475] Building CXX object _deps/boost-build/libs/locale/CMakeFiles/boost_locale.dir/src/util/locale_data.cpp.o
+[158/475] Building CXX object _deps/boost-build/libs/locale/CMakeFiles/boost_locale.dir/src/util/codecvt_converter.cpp.o
+[159/475] Building CXX object _deps/boost-build/libs/locale/CMakeFiles/boost_locale.dir/src/shared/message.cpp.o
+[160/475] Building CXX object _deps/boost-build/libs/locale/CMakeFiles/boost_locale.dir/src/util/encoding.cpp.o
+[161/475] Building CXX object _deps/boost-build/libs/locale/CMakeFiles/boost_locale.dir/src/util/info.cpp.o
+[162/475] Building CXX object _deps/boost-build/libs/locale/CMakeFiles/boost_locale.dir/src/util/locale_data.cpp.o
+[163/475] Building CXX object _deps/boost-build/libs/locale/CMakeFiles/boost_locale.dir/src/icu/boundary.cpp.o
 [164/475] Building CXX object _deps/boost-build/libs/locale/CMakeFiles/boost_locale.dir/src/icu/codecvt.cpp.o
-[165/475] Building CXX object _deps/boost-build/libs/locale/CMakeFiles/boost_locale.dir/src/icu/boundary.cpp.o
-[166/475] Building CXX object _deps/boost-build/libs/locale/CMakeFiles/boost_locale.dir/src/icu/conversion.cpp.o
+[165/475] Building CXX object _deps/boost-build/libs/locale/CMakeFiles/boost_locale.dir/src/icu/conversion.cpp.o
+[166/475] Building CXX object src/arrow/CMakeFiles/arrow_objlib.dir/Unity/unity_2_cxx.cxx.o
 [167/475] Building CXX object _deps/boost-build/libs/locale/CMakeFiles/boost_locale.dir/src/icu/formatters_cache.cpp.o
-[168/475] Building CXX object _deps/boost-build/libs/locale/CMakeFiles/boost_locale.dir/src/icu/icu_backend.cpp.o
-[169/475] Building CXX object _deps/boost-build/libs/locale/CMakeFiles/boost_locale.dir/src/icu/formatter.cpp.o
-[170/475] Building CXX object _deps/boost-build/libs/locale/CMakeFiles/boost_locale.dir/src/std/codecvt.cpp.o
+[168/475] Building CXX object _deps/boost-build/libs/locale/CMakeFiles/boost_locale.dir/src/icu/formatter.cpp.o
+[169/475] Building CXX object _deps/boost-build/libs/locale/CMakeFiles/boost_locale.dir/src/std/codecvt.cpp.o
+[170/475] Building CXX object _deps/boost-build/libs/locale/CMakeFiles/boost_locale.dir/src/icu/date_time.cpp.o
 [171/475] Building CXX object _deps/boost-build/libs/locale/CMakeFiles/boost_locale.dir/src/icu/collator.cpp.o
-[172/475] Building CXX object _deps/boost-build/libs/locale/CMakeFiles/boost_locale.dir/src/icu/date_time.cpp.o
+[172/475] Building CXX object _deps/boost-build/libs/locale/CMakeFiles/boost_locale.dir/src/icu/icu_backend.cpp.o
 [173/475] Building CXX object _deps/boost-build/libs/locale/CMakeFiles/boost_locale.dir/src/std/collate.cpp.o
 [174/475] Building CXX object _deps/boost-build/libs/locale/CMakeFiles/boost_locale.dir/src/std/converter.cpp.o
 [175/475] Building CXX object _deps/boost-build/libs/locale/CMakeFiles/boost_locale.dir/src/icu/numeric.cpp.o
 [176/475] Building CXX object _deps/boost-build/libs/locale/CMakeFiles/boost_locale.dir/src/posix/codecvt.cpp.o
 [177/475] Building CXX object _deps/boost-build/libs/locale/CMakeFiles/boost_locale.dir/src/std/std_backend.cpp.o
 [178/475] Building CXX object _deps/boost-build/libs/locale/CMakeFiles/boost_locale.dir/src/posix/collate.cpp.o
-[179/475] Building CXX object _deps/boost-build/libs/locale/CMakeFiles/boost_locale.dir/src/posix/converter.cpp.o
+[179/475] Building CXX object _deps/boost-build/libs/locale/CMakeFiles/boost_locale.dir/src/std/numeric.cpp.o
 [180/475] Linking CXX static library _deps/boost-build/libs/thread/libboost_thread.a
-[181/475] Building CXX object _deps/boost-build/libs/locale/CMakeFiles/boost_locale.dir/src/posix/posix_backend.cpp.o
+[181/475] Building CXX object _deps/boost-build/libs/locale/CMakeFiles/boost_locale.dir/src/posix/converter.cpp.o
 [182/475] Linking CXX static library _deps/re2-build/libre2.a
-[183/475] Building CXX object _deps/boost-build/libs/locale/CMakeFiles/boost_locale.dir/src/util/gregorian.cpp.o
-[184/475] Building CXX object _deps/boost-build/libs/locale/CMakeFiles/boost_locale.dir/src/std/numeric.cpp.o
+[183/475] Building CXX object _deps/boost-build/libs/locale/CMakeFiles/boost_locale.dir/src/posix/posix_backend.cpp.o
+[184/475] Building CXX object _deps/boost-build/libs/locale/CMakeFiles/boost_locale.dir/src/util/gregorian.cpp.o
 [185/475] Building CXX object _deps/boost-build/libs/locale/CMakeFiles/boost_locale.dir/src/posix/numeric.cpp.o
 [186/475] Building CXX object src/arrow/CMakeFiles/arrow_objlib.dir/Unity/unity_0_cxx.cxx.o
-[187/475] Building CXX object _deps/googletest-build/googletest/CMakeFiles/gtest.dir/Unity/unity_0_cxx.cxx.o
-[188/475] Linking CXX shared library release/libarrow.so.2500.0.0
-[189/475] Building CXX object src/arrow/CMakeFiles/arrow_compute_objlib.dir/Unity/unity_5_cxx.cxx.o
+[187/475] Linking CXX shared library release/libarrow.so.2500.0.0
+[188/475] Building CXX object src/arrow/CMakeFiles/arrow_compute_objlib.dir/Unity/unity_5_cxx.cxx.o
+[189/475] Building CXX object _deps/googletest-build/googletest/CMakeFiles/gtest.dir/Unity/unity_0_cxx.cxx.o
 [190/475] Building CXX object src/arrow/CMakeFiles/arrow_compute_objlib.dir/compute/kernels/aggregate_basic_avx2.cc.o
-[191/475] Building CXX object src/arrow/CMakeFiles/arrow_compute_objlib.dir/Unity/unity_3_cxx.cxx.o
+[191/475] Building CXX object src/arrow/CMakeFiles/arrow_compute_objlib.dir/compute/kernels/aggregate_basic_avx512.cc.o
 [192/475] Building CXX object src/arrow/CMakeFiles/arrow_compute_objlib.dir/compute/key_hash_internal_avx2.cc.o
-[193/475] Building CXX object src/arrow/CMakeFiles/arrow_compute_objlib.dir/compute/key_map_internal_avx2.cc.o
-[194/475] Building CXX object src/arrow/CMakeFiles/arrow_compute_objlib.dir/compute/kernels/aggregate_basic_avx512.cc.o
+[193/475] Building CXX object src/arrow/CMakeFiles/arrow_compute_objlib.dir/Unity/unity_3_cxx.cxx.o
+[194/475] Building CXX object src/arrow/CMakeFiles/arrow_compute_objlib.dir/compute/key_map_internal_avx2.cc.o
 [195/475] Building CXX object src/arrow/CMakeFiles/arrow_compute_objlib.dir/compute/row/compare_internal_avx2.cc.o
 [196/475] Building CXX object src/arrow/CMakeFiles/arrow_compute_objlib.dir/compute/row/encode_internal_avx2.cc.o
 [197/475] Creating library symlink release/libarrow.so.2500 release/libarrow.so
@@ -1027,34 +1027,34 @@ In static member function ‘static constexpr _Up* std::__copy_move<_IsMove, tru
 [199/475] Linking CXX static library _deps/boost-build/libs/locale/libboost_locale.a
 [200/475] Building CXX object src/arrow/CMakeFiles/arrow_compute_objlib.dir/compute/util_avx2.cc.o
 [201/475] Building CXX object _deps/thrift-build/lib/cpp/CMakeFiles/thrift.dir/src/thrift/TOutput.cpp.o
-In file included from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/TOutput.cpp:20:
-/tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/Thrift.h:54:19: warning: ‘template<class _Category, class _Tp, class _Distance, class _Pointer, class _Reference> struct std::iterator’ is deprecated [-Wdeprecated-declarations]
+In file included from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/TOutput.cpp:20:
+/tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/Thrift.h:54:19: warning: ‘template<class _Category, class _Tp, class _Distance, class _Pointer, class _Reference> struct std::iterator’ is deprecated [-Wdeprecated-declarations]
    54 |     : public std::iterator<std::forward_iterator_tag, std::pair<int, const char*> > {
       |                   ^~~~~~~~
 In file included from /usr/include/c++/13/bits/stl_construct.h:61,
                  from /usr/include/c++/13/bits/char_traits.h:57,
                  from /usr/include/c++/13/string:42,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/Thrift.h:37:
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/Thrift.h:37:
 /usr/include/c++/13/bits/stl_iterator_base_types.h:127:34: note: declared here
   127 |     struct _GLIBCXX17_DEPRECATED iterator
       |                                  ^~~~~~~~
 [202/475] Building CXX object _deps/thrift-build/lib/cpp/CMakeFiles/thrift.dir/src/thrift/TApplicationException.cpp.o
-In file included from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/TApplicationException.h:23,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/TApplicationException.cpp:20:
-/tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/Thrift.h:54:19: warning: ‘template<class _Category, class _Tp, class _Distance, class _Pointer, class _Reference> struct std::iterator’ is deprecated [-Wdeprecated-declarations]
+In file included from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/TApplicationException.h:23,
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/TApplicationException.cpp:20:
+/tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/Thrift.h:54:19: warning: ‘template<class _Category, class _Tp, class _Distance, class _Pointer, class _Reference> struct std::iterator’ is deprecated [-Wdeprecated-declarations]
    54 |     : public std::iterator<std::forward_iterator_tag, std::pair<int, const char*> > {
       |                   ^~~~~~~~
 In file included from /usr/include/c++/13/bits/stl_construct.h:61,
                  from /usr/include/c++/13/bits/char_traits.h:57,
                  from /usr/include/c++/13/string:42,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/Thrift.h:37:
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/Thrift.h:37:
 /usr/include/c++/13/bits/stl_iterator_base_types.h:127:34: note: declared here
   127 |     struct _GLIBCXX17_DEPRECATED iterator
       |                                  ^~~~~~~~
 [203/475] Building CXX object _deps/thrift-build/lib/cpp/CMakeFiles/thrift.dir/src/thrift/async/TAsyncChannel.cpp.o
-In file included from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/async/TAsyncChannel.h:25,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/async/TAsyncChannel.cpp:20:
-/tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/Thrift.h:54:19: warning: ‘template<class _Category, class _Tp, class _Distance, class _Pointer, class _Reference> struct std::iterator’ is deprecated [-Wdeprecated-declarations]
+In file included from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/async/TAsyncChannel.h:25,
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/async/TAsyncChannel.cpp:20:
+/tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/Thrift.h:54:19: warning: ‘template<class _Category, class _Tp, class _Distance, class _Pointer, class _Reference> struct std::iterator’ is deprecated [-Wdeprecated-declarations]
    54 |     : public std::iterator<std::forward_iterator_tag, std::pair<int, const char*> > {
       |                   ^~~~~~~~
 In file included from /usr/include/c++/13/bits/stl_iterator.h:64,
@@ -1062,31 +1062,31 @@ In file included from /usr/include/c++/13/bits/stl_iterator.h:64,
                  from /usr/include/c++/13/bits/ranges_util.h:34,
                  from /usr/include/c++/13/tuple:44,
                  from /usr/include/c++/13/functional:53,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/async/TAsyncChannel.h:23:
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/async/TAsyncChannel.h:23:
 /usr/include/c++/13/bits/stl_iterator_base_types.h:127:34: note: declared here
   127 |     struct _GLIBCXX17_DEPRECATED iterator
       |                                  ^~~~~~~~
 [204/475] Building CXX object _deps/thrift-build/lib/cpp/CMakeFiles/thrift.dir/src/thrift/TUuid.cpp.o
-In file included from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/TUuid.h:23,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/TUuid.cpp:20:
-/tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/Thrift.h:54:19: warning: ‘template<class _Category, class _Tp, class _Distance, class _Pointer, class _Reference> struct std::iterator’ is deprecated [-Wdeprecated-declarations]
+In file included from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/TUuid.h:23,
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/TUuid.cpp:20:
+/tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/Thrift.h:54:19: warning: ‘template<class _Category, class _Tp, class _Distance, class _Pointer, class _Reference> struct std::iterator’ is deprecated [-Wdeprecated-declarations]
    54 |     : public std::iterator<std::forward_iterator_tag, std::pair<int, const char*> > {
       |                   ^~~~~~~~
 In file included from /usr/include/c++/13/bits/stl_construct.h:61,
                  from /usr/include/c++/13/bits/char_traits.h:57,
                  from /usr/include/c++/13/string:42,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/Thrift.h:37:
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/Thrift.h:37:
 /usr/include/c++/13/bits/stl_iterator_base_types.h:127:34: note: declared here
   127 |     struct _GLIBCXX17_DEPRECATED iterator
       |                                  ^~~~~~~~
 [205/475] Building CXX object _deps/thrift-build/lib/cpp/CMakeFiles/thrift.dir/src/thrift/async/TAsyncProtocolProcessor.cpp.o
-In file included from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/TTransport.h:23,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/protocol/TProtocol.h:46,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/TProcessor.h:24,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/async/TAsyncProcessor.h:26,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/async/TAsyncProtocolProcessor.h:23,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/async/TAsyncProtocolProcessor.cpp:20:
-/tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/Thrift.h:54:19: warning: ‘template<class _Category, class _Tp, class _Distance, class _Pointer, class _Reference> struct std::iterator’ is deprecated [-Wdeprecated-declarations]
+In file included from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/TTransport.h:23,
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/protocol/TProtocol.h:46,
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/TProcessor.h:24,
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/async/TAsyncProcessor.h:26,
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/async/TAsyncProtocolProcessor.h:23,
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/async/TAsyncProtocolProcessor.cpp:20:
+/tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/Thrift.h:54:19: warning: ‘template<class _Category, class _Tp, class _Distance, class _Pointer, class _Reference> struct std::iterator’ is deprecated [-Wdeprecated-declarations]
    54 |     : public std::iterator<std::forward_iterator_tag, std::pair<int, const char*> > {
       |                   ^~~~~~~~
 In file included from /usr/include/c++/13/bits/stl_iterator.h:64,
@@ -1094,31 +1094,31 @@ In file included from /usr/include/c++/13/bits/stl_iterator.h:64,
                  from /usr/include/c++/13/bits/ranges_util.h:34,
                  from /usr/include/c++/13/tuple:44,
                  from /usr/include/c++/13/functional:53,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/async/TAsyncProcessor.h:23:
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/async/TAsyncProcessor.h:23:
 /usr/include/c++/13/bits/stl_iterator_base_types.h:127:34: note: declared here
   127 |     struct _GLIBCXX17_DEPRECATED iterator
       |                                  ^~~~~~~~
 [206/475] Building CXX object _deps/thrift-build/lib/cpp/CMakeFiles/thrift.dir/src/thrift/async/TConcurrentClientSyncInfo.cpp.o
-In file included from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/TApplicationException.h:23,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/async/TConcurrentClientSyncInfo.cpp:22:
-/tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/Thrift.h:54:19: warning: ‘template<class _Category, class _Tp, class _Distance, class _Pointer, class _Reference> struct std::iterator’ is deprecated [-Wdeprecated-declarations]
+In file included from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/TApplicationException.h:23,
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/async/TConcurrentClientSyncInfo.cpp:22:
+/tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/Thrift.h:54:19: warning: ‘template<class _Category, class _Tp, class _Distance, class _Pointer, class _Reference> struct std::iterator’ is deprecated [-Wdeprecated-declarations]
    54 |     : public std::iterator<std::forward_iterator_tag, std::pair<int, const char*> > {
       |                   ^~~~~~~~
 In file included from /usr/include/c++/13/bits/stl_construct.h:61,
                  from /usr/include/c++/13/bits/stl_tempbuf.h:61,
                  from /usr/include/c++/13/memory:66,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/async/TConcurrentClientSyncInfo.cpp:21:
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/async/TConcurrentClientSyncInfo.cpp:21:
 /usr/include/c++/13/bits/stl_iterator_base_types.h:127:34: note: declared here
   127 |     struct _GLIBCXX17_DEPRECATED iterator
       |                                  ^~~~~~~~
 [207/475] Building CXX object _deps/thrift-build/lib/cpp/CMakeFiles/thrift.dir/src/thrift/concurrency/ThreadManager.cpp.o
-In file included from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/concurrency/Exception.h:24,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/concurrency/Monitor.h:24,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/concurrency/Thread.h:26,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/concurrency/ThreadFactory.h:23,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/concurrency/ThreadManager.h:25,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/concurrency/ThreadManager.cpp:22:
-/tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/Thrift.h:54:19: warning: ‘template<class _Category, class _Tp, class _Distance, class _Pointer, class _Reference> struct std::iterator’ is deprecated [-Wdeprecated-declarations]
+In file included from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/concurrency/Exception.h:24,
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/concurrency/Monitor.h:24,
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/concurrency/Thread.h:26,
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/concurrency/ThreadFactory.h:23,
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/concurrency/ThreadManager.h:25,
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/concurrency/ThreadManager.cpp:22:
+/tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/Thrift.h:54:19: warning: ‘template<class _Category, class _Tp, class _Distance, class _Pointer, class _Reference> struct std::iterator’ is deprecated [-Wdeprecated-declarations]
    54 |     : public std::iterator<std::forward_iterator_tag, std::pair<int, const char*> > {
       |                   ^~~~~~~~
 In file included from /usr/include/c++/13/bits/stl_iterator.h:64,
@@ -1126,16 +1126,16 @@ In file included from /usr/include/c++/13/bits/stl_iterator.h:64,
                  from /usr/include/c++/13/bits/ranges_util.h:34,
                  from /usr/include/c++/13/tuple:44,
                  from /usr/include/c++/13/functional:53,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/concurrency/ThreadManager.h:23:
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/concurrency/ThreadManager.h:23:
 /usr/include/c++/13/bits/stl_iterator_base_types.h:127:34: note: declared here
   127 |     struct _GLIBCXX17_DEPRECATED iterator
       |                                  ^~~~~~~~
 [208/475] Building CXX object _deps/thrift-build/lib/cpp/CMakeFiles/thrift.dir/src/thrift/concurrency/TimerManager.cpp.o
-In file included from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/concurrency/Exception.h:24,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/concurrency/Monitor.h:24,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/concurrency/TimerManager.h:23,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/concurrency/TimerManager.cpp:20:
-/tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/Thrift.h:54:19: warning: ‘template<class _Category, class _Tp, class _Distance, class _Pointer, class _Reference> struct std::iterator’ is deprecated [-Wdeprecated-declarations]
+In file included from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/concurrency/Exception.h:24,
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/concurrency/Monitor.h:24,
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/concurrency/TimerManager.h:23,
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/concurrency/TimerManager.cpp:20:
+/tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/Thrift.h:54:19: warning: ‘template<class _Category, class _Tp, class _Distance, class _Pointer, class _Reference> struct std::iterator’ is deprecated [-Wdeprecated-declarations]
    54 |     : public std::iterator<std::forward_iterator_tag, std::pair<int, const char*> > {
       |                   ^~~~~~~~
 In file included from /usr/include/c++/13/bits/stl_construct.h:61,
@@ -1144,79 +1144,93 @@ In file included from /usr/include/c++/13/bits/stl_construct.h:61,
                  from /usr/include/c++/13/istream:40,
                  from /usr/include/c++/13/sstream:40,
                  from /usr/include/c++/13/chrono:45,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/concurrency/Monitor.h:23:
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/concurrency/Monitor.h:23:
 /usr/include/c++/13/bits/stl_iterator_base_types.h:127:34: note: declared here
   127 |     struct _GLIBCXX17_DEPRECATED iterator
       |                                  ^~~~~~~~
 [209/475] Building CXX object _deps/thrift-build/lib/cpp/CMakeFiles/thrift.dir/src/thrift/protocol/TBase64Utils.cpp.o
 [210/475] Building CXX object _deps/thrift-build/lib/cpp/CMakeFiles/thrift.dir/src/thrift/processor/PeekProcessor.cpp.o
-In file included from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/TTransport.h:23,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/protocol/TProtocol.h:46,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/TProcessor.h:24,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/processor/PeekProcessor.h:24,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/processor/PeekProcessor.cpp:20:
-/tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/Thrift.h:54:19: warning: ‘template<class _Category, class _Tp, class _Distance, class _Pointer, class _Reference> struct std::iterator’ is deprecated [-Wdeprecated-declarations]
+In file included from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/TTransport.h:23,
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/protocol/TProtocol.h:46,
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/TProcessor.h:24,
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/processor/PeekProcessor.h:24,
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/processor/PeekProcessor.cpp:20:
+/tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/Thrift.h:54:19: warning: ‘template<class _Category, class _Tp, class _Distance, class _Pointer, class _Reference> struct std::iterator’ is deprecated [-Wdeprecated-declarations]
    54 |     : public std::iterator<std::forward_iterator_tag, std::pair<int, const char*> > {
       |                   ^~~~~~~~
 In file included from /usr/include/c++/13/bits/stl_construct.h:61,
                  from /usr/include/c++/13/bits/char_traits.h:57,
                  from /usr/include/c++/13/string:42,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/processor/PeekProcessor.h:23:
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/processor/PeekProcessor.h:23:
 /usr/include/c++/13/bits/stl_iterator_base_types.h:127:34: note: declared here
   127 |     struct _GLIBCXX17_DEPRECATED iterator
       |                                  ^~~~~~~~
 [211/475] Building CXX object _deps/thrift-build/lib/cpp/CMakeFiles/thrift.dir/src/thrift/protocol/TDebugProtocol.cpp.o
-In file included from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/TTransport.h:23,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/protocol/TProtocol.h:46,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/protocol/TVirtualProtocol.h:23,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/protocol/TDebugProtocol.h:23,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/protocol/TDebugProtocol.cpp:20:
-/tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/Thrift.h:54:19: warning: ‘template<class _Category, class _Tp, class _Distance, class _Pointer, class _Reference> struct std::iterator’ is deprecated [-Wdeprecated-declarations]
+In file included from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/TTransport.h:23,
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/protocol/TProtocol.h:46,
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/protocol/TVirtualProtocol.h:23,
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/protocol/TDebugProtocol.h:23,
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/protocol/TDebugProtocol.cpp:20:
+/tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/Thrift.h:54:19: warning: ‘template<class _Category, class _Tp, class _Distance, class _Pointer, class _Reference> struct std::iterator’ is deprecated [-Wdeprecated-declarations]
    54 |     : public std::iterator<std::forward_iterator_tag, std::pair<int, const char*> > {
       |                   ^~~~~~~~
 In file included from /usr/include/c++/13/bits/stl_construct.h:61,
                  from /usr/include/c++/13/bits/char_traits.h:57,
                  from /usr/include/c++/13/string:42,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/Thrift.h:37:
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/Thrift.h:37:
 /usr/include/c++/13/bits/stl_iterator_base_types.h:127:34: note: declared here
   127 |     struct _GLIBCXX17_DEPRECATED iterator
       |                                  ^~~~~~~~
 [212/475] Building CXX object _deps/thrift-build/lib/cpp/CMakeFiles/thrift.dir/src/thrift/protocol/TMultiplexedProtocol.cpp.o
-In file included from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/TTransport.h:23,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/protocol/TProtocol.h:46,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/protocol/TProtocolDecorator.h:23,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/protocol/TMultiplexedProtocol.h:23,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/protocol/TMultiplexedProtocol.cpp:20:
-/tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/Thrift.h:54:19: warning: ‘template<class _Category, class _Tp, class _Distance, class _Pointer, class _Reference> struct std::iterator’ is deprecated [-Wdeprecated-declarations]
+In file included from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/TTransport.h:23,
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/protocol/TProtocol.h:46,
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/protocol/TProtocolDecorator.h:23,
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/protocol/TMultiplexedProtocol.h:23,
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/protocol/TMultiplexedProtocol.cpp:20:
+/tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/Thrift.h:54:19: warning: ‘template<class _Category, class _Tp, class _Distance, class _Pointer, class _Reference> struct std::iterator’ is deprecated [-Wdeprecated-declarations]
    54 |     : public std::iterator<std::forward_iterator_tag, std::pair<int, const char*> > {
       |                   ^~~~~~~~
 In file included from /usr/include/c++/13/bits/stl_construct.h:61,
                  from /usr/include/c++/13/bits/char_traits.h:57,
                  from /usr/include/c++/13/string:42,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/Thrift.h:37:
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/Thrift.h:37:
 /usr/include/c++/13/bits/stl_iterator_base_types.h:127:34: note: declared here
   127 |     struct _GLIBCXX17_DEPRECATED iterator
       |                                  ^~~~~~~~
 [213/475] Building CXX object _deps/thrift-build/lib/cpp/CMakeFiles/thrift.dir/src/thrift/protocol/TJSONProtocol.cpp.o
-In file included from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/TTransport.h:23,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/protocol/TProtocol.h:46,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/protocol/TVirtualProtocol.h:23,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/protocol/TJSONProtocol.h:23,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/protocol/TJSONProtocol.cpp:20:
-/tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/Thrift.h:54:19: warning: ‘template<class _Category, class _Tp, class _Distance, class _Pointer, class _Reference> struct std::iterator’ is deprecated [-Wdeprecated-declarations]
+In file included from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/TTransport.h:23,
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/protocol/TProtocol.h:46,
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/protocol/TVirtualProtocol.h:23,
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/protocol/TJSONProtocol.h:23,
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/protocol/TJSONProtocol.cpp:20:
+/tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/Thrift.h:54:19: warning: ‘template<class _Category, class _Tp, class _Distance, class _Pointer, class _Reference> struct std::iterator’ is deprecated [-Wdeprecated-declarations]
    54 |     : public std::iterator<std::forward_iterator_tag, std::pair<int, const char*> > {
       |                   ^~~~~~~~
 In file included from /usr/include/c++/13/bits/stl_construct.h:61,
                  from /usr/include/c++/13/bits/char_traits.h:57,
                  from /usr/include/c++/13/string:42,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/Thrift.h:37:
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/Thrift.h:37:
 /usr/include/c++/13/bits/stl_iterator_base_types.h:127:34: note: declared here
   127 |     struct _GLIBCXX17_DEPRECATED iterator
       |                                  ^~~~~~~~
-[214/475] Building CXX object _deps/thrift-build/lib/cpp/CMakeFiles/thrift.dir/src/thrift/transport/TTransportException.cpp.o
-In file included from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/TTransportException.h:25,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/TTransportException.cpp:20:
-/tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/Thrift.h:54:19: warning: ‘template<class _Category, class _Tp, class _Distance, class _Pointer, class _Reference> struct std::iterator’ is deprecated [-Wdeprecated-declarations]
+[214/475] Building CXX object _deps/thrift-build/lib/cpp/CMakeFiles/thrift.dir/src/thrift/protocol/TProtocol.cpp.o
+In file included from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/TTransport.h:23,
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/protocol/TProtocol.h:46,
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/protocol/TProtocol.cpp:20:
+/tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/Thrift.h:54:19: warning: ‘template<class _Category, class _Tp, class _Distance, class _Pointer, class _Reference> struct std::iterator’ is deprecated [-Wdeprecated-declarations]
+   54 |     : public std::iterator<std::forward_iterator_tag, std::pair<int, const char*> > {
+      |                   ^~~~~~~~
+In file included from /usr/include/c++/13/bits/stl_construct.h:61,
+                 from /usr/include/c++/13/bits/char_traits.h:57,
+                 from /usr/include/c++/13/string:42,
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/Thrift.h:37:
+/usr/include/c++/13/bits/stl_iterator_base_types.h:127:34: note: declared here
+  127 |     struct _GLIBCXX17_DEPRECATED iterator
+      |                                  ^~~~~~~~
+[215/475] Building CXX object _deps/thrift-build/lib/cpp/CMakeFiles/thrift.dir/src/thrift/transport/TTransportException.cpp.o
+In file included from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/TTransportException.h:25,
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/TTransportException.cpp:20:
+/tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/Thrift.h:54:19: warning: ‘template<class _Category, class _Tp, class _Distance, class _Pointer, class _Reference> struct std::iterator’ is deprecated [-Wdeprecated-declarations]
    54 |     : public std::iterator<std::forward_iterator_tag, std::pair<int, const char*> > {
       |                   ^~~~~~~~
 In file included from /usr/include/c++/13/bits/stl_iterator.h:64,
@@ -1224,62 +1238,49 @@ In file included from /usr/include/c++/13/bits/stl_iterator.h:64,
                  from /usr/include/c++/13/bits/ranges_util.h:34,
                  from /usr/include/c++/13/tuple:44,
                  from /usr/include/c++/13/functional:53,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/boost-src/libs/numeric/conversion/include/boost/numeric/conversion/converter_policies.hpp:13,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/boost-src/libs/numeric/conversion/include/boost/numeric/conversion/converter.hpp:14,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/boost-src/libs/numeric/conversion/include/boost/numeric/conversion/cast.hpp:33,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/TTransportException.h:23:
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/boost-src/libs/numeric/conversion/include/boost/numeric/conversion/converter_policies.hpp:13,
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/boost-src/libs/numeric/conversion/include/boost/numeric/conversion/converter.hpp:14,
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/boost-src/libs/numeric/conversion/include/boost/numeric/conversion/cast.hpp:33,
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/TTransportException.h:23:
 /usr/include/c++/13/bits/stl_iterator_base_types.h:127:34: note: declared here
   127 |     struct _GLIBCXX17_DEPRECATED iterator
       |                                  ^~~~~~~~
-[215/475] Building CXX object _deps/thrift-build/lib/cpp/CMakeFiles/thrift.dir/src/thrift/protocol/TProtocol.cpp.o
-In file included from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/TTransport.h:23,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/protocol/TProtocol.h:46,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/protocol/TProtocol.cpp:20:
-/tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/Thrift.h:54:19: warning: ‘template<class _Category, class _Tp, class _Distance, class _Pointer, class _Reference> struct std::iterator’ is deprecated [-Wdeprecated-declarations]
+[216/475] Building CXX object src/arrow/CMakeFiles/arrow_compute_objlib.dir/Unity/unity_4_cxx.cxx.o
+[217/475] Building CXX object _deps/thrift-build/lib/cpp/CMakeFiles/thrift.dir/src/thrift/transport/TFDTransport.cpp.o
+In file included from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/TTransport.h:23,
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/TFDTransport.h:28,
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/TFDTransport.cpp:34:
+/tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/Thrift.h:54:19: warning: ‘template<class _Category, class _Tp, class _Distance, class _Pointer, class _Reference> struct std::iterator’ is deprecated [-Wdeprecated-declarations]
    54 |     : public std::iterator<std::forward_iterator_tag, std::pair<int, const char*> > {
       |                   ^~~~~~~~
 In file included from /usr/include/c++/13/bits/stl_construct.h:61,
                  from /usr/include/c++/13/bits/char_traits.h:57,
                  from /usr/include/c++/13/string:42,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/Thrift.h:37:
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/TFDTransport.h:23:
 /usr/include/c++/13/bits/stl_iterator_base_types.h:127:34: note: declared here
   127 |     struct _GLIBCXX17_DEPRECATED iterator
       |                                  ^~~~~~~~
-[216/475] Building CXX object _deps/thrift-build/lib/cpp/CMakeFiles/thrift.dir/src/thrift/transport/TFDTransport.cpp.o
-In file included from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/TTransport.h:23,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/TFDTransport.h:28,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/TFDTransport.cpp:34:
-/tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/Thrift.h:54:19: warning: ‘template<class _Category, class _Tp, class _Distance, class _Pointer, class _Reference> struct std::iterator’ is deprecated [-Wdeprecated-declarations]
+[218/475] Building CXX object _deps/thrift-build/lib/cpp/CMakeFiles/thrift.dir/src/thrift/transport/TSimpleFileTransport.cpp.o
+In file included from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/TTransport.h:23,
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/TFDTransport.h:28,
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/TSimpleFileTransport.h:23,
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/TSimpleFileTransport.cpp:22:
+/tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/Thrift.h:54:19: warning: ‘template<class _Category, class _Tp, class _Distance, class _Pointer, class _Reference> struct std::iterator’ is deprecated [-Wdeprecated-declarations]
    54 |     : public std::iterator<std::forward_iterator_tag, std::pair<int, const char*> > {
       |                   ^~~~~~~~
 In file included from /usr/include/c++/13/bits/stl_construct.h:61,
                  from /usr/include/c++/13/bits/char_traits.h:57,
                  from /usr/include/c++/13/string:42,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/TFDTransport.h:23:
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/TFDTransport.h:23:
 /usr/include/c++/13/bits/stl_iterator_base_types.h:127:34: note: declared here
   127 |     struct _GLIBCXX17_DEPRECATED iterator
       |                                  ^~~~~~~~
-[217/475] Building CXX object _deps/thrift-build/lib/cpp/CMakeFiles/thrift.dir/src/thrift/transport/TSimpleFileTransport.cpp.o
-In file included from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/TTransport.h:23,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/TFDTransport.h:28,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/TSimpleFileTransport.h:23,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/TSimpleFileTransport.cpp:22:
-/tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/Thrift.h:54:19: warning: ‘template<class _Category, class _Tp, class _Distance, class _Pointer, class _Reference> struct std::iterator’ is deprecated [-Wdeprecated-declarations]
-   54 |     : public std::iterator<std::forward_iterator_tag, std::pair<int, const char*> > {
-      |                   ^~~~~~~~
-In file included from /usr/include/c++/13/bits/stl_construct.h:61,
-                 from /usr/include/c++/13/bits/char_traits.h:57,
-                 from /usr/include/c++/13/string:42,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/TFDTransport.h:23:
-/usr/include/c++/13/bits/stl_iterator_base_types.h:127:34: note: declared here
-  127 |     struct _GLIBCXX17_DEPRECATED iterator
-      |                                  ^~~~~~~~
-[218/475] Building CXX object _deps/thrift-build/lib/cpp/CMakeFiles/thrift.dir/src/thrift/transport/THttpTransport.cpp.o
-In file included from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/TTransport.h:23,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/TBufferTransports.h:27,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/THttpTransport.h:23,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/THttpTransport.cpp:22:
-/tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/Thrift.h:54:19: warning: ‘template<class _Category, class _Tp, class _Distance, class _Pointer, class _Reference> struct std::iterator’ is deprecated [-Wdeprecated-declarations]
+[219/475] Building CXX object _deps/thrift-build/lib/cpp/CMakeFiles/thrift.dir/src/thrift/transport/THttpTransport.cpp.o
+In file included from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/TTransport.h:23,
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/TBufferTransports.h:27,
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/THttpTransport.h:23,
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/THttpTransport.cpp:22:
+/tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/Thrift.h:54:19: warning: ‘template<class _Category, class _Tp, class _Distance, class _Pointer, class _Reference> struct std::iterator’ is deprecated [-Wdeprecated-declarations]
    54 |     : public std::iterator<std::forward_iterator_tag, std::pair<int, const char*> > {
       |                   ^~~~~~~~
 In file included from /usr/include/c++/13/bits/stl_construct.h:61,
@@ -1287,17 +1288,17 @@ In file included from /usr/include/c++/13/bits/stl_construct.h:61,
                  from /usr/include/c++/13/ios:42,
                  from /usr/include/c++/13/istream:40,
                  from /usr/include/c++/13/sstream:40,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/THttpTransport.cpp:20:
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/THttpTransport.cpp:20:
 /usr/include/c++/13/bits/stl_iterator_base_types.h:127:34: note: declared here
   127 |     struct _GLIBCXX17_DEPRECATED iterator
       |                                  ^~~~~~~~
-[219/475] Building CXX object _deps/thrift-build/lib/cpp/CMakeFiles/thrift.dir/src/thrift/transport/THttpClient.cpp.o
-In file included from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/TTransport.h:23,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/TBufferTransports.h:27,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/THttpTransport.h:23,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/THttpClient.h:23,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/THttpClient.cpp:26:
-/tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/Thrift.h:54:19: warning: ‘template<class _Category, class _Tp, class _Distance, class _Pointer, class _Reference> struct std::iterator’ is deprecated [-Wdeprecated-declarations]
+[220/475] Building CXX object _deps/thrift-build/lib/cpp/CMakeFiles/thrift.dir/src/thrift/transport/THttpClient.cpp.o
+In file included from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/TTransport.h:23,
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/TBufferTransports.h:27,
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/THttpTransport.h:23,
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/THttpClient.h:23,
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/THttpClient.cpp:26:
+/tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/Thrift.h:54:19: warning: ‘template<class _Category, class _Tp, class _Distance, class _Pointer, class _Reference> struct std::iterator’ is deprecated [-Wdeprecated-declarations]
    54 |     : public std::iterator<std::forward_iterator_tag, std::pair<int, const char*> > {
       |                   ^~~~~~~~
 In file included from /usr/include/c++/13/bits/stl_construct.h:61,
@@ -1305,18 +1306,17 @@ In file included from /usr/include/c++/13/bits/stl_construct.h:61,
                  from /usr/include/c++/13/ios:42,
                  from /usr/include/c++/13/istream:40,
                  from /usr/include/c++/13/sstream:40,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/THttpClient.cpp:22:
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/THttpClient.cpp:22:
 /usr/include/c++/13/bits/stl_iterator_base_types.h:127:34: note: declared here
   127 |     struct _GLIBCXX17_DEPRECATED iterator
       |                                  ^~~~~~~~
-[220/475] Building CXX object src/arrow/CMakeFiles/arrow_compute_objlib.dir/Unity/unity_4_cxx.cxx.o
 [221/475] Building CXX object _deps/thrift-build/lib/cpp/CMakeFiles/thrift.dir/src/thrift/transport/THttpServer.cpp.o
-In file included from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/TTransport.h:23,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/TBufferTransports.h:27,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/THttpTransport.h:23,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/THttpServer.h:23,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/THttpServer.cpp:25:
-/tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/Thrift.h:54:19: warning: ‘template<class _Category, class _Tp, class _Distance, class _Pointer, class _Reference> struct std::iterator’ is deprecated [-Wdeprecated-declarations]
+In file included from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/TTransport.h:23,
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/TBufferTransports.h:27,
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/THttpTransport.h:23,
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/THttpServer.h:23,
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/THttpServer.cpp:25:
+/tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/Thrift.h:54:19: warning: ‘template<class _Category, class _Tp, class _Distance, class _Pointer, class _Reference> struct std::iterator’ is deprecated [-Wdeprecated-declarations]
    54 |     : public std::iterator<std::forward_iterator_tag, std::pair<int, const char*> > {
       |                   ^~~~~~~~
 In file included from /usr/include/c++/13/bits/stl_construct.h:61,
@@ -1324,160 +1324,160 @@ In file included from /usr/include/c++/13/bits/stl_construct.h:61,
                  from /usr/include/c++/13/ios:42,
                  from /usr/include/c++/13/istream:40,
                  from /usr/include/c++/13/sstream:40,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/THttpServer.cpp:21:
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/THttpServer.cpp:21:
 /usr/include/c++/13/bits/stl_iterator_base_types.h:127:34: note: declared here
   127 |     struct _GLIBCXX17_DEPRECATED iterator
       |                                  ^~~~~~~~
-[222/475] Building CXX object _deps/thrift-build/lib/cpp/CMakeFiles/thrift.dir/src/thrift/transport/TSocketPool.cpp.o
-In file included from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/TTransport.h:23,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/TSocket.h:25,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/TSocketPool.h:24,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/TSocketPool.cpp:29:
-/tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/Thrift.h:54:19: warning: ‘template<class _Category, class _Tp, class _Distance, class _Pointer, class _Reference> struct std::iterator’ is deprecated [-Wdeprecated-declarations]
+[222/475] Building CXX object _deps/thrift-build/lib/cpp/CMakeFiles/thrift.dir/src/thrift/transport/TSocket.cpp.o
+In file included from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/concurrency/Exception.h:24,
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/concurrency/Monitor.h:24,
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/TSocket.cpp:52:
+/tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/Thrift.h:54:19: warning: ‘template<class _Category, class _Tp, class _Distance, class _Pointer, class _Reference> struct std::iterator’ is deprecated [-Wdeprecated-declarations]
+   54 |     : public std::iterator<std::forward_iterator_tag, std::pair<int, const char*> > {
+      |                   ^~~~~~~~
+In file included from /usr/include/c++/13/bits/stl_construct.h:61,
+                 from /usr/include/c++/13/bits/char_traits.h:57,
+                 from /usr/include/c++/13/ios:42,
+                 from /usr/include/c++/13/istream:40,
+                 from /usr/include/c++/13/sstream:40,
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/TSocket.cpp:23:
+/usr/include/c++/13/bits/stl_iterator_base_types.h:127:34: note: declared here
+  127 |     struct _GLIBCXX17_DEPRECATED iterator
+      |                                  ^~~~~~~~
+[223/475] Building CXX object _deps/thrift-build/lib/cpp/CMakeFiles/thrift.dir/src/thrift/transport/TSocketPool.cpp.o
+In file included from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/TTransport.h:23,
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/TSocket.h:25,
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/TSocketPool.h:24,
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/TSocketPool.cpp:29:
+/tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/Thrift.h:54:19: warning: ‘template<class _Category, class _Tp, class _Distance, class _Pointer, class _Reference> struct std::iterator’ is deprecated [-Wdeprecated-declarations]
    54 |     : public std::iterator<std::forward_iterator_tag, std::pair<int, const char*> > {
       |                   ^~~~~~~~
 In file included from /usr/include/c++/13/bits/stl_algobase.h:65,
                  from /usr/include/c++/13/algorithm:60,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/TSocketPool.cpp:22:
-/usr/include/c++/13/bits/stl_iterator_base_types.h:127:34: note: declared here
-  127 |     struct _GLIBCXX17_DEPRECATED iterator
-      |                                  ^~~~~~~~
-[223/475] Building CXX object _deps/thrift-build/lib/cpp/CMakeFiles/thrift.dir/src/thrift/transport/TSocket.cpp.o
-In file included from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/concurrency/Exception.h:24,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/concurrency/Monitor.h:24,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/TSocket.cpp:52:
-/tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/Thrift.h:54:19: warning: ‘template<class _Category, class _Tp, class _Distance, class _Pointer, class _Reference> struct std::iterator’ is deprecated [-Wdeprecated-declarations]
-   54 |     : public std::iterator<std::forward_iterator_tag, std::pair<int, const char*> > {
-      |                   ^~~~~~~~
-In file included from /usr/include/c++/13/bits/stl_construct.h:61,
-                 from /usr/include/c++/13/bits/char_traits.h:57,
-                 from /usr/include/c++/13/ios:42,
-                 from /usr/include/c++/13/istream:40,
-                 from /usr/include/c++/13/sstream:40,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/TSocket.cpp:23:
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/TSocketPool.cpp:22:
 /usr/include/c++/13/bits/stl_iterator_base_types.h:127:34: note: declared here
   127 |     struct _GLIBCXX17_DEPRECATED iterator
       |                                  ^~~~~~~~
 [224/475] Building CXX object _deps/thrift-build/lib/cpp/CMakeFiles/thrift.dir/src/thrift/transport/TServerSocket.cpp.o
-In file included from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/TTransport.h:23,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/TServerTransport.h:23,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/TServerSocket.h:27,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/TServerSocket.cpp:54:
-/tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/Thrift.h:54:19: warning: ‘template<class _Category, class _Tp, class _Distance, class _Pointer, class _Reference> struct std::iterator’ is deprecated [-Wdeprecated-declarations]
+In file included from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/TTransport.h:23,
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/TServerTransport.h:23,
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/TServerSocket.h:27,
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/TServerSocket.cpp:54:
+/tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/Thrift.h:54:19: warning: ‘template<class _Category, class _Tp, class _Distance, class _Pointer, class _Reference> struct std::iterator’ is deprecated [-Wdeprecated-declarations]
    54 |     : public std::iterator<std::forward_iterator_tag, std::pair<int, const char*> > {
       |                   ^~~~~~~~
 In file included from /usr/include/c++/13/bits/stl_construct.h:61,
                  from /usr/include/c++/13/bits/stl_tempbuf.h:61,
                  from /usr/include/c++/13/memory:66,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/TServerSocket.cpp:23:
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/TServerSocket.cpp:23:
 /usr/include/c++/13/bits/stl_iterator_base_types.h:127:34: note: declared here
   127 |     struct _GLIBCXX17_DEPRECATED iterator
       |                                  ^~~~~~~~
-In file included from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/TServerSocket.cpp:56:
-/tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/TSocketUtils.h:65:22: warning: ‘template<class _Category, class _Tp, class _Distance, class _Pointer, class _Reference> struct std::iterator’ is deprecated [-Wdeprecated-declarations]
+In file included from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/TServerSocket.cpp:56:
+/tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/TSocketUtils.h:65:22: warning: ‘template<class _Category, class _Tp, class _Distance, class _Pointer, class _Reference> struct std::iterator’ is deprecated [-Wdeprecated-declarations]
    65 |   struct Iter : std::iterator<std::forward_iterator_tag, const addrinfo*> {
       |                      ^~~~~~~~
 /usr/include/c++/13/bits/stl_iterator_base_types.h:127:34: note: declared here
   127 |     struct _GLIBCXX17_DEPRECATED iterator
       |                                  ^~~~~~~~
 [225/475] Building CXX object _deps/thrift-build/lib/cpp/CMakeFiles/thrift.dir/src/thrift/transport/TTransportUtils.cpp.o
-In file included from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/TTransport.h:23,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/TTransportUtils.h:27,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/TTransportUtils.cpp:20:
-/tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/Thrift.h:54:19: warning: ‘template<class _Category, class _Tp, class _Distance, class _Pointer, class _Reference> struct std::iterator’ is deprecated [-Wdeprecated-declarations]
+In file included from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/TTransport.h:23,
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/TTransportUtils.h:27,
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/TTransportUtils.cpp:20:
+/tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/Thrift.h:54:19: warning: ‘template<class _Category, class _Tp, class _Distance, class _Pointer, class _Reference> struct std::iterator’ is deprecated [-Wdeprecated-declarations]
    54 |     : public std::iterator<std::forward_iterator_tag, std::pair<int, const char*> > {
       |                   ^~~~~~~~
 In file included from /usr/include/c++/13/bits/stl_construct.h:61,
                  from /usr/include/c++/13/bits/char_traits.h:57,
                  from /usr/include/c++/13/string:42,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/TTransportUtils.h:25:
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/TTransportUtils.h:25:
 /usr/include/c++/13/bits/stl_iterator_base_types.h:127:34: note: declared here
   127 |     struct _GLIBCXX17_DEPRECATED iterator
       |                                  ^~~~~~~~
-[226/475] Building CXX object _deps/thrift-build/lib/cpp/CMakeFiles/thrift.dir/src/thrift/transport/SocketCommon.cpp.o
-In file included from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/TTransportException.h:25,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/SocketCommon.cpp:24:
-/tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/Thrift.h:54:19: warning: ‘template<class _Category, class _Tp, class _Distance, class _Pointer, class _Reference> struct std::iterator’ is deprecated [-Wdeprecated-declarations]
-   54 |     : public std::iterator<std::forward_iterator_tag, std::pair<int, const char*> > {
-      |                   ^~~~~~~~
-In file included from /usr/include/c++/13/bits/stl_construct.h:61,
-                 from /usr/include/c++/13/bits/char_traits.h:57,
-                 from /usr/include/c++/13/string:42,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/SocketCommon.h:40,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/SocketCommon.cpp:22:
-/usr/include/c++/13/bits/stl_iterator_base_types.h:127:34: note: declared here
-  127 |     struct _GLIBCXX17_DEPRECATED iterator
-      |                                  ^~~~~~~~
-[227/475] Building CXX object _deps/thrift-build/lib/cpp/CMakeFiles/thrift.dir/src/thrift/transport/TBufferTransports.cpp.o
-In file included from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/TTransport.h:23,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/TBufferTransports.h:27,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/TBufferTransports.cpp:24:
-/tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/Thrift.h:54:19: warning: ‘template<class _Category, class _Tp, class _Distance, class _Pointer, class _Reference> struct std::iterator’ is deprecated [-Wdeprecated-declarations]
+[226/475] Building CXX object _deps/thrift-build/lib/cpp/CMakeFiles/thrift.dir/src/thrift/transport/TBufferTransports.cpp.o
+In file included from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/TTransport.h:23,
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/TBufferTransports.h:27,
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/TBufferTransports.cpp:24:
+/tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/Thrift.h:54:19: warning: ‘template<class _Category, class _Tp, class _Distance, class _Pointer, class _Reference> struct std::iterator’ is deprecated [-Wdeprecated-declarations]
    54 |     : public std::iterator<std::forward_iterator_tag, std::pair<int, const char*> > {
       |                   ^~~~~~~~
 In file included from /usr/include/c++/13/bits/stl_algobase.h:65,
                  from /usr/include/c++/13/algorithm:60,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/TBufferTransports.cpp:20:
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/TBufferTransports.cpp:20:
+/usr/include/c++/13/bits/stl_iterator_base_types.h:127:34: note: declared here
+  127 |     struct _GLIBCXX17_DEPRECATED iterator
+      |                                  ^~~~~~~~
+[227/475] Building CXX object _deps/thrift-build/lib/cpp/CMakeFiles/thrift.dir/src/thrift/transport/SocketCommon.cpp.o
+In file included from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/TTransportException.h:25,
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/SocketCommon.cpp:24:
+/tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/Thrift.h:54:19: warning: ‘template<class _Category, class _Tp, class _Distance, class _Pointer, class _Reference> struct std::iterator’ is deprecated [-Wdeprecated-declarations]
+   54 |     : public std::iterator<std::forward_iterator_tag, std::pair<int, const char*> > {
+      |                   ^~~~~~~~
+In file included from /usr/include/c++/13/bits/stl_construct.h:61,
+                 from /usr/include/c++/13/bits/char_traits.h:57,
+                 from /usr/include/c++/13/string:42,
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/SocketCommon.h:40,
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/SocketCommon.cpp:22:
 /usr/include/c++/13/bits/stl_iterator_base_types.h:127:34: note: declared here
   127 |     struct _GLIBCXX17_DEPRECATED iterator
       |                                  ^~~~~~~~
 [228/475] Building CXX object _deps/thrift-build/lib/cpp/CMakeFiles/thrift.dir/src/thrift/server/TConnectedClient.cpp.o
-In file included from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/TTransport.h:23,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/protocol/TProtocol.h:46,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/TProcessor.h:24,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/server/TConnectedClient.h:24,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/server/TConnectedClient.cpp:20:
-/tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/Thrift.h:54:19: warning: ‘template<class _Category, class _Tp, class _Distance, class _Pointer, class _Reference> struct std::iterator’ is deprecated [-Wdeprecated-declarations]
+In file included from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/TTransport.h:23,
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/protocol/TProtocol.h:46,
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/TProcessor.h:24,
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/server/TConnectedClient.h:24,
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/server/TConnectedClient.cpp:20:
+/tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/Thrift.h:54:19: warning: ‘template<class _Category, class _Tp, class _Distance, class _Pointer, class _Reference> struct std::iterator’ is deprecated [-Wdeprecated-declarations]
    54 |     : public std::iterator<std::forward_iterator_tag, std::pair<int, const char*> > {
       |                   ^~~~~~~~
 In file included from /usr/include/c++/13/bits/stl_construct.h:61,
                  from /usr/include/c++/13/bits/stl_tempbuf.h:61,
                  from /usr/include/c++/13/memory:66,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/server/TConnectedClient.h:23:
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/server/TConnectedClient.h:23:
 /usr/include/c++/13/bits/stl_iterator_base_types.h:127:34: note: declared here
   127 |     struct _GLIBCXX17_DEPRECATED iterator
       |                                  ^~~~~~~~
 [229/475] Building CXX object _deps/thrift-build/lib/cpp/CMakeFiles/thrift.dir/src/thrift/server/TServerFramework.cpp.o
-In file included from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/TTransport.h:23,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/protocol/TProtocol.h:46,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/TProcessor.h:24,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/server/TServerFramework.h:25,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/server/TServerFramework.cpp:24:
-/tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/Thrift.h:54:19: warning: ‘template<class _Category, class _Tp, class _Distance, class _Pointer, class _Reference> struct std::iterator’ is deprecated [-Wdeprecated-declarations]
+In file included from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/TTransport.h:23,
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/protocol/TProtocol.h:46,
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/TProcessor.h:24,
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/server/TServerFramework.h:25,
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/server/TServerFramework.cpp:24:
+/tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/Thrift.h:54:19: warning: ‘template<class _Category, class _Tp, class _Distance, class _Pointer, class _Reference> struct std::iterator’ is deprecated [-Wdeprecated-declarations]
    54 |     : public std::iterator<std::forward_iterator_tag, std::pair<int, const char*> > {
       |                   ^~~~~~~~
 In file included from /usr/include/c++/13/bits/stl_algobase.h:65,
                  from /usr/include/c++/13/algorithm:60,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/server/TServerFramework.cpp:20:
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/server/TServerFramework.cpp:20:
 /usr/include/c++/13/bits/stl_iterator_base_types.h:127:34: note: declared here
   127 |     struct _GLIBCXX17_DEPRECATED iterator
       |                                  ^~~~~~~~
 [230/475] Building CXX object _deps/thrift-build/lib/cpp/CMakeFiles/thrift.dir/src/thrift/server/TSimpleServer.cpp.o
-In file included from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/TTransport.h:23,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/protocol/TProtocol.h:46,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/TProcessor.h:24,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/server/TServerFramework.h:25,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/server/TSimpleServer.h:23,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/server/TSimpleServer.cpp:20:
-/tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/Thrift.h:54:19: warning: ‘template<class _Category, class _Tp, class _Distance, class _Pointer, class _Reference> struct std::iterator’ is deprecated [-Wdeprecated-declarations]
+In file included from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/TTransport.h:23,
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/protocol/TProtocol.h:46,
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/TProcessor.h:24,
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/server/TServerFramework.h:25,
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/server/TSimpleServer.h:23,
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/server/TSimpleServer.cpp:20:
+/tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/Thrift.h:54:19: warning: ‘template<class _Category, class _Tp, class _Distance, class _Pointer, class _Reference> struct std::iterator’ is deprecated [-Wdeprecated-declarations]
    54 |     : public std::iterator<std::forward_iterator_tag, std::pair<int, const char*> > {
       |                   ^~~~~~~~
 In file included from /usr/include/c++/13/bits/stl_construct.h:61,
                  from /usr/include/c++/13/bits/stl_tempbuf.h:61,
                  from /usr/include/c++/13/memory:66,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/server/TServerFramework.h:23:
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/server/TServerFramework.h:23:
 /usr/include/c++/13/bits/stl_iterator_base_types.h:127:34: note: declared here
   127 |     struct _GLIBCXX17_DEPRECATED iterator
       |                                  ^~~~~~~~
 [231/475] Building CXX object _deps/thrift-build/lib/cpp/CMakeFiles/thrift.dir/src/thrift/server/TThreadPoolServer.cpp.o
-In file included from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/concurrency/Exception.h:24,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/concurrency/Monitor.h:24,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/concurrency/Thread.h:26,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/concurrency/ThreadFactory.h:23,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/concurrency/ThreadManager.h:25,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/server/TThreadPoolServer.h:24,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/server/TThreadPoolServer.cpp:20:
-/tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/Thrift.h:54:19: warning: ‘template<class _Category, class _Tp, class _Distance, class _Pointer, class _Reference> struct std::iterator’ is deprecated [-Wdeprecated-declarations]
+In file included from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/concurrency/Exception.h:24,
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/concurrency/Monitor.h:24,
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/concurrency/Thread.h:26,
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/concurrency/ThreadFactory.h:23,
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/concurrency/ThreadManager.h:25,
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/server/TThreadPoolServer.h:24,
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/server/TThreadPoolServer.cpp:20:
+/tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/Thrift.h:54:19: warning: ‘template<class _Category, class _Tp, class _Distance, class _Pointer, class _Reference> struct std::iterator’ is deprecated [-Wdeprecated-declarations]
    54 |     : public std::iterator<std::forward_iterator_tag, std::pair<int, const char*> > {
       |                   ^~~~~~~~
 In file included from /usr/include/c++/13/bits/stl_iterator.h:64,
@@ -1485,51 +1485,78 @@ In file included from /usr/include/c++/13/bits/stl_iterator.h:64,
                  from /usr/include/c++/13/bits/ranges_util.h:34,
                  from /usr/include/c++/13/tuple:44,
                  from /usr/include/c++/13/functional:53,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/concurrency/ThreadManager.h:23:
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/concurrency/ThreadManager.h:23:
 /usr/include/c++/13/bits/stl_iterator_base_types.h:127:34: note: declared here
   127 |     struct _GLIBCXX17_DEPRECATED iterator
       |                                  ^~~~~~~~
-[232/475] Building CXX object _deps/thrift-build/lib/cpp/CMakeFiles/thrift.dir/src/thrift/transport/TPipe.cpp.o
-In file included from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/TTransportException.h:25,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/TPipe.cpp:20:
-/tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/Thrift.h:54:19: warning: ‘template<class _Category, class _Tp, class _Distance, class _Pointer, class _Reference> struct std::iterator’ is deprecated [-Wdeprecated-declarations]
-   54 |     : public std::iterator<std::forward_iterator_tag, std::pair<int, const char*> > {
-      |                   ^~~~~~~~
-In file included from /usr/include/c++/13/bits/stl_iterator.h:64,
-                 from /usr/include/c++/13/bits/ranges_base.h:37,
-                 from /usr/include/c++/13/bits/ranges_util.h:34,
-                 from /usr/include/c++/13/tuple:44,
-                 from /usr/include/c++/13/functional:53,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/boost-src/libs/numeric/conversion/include/boost/numeric/conversion/converter_policies.hpp:13,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/boost-src/libs/numeric/conversion/include/boost/numeric/conversion/converter.hpp:14,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/boost-src/libs/numeric/conversion/include/boost/numeric/conversion/cast.hpp:33,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/TTransportException.h:23:
-/usr/include/c++/13/bits/stl_iterator_base_types.h:127:34: note: declared here
-  127 |     struct _GLIBCXX17_DEPRECATED iterator
-      |                                  ^~~~~~~~
-[233/475] Building CXX object _deps/thrift-build/lib/cpp/CMakeFiles/thrift.dir/src/thrift/server/TThreadedServer.cpp.o
-In file included from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/concurrency/Exception.h:24,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/concurrency/Monitor.h:24,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/concurrency/Thread.h:26,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/concurrency/ThreadFactory.h:23,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/server/TThreadedServer.cpp:22:
-/tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/Thrift.h:54:19: warning: ‘template<class _Category, class _Tp, class _Distance, class _Pointer, class _Reference> struct std::iterator’ is deprecated [-Wdeprecated-declarations]
+[232/475] Building CXX object _deps/thrift-build/lib/cpp/CMakeFiles/thrift.dir/src/thrift/server/TThreadedServer.cpp.o
+In file included from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/concurrency/Exception.h:24,
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/concurrency/Monitor.h:24,
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/concurrency/Thread.h:26,
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/concurrency/ThreadFactory.h:23,
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/server/TThreadedServer.cpp:22:
+/tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/Thrift.h:54:19: warning: ‘template<class _Category, class _Tp, class _Distance, class _Pointer, class _Reference> struct std::iterator’ is deprecated [-Wdeprecated-declarations]
    54 |     : public std::iterator<std::forward_iterator_tag, std::pair<int, const char*> > {
       |                   ^~~~~~~~
 In file included from /usr/include/c++/13/bits/stl_construct.h:61,
                  from /usr/include/c++/13/bits/char_traits.h:57,
                  from /usr/include/c++/13/string:42,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/server/TThreadedServer.cpp:20:
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/server/TThreadedServer.cpp:20:
 /usr/include/c++/13/bits/stl_iterator_base_types.h:127:34: note: declared here
   127 |     struct _GLIBCXX17_DEPRECATED iterator
       |                                  ^~~~~~~~
-[234/475] Building CXX object src/arrow/CMakeFiles/arrow_compute_objlib.dir/Unity/unity_0_cxx.cxx.o
+[233/475] Building CXX object _deps/thrift-build/lib/cpp/CMakeFiles/thrift.dir/src/thrift/transport/TPipe.cpp.o
+In file included from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/TTransportException.h:25,
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/TPipe.cpp:20:
+/tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/Thrift.h:54:19: warning: ‘template<class _Category, class _Tp, class _Distance, class _Pointer, class _Reference> struct std::iterator’ is deprecated [-Wdeprecated-declarations]
+   54 |     : public std::iterator<std::forward_iterator_tag, std::pair<int, const char*> > {
+      |                   ^~~~~~~~
+In file included from /usr/include/c++/13/bits/stl_iterator.h:64,
+                 from /usr/include/c++/13/bits/ranges_base.h:37,
+                 from /usr/include/c++/13/bits/ranges_util.h:34,
+                 from /usr/include/c++/13/tuple:44,
+                 from /usr/include/c++/13/functional:53,
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/boost-src/libs/numeric/conversion/include/boost/numeric/conversion/converter_policies.hpp:13,
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/boost-src/libs/numeric/conversion/include/boost/numeric/conversion/converter.hpp:14,
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/boost-src/libs/numeric/conversion/include/boost/numeric/conversion/cast.hpp:33,
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/TTransportException.h:23:
+/usr/include/c++/13/bits/stl_iterator_base_types.h:127:34: note: declared here
+  127 |     struct _GLIBCXX17_DEPRECATED iterator
+      |                                  ^~~~~~~~
+[234/475] Building CXX object _deps/thrift-build/lib/cpp/CMakeFiles/thrift.dir/src/thrift/VirtualProfiling.cpp.o
+In file included from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/VirtualProfiling.cpp:20:
+/tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/Thrift.h:54:19: warning: ‘template<class _Category, class _Tp, class _Distance, class _Pointer, class _Reference> struct std::iterator’ is deprecated [-Wdeprecated-declarations]
+   54 |     : public std::iterator<std::forward_iterator_tag, std::pair<int, const char*> > {
+      |                   ^~~~~~~~
+In file included from /usr/include/c++/13/bits/stl_construct.h:61,
+                 from /usr/include/c++/13/bits/char_traits.h:57,
+                 from /usr/include/c++/13/string:42,
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/Thrift.h:37:
+/usr/include/c++/13/bits/stl_iterator_base_types.h:127:34: note: declared here
+  127 |     struct _GLIBCXX17_DEPRECATED iterator
+      |                                  ^~~~~~~~
+[235/475] Building CXX object _deps/thrift-build/lib/cpp/CMakeFiles/thrift.dir/src/thrift/server/TServer.cpp.o
+[236/475] Building CXX object _deps/thrift-build/lib/cpp/CMakeFiles/thrift.dir/src/thrift/transport/TPipeServer.cpp.o
+In file included from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/TTransport.h:23,
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/TPipe.h:23,
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/TPipeServer.cpp:23:
+/tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/Thrift.h:54:19: warning: ‘template<class _Category, class _Tp, class _Distance, class _Pointer, class _Reference> struct std::iterator’ is deprecated [-Wdeprecated-declarations]
+   54 |     : public std::iterator<std::forward_iterator_tag, std::pair<int, const char*> > {
+      |                   ^~~~~~~~
+In file included from /usr/include/c++/13/bits/stl_construct.h:61,
+                 from /usr/include/c++/13/bits/char_traits.h:57,
+                 from /usr/include/c++/13/string:42,
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/Thrift.h:37:
+/usr/include/c++/13/bits/stl_iterator_base_types.h:127:34: note: declared here
+  127 |     struct _GLIBCXX17_DEPRECATED iterator
+      |                                  ^~~~~~~~
+[237/475] Building CXX object src/arrow/CMakeFiles/arrow_compute_objlib.dir/Unity/unity_0_cxx.cxx.o
 In file included from /usr/include/c++/13/bits/stl_uninitialized.h:63,
                  from /usr/include/c++/13/memory:69,
                  from /home/runner/work/pyarrow-lincc-fw-openastronomy-gsoc26/pyarrow-lincc-fw-openastronomy-gsoc26/arrow/cpp/src/arrow/status.h:19,
                  from /home/runner/work/pyarrow-lincc-fw-openastronomy-gsoc26/pyarrow-lincc-fw-openastronomy-gsoc26/arrow/cpp/src/arrow/compute/initialize.h:21,
                  from /home/runner/work/pyarrow-lincc-fw-openastronomy-gsoc26/pyarrow-lincc-fw-openastronomy-gsoc26/arrow/cpp/src/arrow/compute/initialize.cc:17,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/src/arrow/CMakeFiles/arrow_compute_objlib.dir/Unity/unity_0_cxx.cxx:4:
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/src/arrow/CMakeFiles/arrow_compute_objlib.dir/Unity/unity_0_cxx.cxx:4:
 In static member function ‘static constexpr _Up* std::__copy_move<_IsMove, true, std::random_access_iterator_tag>::__copy_m(_Tp*, _Tp*, _Up*) [with _Tp = long unsigned int; _Up = long unsigned int; bool _IsMove = false]’,
     inlined from ‘constexpr _OI std::__copy_move_a2(_II, _II, _OI) [with bool _IsMove = false; _II = long unsigned int*; _OI = long unsigned int*]’ at /usr/include/c++/13/bits/stl_algobase.h:506:30,
     inlined from ‘constexpr _OI std::__copy_move_a1(_II, _II, _OI) [with bool _IsMove = false; _II = long unsigned int*; _OI = long unsigned int*]’ at /usr/include/c++/13/bits/stl_algobase.h:533:42,
@@ -1545,71 +1572,62 @@ In static member function ‘static constexpr _Up* std::__copy_move<_IsMove, tru
 /usr/include/c++/13/bits/stl_algobase.h:437:30: warning: ‘void* __builtin_memmove(void*, const void*, long unsigned int)’ forming offset 8 is out of the bounds [0, 8] [-Warray-bounds=]
   437 |             __builtin_memmove(__result, __first, sizeof(_Tp) * _Num);
       |             ~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-[235/475] Building CXX object _deps/thrift-build/lib/cpp/CMakeFiles/thrift.dir/src/thrift/transport/TPipeServer.cpp.o
-In file included from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/TTransport.h:23,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/TPipe.h:23,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/TPipeServer.cpp:23:
-/tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/Thrift.h:54:19: warning: ‘template<class _Category, class _Tp, class _Distance, class _Pointer, class _Reference> struct std::iterator’ is deprecated [-Wdeprecated-declarations]
-   54 |     : public std::iterator<std::forward_iterator_tag, std::pair<int, const char*> > {
-      |                   ^~~~~~~~
-In file included from /usr/include/c++/13/bits/stl_construct.h:61,
-                 from /usr/include/c++/13/bits/char_traits.h:57,
-                 from /usr/include/c++/13/string:42,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/Thrift.h:37:
-/usr/include/c++/13/bits/stl_iterator_base_types.h:127:34: note: declared here
-  127 |     struct _GLIBCXX17_DEPRECATED iterator
-      |                                  ^~~~~~~~
-[236/475] Building CXX object _deps/thrift-build/lib/cpp/CMakeFiles/thrift.dir/src/thrift/server/TServer.cpp.o
-[237/475] Building CXX object _deps/thrift-build/lib/cpp/CMakeFiles/thrift.dir/src/thrift/VirtualProfiling.cpp.o
-In file included from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/VirtualProfiling.cpp:20:
-/tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/Thrift.h:54:19: warning: ‘template<class _Category, class _Tp, class _Distance, class _Pointer, class _Reference> struct std::iterator’ is deprecated [-Wdeprecated-declarations]
-   54 |     : public std::iterator<std::forward_iterator_tag, std::pair<int, const char*> > {
-      |                   ^~~~~~~~
-In file included from /usr/include/c++/13/bits/stl_construct.h:61,
-                 from /usr/include/c++/13/bits/char_traits.h:57,
-                 from /usr/include/c++/13/string:42,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/Thrift.h:37:
-/usr/include/c++/13/bits/stl_iterator_base_types.h:127:34: note: declared here
-  127 |     struct _GLIBCXX17_DEPRECATED iterator
-      |                                  ^~~~~~~~
-[238/475] Building CXX object _deps/thrift-build/lib/cpp/CMakeFiles/thrift.dir/src/thrift/concurrency/Thread.cpp.o
-In file included from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/concurrency/Exception.h:24,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/concurrency/Monitor.h:24,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/concurrency/Thread.h:26,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/concurrency/Thread.cpp:20:
-/tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/Thrift.h:54:19: warning: ‘template<class _Category, class _Tp, class _Distance, class _Pointer, class _Reference> struct std::iterator’ is deprecated [-Wdeprecated-declarations]
+[238/475] Building CXX object _deps/thrift-build/lib/cpp/CMakeFiles/thrift.dir/src/thrift/concurrency/ThreadFactory.cpp.o
+In file included from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/concurrency/Exception.h:24,
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/concurrency/Monitor.h:24,
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/concurrency/Thread.h:26,
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/concurrency/ThreadFactory.h:23,
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/concurrency/ThreadFactory.cpp:22:
+/tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/Thrift.h:54:19: warning: ‘template<class _Category, class _Tp, class _Distance, class _Pointer, class _Reference> struct std::iterator’ is deprecated [-Wdeprecated-declarations]
    54 |     : public std::iterator<std::forward_iterator_tag, std::pair<int, const char*> > {
       |                   ^~~~~~~~
 In file included from /usr/include/c++/13/bits/stl_construct.h:61,
                  from /usr/include/c++/13/bits/stl_tempbuf.h:61,
                  from /usr/include/c++/13/memory:66,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/concurrency/Thread.h:23:
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/concurrency/Thread.h:23:
 /usr/include/c++/13/bits/stl_iterator_base_types.h:127:34: note: declared here
   127 |     struct _GLIBCXX17_DEPRECATED iterator
       |                                  ^~~~~~~~
-[239/475] Building CXX object _deps/thrift-build/lib/cpp/CMakeFiles/thrift.dir/src/thrift/concurrency/ThreadFactory.cpp.o
-In file included from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/concurrency/Exception.h:24,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/concurrency/Monitor.h:24,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/concurrency/Thread.h:26,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/concurrency/ThreadFactory.h:23,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/concurrency/ThreadFactory.cpp:22:
-/tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/Thrift.h:54:19: warning: ‘template<class _Category, class _Tp, class _Distance, class _Pointer, class _Reference> struct std::iterator’ is deprecated [-Wdeprecated-declarations]
+[239/475] Building CXX object _deps/thrift-build/lib/cpp/CMakeFiles/thrift.dir/src/thrift/concurrency/Thread.cpp.o
+In file included from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/concurrency/Exception.h:24,
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/concurrency/Monitor.h:24,
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/concurrency/Thread.h:26,
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/concurrency/Thread.cpp:20:
+/tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/Thrift.h:54:19: warning: ‘template<class _Category, class _Tp, class _Distance, class _Pointer, class _Reference> struct std::iterator’ is deprecated [-Wdeprecated-declarations]
    54 |     : public std::iterator<std::forward_iterator_tag, std::pair<int, const char*> > {
       |                   ^~~~~~~~
 In file included from /usr/include/c++/13/bits/stl_construct.h:61,
                  from /usr/include/c++/13/bits/stl_tempbuf.h:61,
                  from /usr/include/c++/13/memory:66,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/concurrency/Thread.h:23:
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/concurrency/Thread.h:23:
 /usr/include/c++/13/bits/stl_iterator_base_types.h:127:34: note: declared here
   127 |     struct _GLIBCXX17_DEPRECATED iterator
       |                                  ^~~~~~~~
 [240/475] Linking CXX shared library release/libarrow_gtest.so.1.17.0
 [241/475] No patch step for 'gflags_ep'
-[242/475] Building CXX object _deps/thrift-build/lib/cpp/CMakeFiles/thrift.dir/src/thrift/concurrency/Monitor.cpp.o
-In file included from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/concurrency/Exception.h:24,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/concurrency/Monitor.h:24,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/concurrency/Monitor.cpp:22:
-/tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/Thrift.h:54:19: warning: ‘template<class _Category, class _Tp, class _Distance, class _Pointer, class _Reference> struct std::iterator’ is deprecated [-Wdeprecated-declarations]
+[242/475] Building CXX object _deps/thrift-build/lib/cpp/CMakeFiles/thrift.dir/src/thrift/transport/TFileTransport.cpp.o
+In file included from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/TTransport.h:23,
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/TFileTransport.h:23,
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/TFileTransport.cpp:47:
+/tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/Thrift.h:54:19: warning: ‘template<class _Category, class _Tp, class _Distance, class _Pointer, class _Reference> struct std::iterator’ is deprecated [-Wdeprecated-declarations]
+   54 |     : public std::iterator<std::forward_iterator_tag, std::pair<int, const char*> > {
+      |                   ^~~~~~~~
+In file included from /usr/include/c++/13/bits/stl_construct.h:61,
+                 from /usr/include/c++/13/bits/char_traits.h:57,
+                 from /usr/include/c++/13/ios:42,
+                 from /usr/include/c++/13/ostream:40,
+                 from /usr/include/c++/13/iostream:41,
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/TFileTransport.cpp:36:
+/usr/include/c++/13/bits/stl_iterator_base_types.h:127:34: note: declared here
+  127 |     struct _GLIBCXX17_DEPRECATED iterator
+      |                                  ^~~~~~~~
+[243/475] Building CXX object _deps/boost-build/libs/filesystem/CMakeFiles/boost_filesystem.dir/src/codecvt_error_category.cpp.o
+[244/475] Building CXX object _deps/thrift-build/lib/cpp/CMakeFiles/thrift.dir/src/thrift/concurrency/Mutex.cpp.o
+[245/475] Building CXX object _deps/thrift-build/lib/cpp/CMakeFiles/thrift.dir/src/thrift/concurrency/Monitor.cpp.o
+In file included from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/concurrency/Exception.h:24,
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/concurrency/Monitor.h:24,
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/concurrency/Monitor.cpp:22:
+/tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/Thrift.h:54:19: warning: ‘template<class _Category, class _Tp, class _Distance, class _Pointer, class _Reference> struct std::iterator’ is deprecated [-Wdeprecated-declarations]
    54 |     : public std::iterator<std::forward_iterator_tag, std::pair<int, const char*> > {
       |                   ^~~~~~~~
 In file included from /usr/include/c++/13/bits/stl_construct.h:61,
@@ -1618,49 +1636,31 @@ In file included from /usr/include/c++/13/bits/stl_construct.h:61,
                  from /usr/include/c++/13/istream:40,
                  from /usr/include/c++/13/sstream:40,
                  from /usr/include/c++/13/chrono:45,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/concurrency/Monitor.h:23:
+                 from /tmp/arrow-archery-fobawdej/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/concurrency/Monitor.h:23:
 /usr/include/c++/13/bits/stl_iterator_base_types.h:127:34: note: declared here
   127 |     struct _GLIBCXX17_DEPRECATED iterator
       |                                  ^~~~~~~~
-[243/475] Building CXX object _deps/thrift-build/lib/cpp/CMakeFiles/thrift.dir/src/thrift/concurrency/Mutex.cpp.o
-[244/475] Building CXX object _deps/thrift-build/lib/cpp/CMakeFiles/thrift.dir/src/thrift/transport/TFileTransport.cpp.o
-In file included from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/TTransport.h:23,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/TFileTransport.h:23,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/TFileTransport.cpp:47:
-/tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/Thrift.h:54:19: warning: ‘template<class _Category, class _Tp, class _Distance, class _Pointer, class _Reference> struct std::iterator’ is deprecated [-Wdeprecated-declarations]
-   54 |     : public std::iterator<std::forward_iterator_tag, std::pair<int, const char*> > {
-      |                   ^~~~~~~~
-In file included from /usr/include/c++/13/bits/stl_construct.h:61,
-                 from /usr/include/c++/13/bits/char_traits.h:57,
-                 from /usr/include/c++/13/ios:42,
-                 from /usr/include/c++/13/ostream:40,
-                 from /usr/include/c++/13/iostream:41,
-                 from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/_deps/thrift-src/lib/cpp/src/thrift/transport/TFileTransport.cpp:36:
-/usr/include/c++/13/bits/stl_iterator_base_types.h:127:34: note: declared here
-  127 |     struct _GLIBCXX17_DEPRECATED iterator
-      |                                  ^~~~~~~~
-[245/475] Building CXX object _deps/boost-build/libs/filesystem/CMakeFiles/boost_filesystem.dir/src/codecvt_error_category.cpp.o
 [246/475] Building CXX object _deps/boost-build/libs/filesystem/CMakeFiles/boost_filesystem.dir/src/exception.cpp.o
-[247/475] Building CXX object _deps/boost-build/libs/filesystem/CMakeFiles/boost_filesystem.dir/src/directory.cpp.o
-[248/475] Building CXX object _deps/boost-build/libs/filesystem/CMakeFiles/boost_filesystem.dir/src/operations.cpp.o
-[249/475] Building CXX object _deps/boost-build/libs/filesystem/CMakeFiles/boost_filesystem.dir/src/path.cpp.o
-[250/475] Building CXX object _deps/boost-build/libs/filesystem/CMakeFiles/boost_filesystem.dir/src/portability.cpp.o
-[251/475] Building CXX object _deps/boost-build/libs/filesystem/CMakeFiles/boost_filesystem.dir/src/utf8_codecvt_facet.cpp.o
-[252/475] Building CXX object _deps/boost-build/libs/filesystem/CMakeFiles/boost_filesystem.dir/src/path_traits.cpp.o
+[247/475] Building CXX object _deps/boost-build/libs/filesystem/CMakeFiles/boost_filesystem.dir/src/path_traits.cpp.o
+[248/475] Building CXX object _deps/boost-build/libs/filesystem/CMakeFiles/boost_filesystem.dir/src/path.cpp.o
+[249/475] Building CXX object _deps/boost-build/libs/filesystem/CMakeFiles/boost_filesystem.dir/src/directory.cpp.o
+[250/475] Building CXX object _deps/boost-build/libs/filesystem/CMakeFiles/boost_filesystem.dir/src/operations.cpp.o
+[251/475] Linking CXX static library lib/libthrift.a
+[252/475] Building CXX object _deps/boost-build/libs/filesystem/CMakeFiles/boost_filesystem.dir/src/unique_path.cpp.o
 [253/475] Creating library symlink release/libarrow_gtest.so
-[254/475] Linking CXX static library lib/libthrift.a
-[255/475] Building CXX object _deps/boost-build/libs/filesystem/CMakeFiles/boost_filesystem.dir/src/unique_path.cpp.o
+[254/475] Building CXX object _deps/boost-build/libs/filesystem/CMakeFiles/boost_filesystem.dir/src/utf8_codecvt_facet.cpp.o
+[255/475] Building CXX object _deps/boost-build/libs/filesystem/CMakeFiles/boost_filesystem.dir/src/portability.cpp.o
 [256/475] Building CXX object _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/Unity/unity_0_cxx.cxx.o
-[257/475] Building CXX object src/arrow/CMakeFiles/arrow_compute_objlib.dir/Unity/unity_1_cxx.cxx.o
-[258/475] Building CXX object src/arrow/acero/CMakeFiles/arrow_acero_objlib.dir/bloom_filter_avx2.cc.o
-[259/475] Building CXX object src/arrow/acero/CMakeFiles/arrow_acero_objlib.dir/Unity/unity_3_cxx.cxx.o
+[257/475] Building CXX object src/arrow/acero/CMakeFiles/arrow_acero_objlib.dir/Unity/unity_3_cxx.cxx.o
+[258/475] Building CXX object src/arrow/acero/CMakeFiles/arrow_acero_objlib.dir/Unity/unity_1_cxx.cxx.o
+[259/475] Building CXX object src/arrow/acero/CMakeFiles/arrow_acero_objlib.dir/bloom_filter_avx2.cc.o
 [260/475] Building CXX object src/arrow/acero/CMakeFiles/arrow_acero_objlib.dir/Unity/unity_2_cxx.cxx.o
-[261/475] Building CXX object src/arrow/acero/CMakeFiles/arrow_acero_objlib.dir/Unity/unity_1_cxx.cxx.o
+[261/475] Building CXX object src/arrow/CMakeFiles/arrow_compute_objlib.dir/Unity/unity_1_cxx.cxx.o
 [262/475] Building CXX object src/parquet/CMakeFiles/parquet_objlib.dir/Unity/unity_5_cxx.cxx.o
 [263/475] Building CXX object src/arrow/acero/CMakeFiles/arrow_acero_objlib.dir/swiss_join_avx2.cc.o
 [264/475] Building CXX object src/arrow/acero/CMakeFiles/arrow_acero_objlib.dir/Unity/unity_0_cxx.cxx.o
 [265/475] Building CXX object src/parquet/CMakeFiles/parquet_objlib.dir/Unity/unity_4_cxx.cxx.o
-In file included from /tmp/arrow-archery-79edvwkw/WORKSPACE/build/src/parquet/CMakeFiles/parquet_objlib.dir/Unity/unity_4_cxx.cxx:16:
+In file included from /tmp/arrow-archery-fobawdej/WORKSPACE/build/src/parquet/CMakeFiles/parquet_objlib.dir/Unity/unity_4_cxx.cxx:16:
 In member function ‘void parquet::{anonymous}::TypedStatisticsImpl<DType>::Copy(const T&, T*, parquet::ResizableBuffer*) [with DType = parquet::PhysicalType<parquet::Type::FLOAT>]’,
     inlined from ‘void parquet::{anonymous}::TypedStatisticsImpl<DType>::SetMinMaxPair(std::pair<typename DType::c_type, typename DType::c_type>) [with DType = parquet::PhysicalType<parquet::Type::FLOAT>]’ at /home/runner/work/pyarrow-lincc-fw-openastronomy-gsoc26/pyarrow-lincc-fw-openastronomy-gsoc26/arrow/cpp/src/parquet/statistics.cc:857:11:
 /home/runner/work/pyarrow-lincc-fw-openastronomy-gsoc26/pyarrow-lincc-fw-openastronomy-gsoc26/arrow/cpp/src/parquet/statistics.cc:817:60: warning: dangling pointer to ‘max’ may be used [-Wdangling-pointer=]
@@ -1762,37 +1762,37 @@ In member function ‘void parquet::{anonymous}::TypedStatisticsImpl<DType>::Set
 /home/runner/work/pyarrow-lincc-fw-openastronomy-gsoc26/pyarrow-lincc-fw-openastronomy-gsoc26/arrow/cpp/src/parquet/statistics.cc:849:10: note: ‘max’ declared here
   849 |     auto max = maybe_min_max.value().second;
       |          ^~~
-[266/475] Building CXX object src/parquet/CMakeFiles/parquet_objlib.dir/Unity/unity_2_cxx.cxx.o
+[266/475] Building CXX object src/parquet/CMakeFiles/parquet_objlib.dir/Unity/unity_3_cxx.cxx.o
 [267/475] Building CXX object src/parquet/CMakeFiles/parquet_objlib.dir/level_comparison_avx2.cc.o
 [268/475] Building CXX object src/parquet/CMakeFiles/parquet_objlib.dir/level_conversion_bmi2.cc.o
-[269/475] Performing configure step for 'gflags_ep'
+[269/475] Building CXX object src/parquet/CMakeFiles/parquet_objlib.dir/Unity/unity_2_cxx.cxx.o
 [270/475] Linking CXX static library _deps/boost-build/libs/filesystem/libboost_filesystem.a
-[271/475] Building CXX object src/parquet/CMakeFiles/parquet_objlib.dir/Unity/unity_3_cxx.cxx.o
-[272/475] Building CXX object _deps/boost-build/libs/process/CMakeFiles/boost_process.dir/src/detail/environment_posix.cpp.o
+[271/475] Building CXX object src/parquet/CMakeFiles/parquet_objlib.dir/__/generated/parquet_types.cpp.o
+[272/475] Performing configure step for 'gflags_ep'
 [273/475] Building CXX object _deps/boost-build/libs/process/CMakeFiles/boost_process.dir/src/detail/environment_win.cpp.o
-[274/475] Building CXX object src/parquet/CMakeFiles/parquet_objlib.dir/__/generated/parquet_types.cpp.o
-[275/475] Building CXX object _deps/boost-build/libs/process/CMakeFiles/boost_process.dir/src/detail/process_handle_windows.cpp.o
+[274/475] Building CXX object _deps/boost-build/libs/process/CMakeFiles/boost_process.dir/src/detail/environment_posix.cpp.o
+[275/475] Building CXX object _deps/boost-build/libs/process/CMakeFiles/boost_process.dir/src/detail/last_error.cpp.o
 [276/475] Building CXX object _deps/boost-build/libs/process/CMakeFiles/boost_process.dir/src/detail/throw_error.cpp.o
-[277/475] Building CXX object _deps/boost-build/libs/process/CMakeFiles/boost_process.dir/src/detail/last_error.cpp.o
+[277/475] Building CXX object _deps/boost-build/libs/process/CMakeFiles/boost_process.dir/src/detail/process_handle_windows.cpp.o
 [278/475] Building CXX object _deps/boost-build/libs/process/CMakeFiles/boost_process.dir/src/detail/utf8.cpp.o
 [279/475] Building CXX object _deps/boost-build/libs/process/CMakeFiles/boost_process.dir/src/ext/cwd.cpp.o
 [280/475] Building CXX object _deps/boost-build/libs/process/CMakeFiles/boost_process.dir/src/ext/cmd.cpp.o
-[281/475] Building CXX object _deps/boost-build/libs/process/CMakeFiles/boost_process.dir/src/ext/env.cpp.o
-[282/475] Building CXX object _deps/boost-build/libs/process/CMakeFiles/boost_process.dir/src/ext/proc_info.cpp.o
+[281/475] Building CXX object _deps/boost-build/libs/process/CMakeFiles/boost_process.dir/src/ext/proc_info.cpp.o
+[282/475] Building CXX object _deps/boost-build/libs/process/CMakeFiles/boost_process.dir/src/ext/env.cpp.o
 [283/475] Building CXX object _deps/boost-build/libs/process/CMakeFiles/boost_process.dir/src/ext/exe.cpp.o
-[284/475] Building CXX object _deps/boost-build/libs/process/CMakeFiles/boost_process.dir/src/posix/close_handles.cpp.o
-[285/475] Building CXX object _deps/boost-build/libs/process/CMakeFiles/boost_process.dir/src/windows/default_launcher.cpp.o
+[284/475] Building CXX object _deps/boost-build/libs/process/CMakeFiles/boost_process.dir/src/windows/default_launcher.cpp.o
+[285/475] Building CXX object _deps/boost-build/libs/process/CMakeFiles/boost_process.dir/src/posix/close_handles.cpp.o
 [286/475] Building CXX object _deps/boost-build/libs/process/CMakeFiles/boost_process.dir/src/environment.cpp.o
 [287/475] Building CXX object _deps/boost-build/libs/process/CMakeFiles/boost_process.dir/src/error.cpp.o
-[288/475] Building CXX object _deps/boost-build/libs/process/CMakeFiles/boost_process.dir/src/pid.cpp.o
-[289/475] Linking CXX shared library release/libarrow_gmock.so.1.17.0
+[288/475] Linking CXX shared library release/libarrow_gmock.so.1.17.0
+[289/475] Building CXX object _deps/boost-build/libs/process/CMakeFiles/boost_process.dir/src/pid.cpp.o
 [290/475] Creating library symlink release/libarrow_gmock.so
-[291/475] Building CXX object _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/Unity/unity_0_cxx.cxx.o
-[292/475] Building CXX object _deps/boost-build/libs/process/CMakeFiles/boost_process.dir/src/shell.cpp.o
-[293/475] Linking CXX static library _deps/boost-build/libs/process/libboost_process.a
-[294/475] Linking CXX static library release/libarrow.a
-[295/475] Performing build step for 'gflags_ep'
-[296/475] Building CXX object src/parquet/CMakeFiles/parquet_objlib.dir/Unity/unity_0_cxx.cxx.o
+[291/475] Building CXX object src/parquet/CMakeFiles/parquet_objlib.dir/Unity/unity_0_cxx.cxx.o
+[292/475] Linking CXX static library release/libarrow.a
+[293/475] Building CXX object _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/Unity/unity_0_cxx.cxx.o
+[294/475] Building CXX object _deps/boost-build/libs/process/CMakeFiles/boost_process.dir/src/shell.cpp.o
+[295/475] Linking CXX static library _deps/boost-build/libs/process/libboost_process.a
+[296/475] Performing build step for 'gflags_ep'
 [297/475] Building CXX object src/parquet/CMakeFiles/parquet_objlib.dir/Unity/unity_1_cxx.cxx.o
 [298/475] Linking CXX shared library release/libparquet.so.2500.0.0
 [299/475] Creating library symlink release/libparquet.so.2500 release/libparquet.so
@@ -1807,56 +1807,56 @@ In member function ‘void parquet::{anonymous}::TypedStatisticsImpl<DType>::Set
 [308/475] Building CXX object src/arrow/CMakeFiles/arrow-chunk-resolver-benchmark.dir/Unity/unity_0_cxx.cxx.o
 [309/475] Building CXX object src/arrow/CMakeFiles/arrow-memory-pool-benchmark.dir/Unity/unity_0_cxx.cxx.o
 [310/475] Building CXX object src/arrow/CMakeFiles/arrow-compare-benchmark.dir/Unity/unity_0_cxx.cxx.o
-[311/475] Building CXX object src/arrow/CMakeFiles/arrow-tensor-benchmark.dir/Unity/unity_0_cxx.cxx.o
-[312/475] Building CXX object src/arrow/CMakeFiles/arrow-type-benchmark.dir/Unity/unity_0_cxx.cxx.o
-[313/475] Building CXX object src/arrow/dataset/CMakeFiles/arrow_dataset_objlib.dir/Unity/unity_0_cxx.cxx.o
-[314/475] Building CXX object src/arrow/c/CMakeFiles/arrow-bridge-benchmark.dir/Unity/unity_0_cxx.cxx.o
+[311/475] Building CXX object src/arrow/CMakeFiles/arrow-type-benchmark.dir/Unity/unity_0_cxx.cxx.o
+[312/475] Building CXX object src/arrow/CMakeFiles/arrow-tensor-benchmark.dir/Unity/unity_0_cxx.cxx.o
+[313/475] Building CXX object src/arrow/c/CMakeFiles/arrow-bridge-benchmark.dir/Unity/unity_0_cxx.cxx.o
+[314/475] Building CXX object src/arrow/dataset/CMakeFiles/arrow_dataset_objlib.dir/Unity/unity_0_cxx.cxx.o
 [315/475] Building CXX object src/arrow/compute/CMakeFiles/arrow_compute_core_testing.dir/Unity/unity_0_cxx.cxx.o
-[316/475] Building CXX object src/arrow/dataset/CMakeFiles/arrow_dataset_objlib.dir/Unity/unity_1_cxx.cxx.o
-[317/475] Building CXX object src/arrow/CMakeFiles/arrow_testing_objlib.dir/Unity/unity_0_cxx.cxx.o
-[318/475] Linking CXX shared library release/libarrow_testing.so.2500.0.0
-[319/475] Creating library symlink release/libarrow_testing.so.2500 release/libarrow_testing.so
-[320/475] Building CXX object src/arrow/compute/kernels/CMakeFiles/arrow-compute-scalar-cast-benchmark.dir/Unity/unity_0_cxx.cxx.o
-[321/475] Building CXX object src/arrow/compute/kernels/CMakeFiles/arrow-compute-scalar-boolean-benchmark.dir/Unity/unity_0_cxx.cxx.o
-[322/475] Building CXX object src/arrow/compute/kernels/CMakeFiles/arrow-compute-scalar-compare-benchmark.dir/Unity/unity_0_cxx.cxx.o
+[316/475] Building CXX object src/arrow/CMakeFiles/arrow_compute_objlib.dir/Unity/unity_2_cxx.cxx.o
+[317/475] Linking CXX shared library release/libarrow_compute.so.2500.0.0
+[318/475] Creating library symlink release/libarrow_compute.so.2500 release/libarrow_compute.so
+[319/475] Linking CXX shared library release/libarrow_acero.so.2500.0.0
+[320/475] Creating library symlink release/libarrow_acero.so.2500 release/libarrow_acero.so
+[321/475] Linking CXX static library release/libarrow_compute.a
+[322/475] Building CXX object src/arrow/compute/kernels/CMakeFiles/arrow-compute-scalar-cast-benchmark.dir/Unity/unity_0_cxx.cxx.o
 [323/475] Building CXX object src/arrow/compute/CMakeFiles/arrow-compute-function-benchmark.dir/Unity/unity_0_cxx.cxx.o
-[324/475] Building CXX object src/arrow/compute/kernels/CMakeFiles/arrow-compute-scalar-list-benchmark.dir/Unity/unity_0_cxx.cxx.o
-[325/475] Building CXX object src/arrow/compute/kernels/CMakeFiles/arrow-compute-scalar-if-else-benchmark.dir/Unity/unity_0_cxx.cxx.o
-[326/475] Building CXX object src/arrow/compute/kernels/CMakeFiles/arrow-compute-scalar-random-benchmark.dir/Unity/unity_0_cxx.cxx.o
-[327/475] Building CXX object src/arrow/compute/kernels/CMakeFiles/arrow-compute-scalar-arithmetic-benchmark.dir/Unity/unity_0_cxx.cxx.o
-[328/475] Building CXX object src/arrow/CMakeFiles/arrow_compute_objlib.dir/Unity/unity_2_cxx.cxx.o
-[329/475] Linking CXX shared library release/libarrow_compute.so.2500.0.0
-[330/475] Creating library symlink release/libarrow_compute.so.2500 release/libarrow_compute.so
-[331/475] Linking CXX shared library release/libarrow_acero.so.2500.0.0
-[332/475] Creating library symlink release/libarrow_acero.so.2500 release/libarrow_acero.so
-[333/475] Linking CXX static library release/libarrow_compute.a
-[334/475] Linking CXX shared library release/libarrow_dataset.so.2500.0.0
+[324/475] Building CXX object src/arrow/compute/kernels/CMakeFiles/arrow-compute-scalar-boolean-benchmark.dir/Unity/unity_0_cxx.cxx.o
+[325/475] Building CXX object src/arrow/dataset/CMakeFiles/arrow_dataset_objlib.dir/Unity/unity_1_cxx.cxx.o
+[326/475] Linking CXX shared library release/libarrow_dataset.so.2500.0.0
+[327/475] Building CXX object src/arrow/compute/kernels/CMakeFiles/arrow-compute-scalar-compare-benchmark.dir/Unity/unity_0_cxx.cxx.o
+[328/475] Building CXX object src/arrow/compute/kernels/CMakeFiles/arrow-compute-scalar-if-else-benchmark.dir/Unity/unity_0_cxx.cxx.o
+[329/475] Building CXX object src/arrow/compute/kernels/CMakeFiles/arrow-compute-scalar-arithmetic-benchmark.dir/Unity/unity_0_cxx.cxx.o
+[330/475] Building CXX object src/arrow/compute/kernels/CMakeFiles/arrow-compute-scalar-random-benchmark.dir/Unity/unity_0_cxx.cxx.o
+[331/475] Building CXX object src/arrow/CMakeFiles/arrow_testing_objlib.dir/Unity/unity_0_cxx.cxx.o
+[332/475] Building CXX object src/arrow/compute/kernels/CMakeFiles/arrow-compute-scalar-list-benchmark.dir/Unity/unity_0_cxx.cxx.o
+[333/475] Linking CXX shared library release/libarrow_testing.so.2500.0.0
+[334/475] Creating library symlink release/libarrow_testing.so.2500 release/libarrow_testing.so
 [335/475] Building CXX object src/arrow/compute/kernels/CMakeFiles/arrow-compute-scalar-round-benchmark.dir/Unity/unity_0_cxx.cxx.o
-[336/475] Building CXX object src/arrow/compute/kernels/CMakeFiles/arrow-compute-scalar-set-lookup-benchmark.dir/Unity/unity_0_cxx.cxx.o
-[337/475] Building CXX object src/arrow/compute/kernels/CMakeFiles/arrow-compute-vector-partition-benchmark.dir/Unity/unity_0_cxx.cxx.o
+[336/475] Building CXX object src/arrow/compute/kernels/CMakeFiles/arrow-compute-scalar-string-benchmark.dir/Unity/unity_0_cxx.cxx.o
+[337/475] Building CXX object src/arrow/compute/kernels/CMakeFiles/arrow-compute-scalar-set-lookup-benchmark.dir/Unity/unity_0_cxx.cxx.o
 [338/475] Building CXX object src/arrow/compute/kernels/CMakeFiles/arrow-compute-vector-hash-benchmark.dir/Unity/unity_0_cxx.cxx.o
-[339/475] Building CXX object src/arrow/compute/kernels/CMakeFiles/arrow-compute-scalar-string-benchmark.dir/Unity/unity_0_cxx.cxx.o
-[340/475] Building CXX object src/arrow/compute/kernels/CMakeFiles/arrow-compute-vector-sort-benchmark.dir/Unity/unity_0_cxx.cxx.o
-[341/475] Building CXX object src/arrow/compute/kernels/CMakeFiles/arrow-compute-vector-topk-benchmark.dir/Unity/unity_0_cxx.cxx.o
-[342/475] Building CXX object src/arrow/compute/kernels/CMakeFiles/arrow-compute-vector-replace-benchmark.dir/Unity/unity_0_cxx.cxx.o
+[339/475] Building CXX object src/arrow/compute/kernels/CMakeFiles/arrow-compute-vector-sort-benchmark.dir/Unity/unity_0_cxx.cxx.o
+[340/475] Building CXX object src/arrow/compute/kernels/CMakeFiles/arrow-compute-vector-partition-benchmark.dir/Unity/unity_0_cxx.cxx.o
+[341/475] Building CXX object src/arrow/compute/kernels/CMakeFiles/arrow-compute-vector-replace-benchmark.dir/Unity/unity_0_cxx.cxx.o
+[342/475] Building CXX object src/arrow/compute/kernels/CMakeFiles/arrow-compute-vector-topk-benchmark.dir/Unity/unity_0_cxx.cxx.o
 [343/475] Building CXX object src/arrow/io/CMakeFiles/arrow-io-file-benchmark.dir/Unity/unity_0_cxx.cxx.o
-[344/475] Building CXX object src/arrow/io/CMakeFiles/arrow-io-memory-benchmark.dir/Unity/unity_0_cxx.cxx.o
-[345/475] Building CXX object src/arrow/compute/kernels/CMakeFiles/arrow-compute-vector-selection-benchmark.dir/Unity/unity_0_cxx.cxx.o
-[346/475] Building CXX object src/arrow/compute/row/CMakeFiles/arrow-compute-grouper-benchmark.dir/Unity/unity_0_cxx.cxx.o
-[347/475] Building CXX object src/arrow/io/CMakeFiles/arrow-io-compressed-benchmark.dir/Unity/unity_0_cxx.cxx.o
-[348/475] Building CXX object src/arrow/compute/kernels/CMakeFiles/arrow-compute-scalar-temporal-benchmark.dir/Unity/unity_0_cxx.cxx.o
+[344/475] Building CXX object src/arrow/compute/kernels/CMakeFiles/arrow-compute-vector-selection-benchmark.dir/Unity/unity_0_cxx.cxx.o
+[345/475] Building CXX object src/arrow/compute/kernels/CMakeFiles/arrow-compute-scalar-temporal-benchmark.dir/Unity/unity_0_cxx.cxx.o
+[346/475] Building CXX object src/arrow/io/CMakeFiles/arrow-io-memory-benchmark.dir/Unity/unity_0_cxx.cxx.o
+[347/475] Building CXX object src/arrow/compute/row/CMakeFiles/arrow-compute-grouper-benchmark.dir/Unity/unity_0_cxx.cxx.o
+[348/475] Building CXX object src/arrow/util/CMakeFiles/arrow-bitmap-reader-benchmark.dir/Unity/unity_0_cxx.cxx.o
 [349/475] Building CXX object src/arrow/util/CMakeFiles/arrow-bit-block-counter-benchmark.dir/Unity/unity_0_cxx.cxx.o
-[350/475] Building CXX object src/arrow/util/CMakeFiles/arrow-bpacking-benchmark.dir/Unity/unity_0_cxx.cxx.o
-[351/475] Building CXX object src/arrow/util/CMakeFiles/arrow-bitmap-reader-benchmark.dir/Unity/unity_0_cxx.cxx.o
-[352/475] Building CXX object src/arrow/util/CMakeFiles/arrow-compression-benchmark.dir/Unity/unity_0_cxx.cxx.o
-[353/475] Building CXX object src/arrow/util/CMakeFiles/arrow-cache-benchmark.dir/Unity/unity_0_cxx.cxx.o
+[350/475] Building CXX object src/arrow/io/CMakeFiles/arrow-io-compressed-benchmark.dir/Unity/unity_0_cxx.cxx.o
+[351/475] Building CXX object src/arrow/util/CMakeFiles/arrow-compression-benchmark.dir/Unity/unity_0_cxx.cxx.o
+[352/475] Building CXX object src/arrow/util/CMakeFiles/arrow-bpacking-benchmark.dir/Unity/unity_0_cxx.cxx.o
+[353/475] Building CXX object src/arrow/util/CMakeFiles/arrow-decimal-benchmark.dir/Unity/unity_0_cxx.cxx.o
 [354/475] Building CXX object src/arrow/util/CMakeFiles/arrow-bit-util-benchmark.dir/Unity/unity_0_cxx.cxx.o
-[355/475] Building CXX object src/arrow/util/CMakeFiles/arrow-decimal-benchmark.dir/Unity/unity_0_cxx.cxx.o
-[356/475] Building CXX object src/arrow/util/CMakeFiles/arrow-machine-benchmark.dir/Unity/unity_0_cxx.cxx.o
-[357/475] Building CXX object src/arrow/util/CMakeFiles/arrow-queue-benchmark.dir/Unity/unity_0_cxx.cxx.o
-[358/475] Building CXX object src/arrow/tensor/CMakeFiles/arrow-tensor-conversion-benchmark.dir/Unity/unity_0_cxx.cxx.o
-[359/475] Building CXX object src/arrow/util/CMakeFiles/arrow-hashing-benchmark.dir/Unity/unity_0_cxx.cxx.o
-[360/475] Building CXX object src/arrow/util/CMakeFiles/arrow-int-util-benchmark.dir/Unity/unity_0_cxx.cxx.o
+[355/475] Building CXX object src/arrow/util/CMakeFiles/arrow-machine-benchmark.dir/Unity/unity_0_cxx.cxx.o
+[356/475] Building CXX object src/arrow/util/CMakeFiles/arrow-cache-benchmark.dir/Unity/unity_0_cxx.cxx.o
+[357/475] Building CXX object src/arrow/util/CMakeFiles/arrow-hashing-benchmark.dir/Unity/unity_0_cxx.cxx.o
+[358/475] Building CXX object src/arrow/util/CMakeFiles/arrow-queue-benchmark.dir/Unity/unity_0_cxx.cxx.o
+[359/475] Building CXX object src/arrow/util/CMakeFiles/arrow-int-util-benchmark.dir/Unity/unity_0_cxx.cxx.o
+[360/475] Building CXX object src/arrow/tensor/CMakeFiles/arrow-tensor-conversion-benchmark.dir/Unity/unity_0_cxx.cxx.o
 [361/475] Building CXX object src/arrow/util/CMakeFiles/arrow-range-benchmark.dir/Unity/unity_0_cxx.cxx.o
 [362/475] Building CXX object src/arrow/util/CMakeFiles/arrow-tdigest-benchmark.dir/Unity/unity_0_cxx.cxx.o
 [363/475] Building CXX object src/arrow/util/CMakeFiles/arrow-trie-benchmark.dir/Unity/unity_0_cxx.cxx.o
@@ -1865,8 +1865,8 @@ In member function ‘void parquet::{anonymous}::TypedStatisticsImpl<DType>::Set
 [366/475] Linking CXX static library release/libarrow_acero.a
 [367/475] Building CXX object src/arrow/util/CMakeFiles/arrow-utf8-util-benchmark.dir/Unity/unity_0_cxx.cxx.o
 [368/475] Building CXX object src/arrow/csv/CMakeFiles/arrow-csv-parser-benchmark.dir/Unity/unity_0_cxx.cxx.o
-[369/475] Building CXX object src/arrow/util/CMakeFiles/arrow-value-parsing-benchmark.dir/Unity/unity_0_cxx.cxx.o
-[370/475] Building CXX object src/arrow/csv/CMakeFiles/arrow-csv-converter-benchmark.dir/Unity/unity_0_cxx.cxx.o
+[369/475] Building CXX object src/arrow/csv/CMakeFiles/arrow-csv-converter-benchmark.dir/Unity/unity_0_cxx.cxx.o
+[370/475] Building CXX object src/arrow/util/CMakeFiles/arrow-value-parsing-benchmark.dir/Unity/unity_0_cxx.cxx.o
 [371/475] Building CXX object src/arrow/csv/CMakeFiles/arrow-csv-writer-benchmark.dir/Unity/unity_0_cxx.cxx.o
 [372/475] Building CXX object src/arrow/acero/CMakeFiles/arrow-acero-aggregate-benchmark.dir/Unity/unity_0_cxx.cxx.o
 [373/475] Building CXX object src/arrow/acero/CMakeFiles/arrow-acero-asof-join-benchmark.dir/Unity/unity_0_cxx.cxx.o
@@ -1874,31 +1874,31 @@ In member function ‘void parquet::{anonymous}::TypedStatisticsImpl<DType>::Set
 [375/475] Creating library symlink release/libarrow_dataset.so.2500 release/libarrow_dataset.so
 [376/475] Building CXX object src/arrow/acero/CMakeFiles/arrow-acero-filter-benchmark.dir/Unity/unity_0_cxx.cxx.o
 [377/475] Building CXX object src/arrow/acero/CMakeFiles/arrow_acero_testing.dir/Unity/unity_0_cxx.cxx.o
-[378/475] Building CXX object src/arrow/acero/CMakeFiles/arrow-acero-tpch-benchmark.dir/Unity/unity_0_cxx.cxx.o
+[378/475] Building CXX object src/arrow/acero/CMakeFiles/arrow-acero-hash-join-benchmark.dir/Unity/unity_0_cxx.cxx.o
 [379/475] Building CXX object src/arrow/dataset/CMakeFiles/arrow-dataset-file-benchmark.dir/Unity/unity_0_cxx.cxx.o
-[380/475] Building CXX object src/arrow/acero/CMakeFiles/arrow-acero-hash-join-benchmark.dir/Unity/unity_0_cxx.cxx.o
+[380/475] Building CXX object src/arrow/acero/CMakeFiles/arrow-acero-tpch-benchmark.dir/Unity/unity_0_cxx.cxx.o
 [381/475] Linking CXX static library release/libparquet.a
 [382/475] Building CXX object src/arrow/acero/CMakeFiles/arrow-acero-project-benchmark.dir/Unity/unity_0_cxx.cxx.o
-[383/475] Building CXX object src/parquet/CMakeFiles/parquet_testing.dir/Unity/unity_0_cxx.cxx.o
-[384/475] Building CXX object src/arrow/filesystem/CMakeFiles/arrow-filesystem-localfs-benchmark.dir/Unity/unity_0_cxx.cxx.o
-[385/475] Building CXX object src/arrow/ipc/CMakeFiles/arrow-ipc-read-write-benchmark.dir/Unity/unity_0_cxx.cxx.o
-[386/475] Building CXX object src/arrow/json/CMakeFiles/arrow-json-parser-benchmark.dir/Unity/unity_0_cxx.cxx.o
-[387/475] Building CXX object src/parquet/CMakeFiles/parquet-bloom-filter-benchmark.dir/Unity/unity_0_cxx.cxx.o
-[388/475] Building CXX object src/parquet/CMakeFiles/parquet-level-conversion-benchmark.dir/Unity/unity_0_cxx.cxx.o
-[389/475] Building CXX object src/arrow/dataset/CMakeFiles/arrow-dataset-scanner-benchmark.dir/Unity/unity_0_cxx.cxx.o
-[390/475] Building CXX object src/parquet/CMakeFiles/parquet-column-reader-benchmark.dir/Unity/unity_0_cxx.cxx.o
-[391/475] Building CXX object src/parquet/CMakeFiles/parquet-column-io-benchmark.dir/Unity/unity_0_cxx.cxx.o
+[383/475] Building CXX object src/arrow/filesystem/CMakeFiles/arrow-filesystem-localfs-benchmark.dir/Unity/unity_0_cxx.cxx.o
+[384/475] Building CXX object src/parquet/CMakeFiles/parquet_testing.dir/Unity/unity_0_cxx.cxx.o
+[385/475] Building CXX object src/arrow/json/CMakeFiles/arrow-json-parser-benchmark.dir/Unity/unity_0_cxx.cxx.o
+[386/475] Building CXX object src/arrow/ipc/CMakeFiles/arrow-ipc-read-write-benchmark.dir/Unity/unity_0_cxx.cxx.o
+[387/475] Building CXX object src/arrow/dataset/CMakeFiles/arrow-dataset-scanner-benchmark.dir/Unity/unity_0_cxx.cxx.o
+[388/475] Building CXX object src/parquet/CMakeFiles/parquet-bloom-filter-benchmark.dir/Unity/unity_0_cxx.cxx.o
+[389/475] Building CXX object src/parquet/CMakeFiles/parquet-level-conversion-benchmark.dir/Unity/unity_0_cxx.cxx.o
+[390/475] Building CXX object src/parquet/CMakeFiles/parquet-metadata-benchmark.dir/Unity/unity_0_cxx.cxx.o
+[391/475] Building CXX object src/parquet/CMakeFiles/parquet-column-reader-benchmark.dir/Unity/unity_0_cxx.cxx.o
 [392/475] Creating library symlink release/libarrow_gtest_main.so
 [393/475] Linking CXX static library release/libarrow_testing.a
-[394/475] Linking CXX executable release/arrow-builder-benchmark
-[395/475] Linking CXX executable release/arrow-chunk-resolver-benchmark
-[396/475] Linking CXX executable release/arrow-compare-benchmark
+[394/475] Building CXX object src/parquet/CMakeFiles/parquet-column-io-benchmark.dir/Unity/unity_0_cxx.cxx.o
+[395/475] Linking CXX executable release/arrow-builder-benchmark
+[396/475] Linking CXX executable release/arrow-chunk-resolver-benchmark
 [397/475] Linking CXX executable release/arrow-memory-pool-benchmark
-[398/475] Building CXX object src/parquet/CMakeFiles/parquet-metadata-benchmark.dir/Unity/unity_0_cxx.cxx.o
-[399/475] Linking CXX executable release/arrow-type-benchmark
+[398/475] Linking CXX executable release/arrow-type-benchmark
+[399/475] Linking CXX executable release/arrow-compare-benchmark
 [400/475] Linking CXX executable release/arrow-tensor-benchmark
 [401/475] Linking CXX executable release/arrow-bridge-benchmark
-[402/475] Bundling /tmp/arrow-archery-79edvwkw/WORKSPACE/build/release/libarrow_bundled_dependencies.a
+[402/475] Bundling /tmp/arrow-archery-fobawdej/WORKSPACE/build/release/libarrow_bundled_dependencies.a
 [403/475] Linking CXX executable release/arrow-compute-function-benchmark
 [404/475] Building CXX object src/arrow/compute/CMakeFiles/arrow_compute_testing.dir/Unity/unity_0_cxx.cxx.o
 [405/475] Linking CXX executable release/arrow-compute-scalar-cast-benchmark
@@ -1906,98 +1906,98 @@ In member function ‘void parquet::{anonymous}::TypedStatisticsImpl<DType>::Set
 [407/475] Linking CXX executable release/arrow-compute-scalar-boolean-benchmark
 [408/475] Linking CXX executable release/arrow-compute-scalar-compare-benchmark
 [409/475] Linking CXX executable release/arrow-compute-scalar-if-else-benchmark
-[410/475] Linking CXX executable release/arrow-compute-scalar-list-benchmark
-[411/475] Linking CXX executable release/arrow-compute-scalar-random-benchmark
-[412/475] Linking CXX executable release/arrow-compute-scalar-round-benchmark
-[413/475] Linking CXX executable release/arrow-compute-scalar-set-lookup-benchmark
-[414/475] Linking CXX executable release/arrow-compute-scalar-string-benchmark
-[415/475] Linking CXX executable release/arrow-compute-scalar-temporal-benchmark
-[416/475] Linking CXX executable release/arrow-compute-vector-hash-benchmark
-[417/475] Building CXX object src/parquet/CMakeFiles/parquet-page-index-benchmark.dir/Unity/unity_0_cxx.cxx.o
-[418/475] Linking CXX executable release/arrow-compute-vector-sort-benchmark
-[419/475] Linking CXX executable release/arrow-compute-vector-partition-benchmark
-[420/475] Building CXX object src/parquet/CMakeFiles/parquet-arrow-size-stats-benchmark.dir/Unity/unity_0_cxx.cxx.o
-[421/475] Linking CXX executable release/arrow-compute-vector-topk-benchmark
+[410/475] Building CXX object src/parquet/CMakeFiles/parquet-page-index-benchmark.dir/Unity/unity_0_cxx.cxx.o
+[411/475] Linking CXX executable release/arrow-compute-scalar-list-benchmark
+[412/475] Linking CXX executable release/arrow-compute-scalar-random-benchmark
+[413/475] Linking CXX executable release/arrow-compute-scalar-round-benchmark
+[414/475] Linking CXX executable release/arrow-compute-scalar-set-lookup-benchmark
+[415/475] Linking CXX executable release/arrow-compute-scalar-string-benchmark
+[416/475] Linking CXX executable release/arrow-compute-scalar-temporal-benchmark
+[417/475] Linking CXX executable release/arrow-compute-vector-hash-benchmark
+[418/475] Linking CXX executable release/arrow-compute-vector-partition-benchmark
+[419/475] Linking CXX executable release/arrow-compute-vector-topk-benchmark
+[420/475] Linking CXX executable release/arrow-compute-vector-sort-benchmark
+[421/475] Linking CXX executable release/arrow-compute-vector-replace-benchmark
 [422/475] Linking CXX executable release/arrow-compute-vector-selection-benchmark
-[423/475] Linking CXX executable release/arrow-compute-vector-replace-benchmark
+[423/475] Linking CXX executable release/arrow-io-file-benchmark
 [424/475] Linking CXX executable release/arrow-io-memory-benchmark
-[425/475] Linking CXX executable release/arrow-io-file-benchmark
-[426/475] Linking CXX executable release/arrow-io-compressed-benchmark
-[427/475] Linking CXX executable release/arrow-compute-grouper-benchmark
-[428/475] Linking CXX executable release/arrow-tensor-conversion-benchmark
-[429/475] Linking CXX executable release/arrow-bit-block-counter-benchmark
-[430/475] Linking CXX executable release/arrow-bit-util-benchmark
-[431/475] Linking CXX executable release/arrow-bitmap-reader-benchmark
-[432/475] Linking CXX executable release/arrow-compression-benchmark
-[433/475] Linking CXX executable release/arrow-bpacking-benchmark
+[425/475] Linking CXX executable release/arrow-compute-grouper-benchmark
+[426/475] Linking CXX executable release/arrow-tensor-conversion-benchmark
+[427/475] Linking CXX executable release/arrow-io-compressed-benchmark
+[428/475] Linking CXX executable release/arrow-bit-block-counter-benchmark
+[429/475] Linking CXX executable release/arrow-bit-util-benchmark
+[430/475] Linking CXX executable release/arrow-bitmap-reader-benchmark
+[431/475] Linking CXX executable release/arrow-bpacking-benchmark
+[432/475] Building CXX object src/parquet/CMakeFiles/parquet-arrow-size-stats-benchmark.dir/Unity/unity_0_cxx.cxx.o
+[433/475] Linking CXX executable release/arrow-compression-benchmark
 [434/475] Linking CXX executable release/arrow-cache-benchmark
-[435/475] Linking CXX executable release/arrow-int-util-benchmark
-[436/475] Linking CXX executable release/arrow-hashing-benchmark
+[435/475] Linking CXX executable release/arrow-hashing-benchmark
+[436/475] Linking CXX executable release/arrow-int-util-benchmark
 [437/475] Linking CXX executable release/arrow-decimal-benchmark
 [438/475] Linking CXX executable release/arrow-machine-benchmark
-[439/475] Building CXX object src/parquet/CMakeFiles/parquet-encoding-benchmark.dir/Unity/unity_0_cxx.cxx.o
-[440/475] Linking CXX executable release/arrow-range-benchmark
-[441/475] Linking CXX executable release/arrow-queue-benchmark
-[442/475] Linking CXX executable release/arrow-small-vector-benchmark
-[443/475] Linking CXX executable release/arrow-trie-benchmark
+[439/475] Linking CXX executable release/arrow-range-benchmark
+[440/475] Linking CXX executable release/arrow-queue-benchmark
+[441/475] Linking CXX executable release/arrow-thread-pool-benchmark
+[442/475] Linking CXX executable release/arrow-trie-benchmark
+[443/475] Linking CXX executable release/arrow-small-vector-benchmark
 [444/475] Linking CXX executable release/arrow-tdigest-benchmark
-[445/475] Linking CXX executable release/arrow-utf8-util-benchmark
-[446/475] Linking CXX executable release/arrow-thread-pool-benchmark
-[447/475] Linking CXX executable release/arrow-value-parsing-benchmark
-[448/475] Linking CXX executable release/arrow-csv-converter-benchmark
-[449/475] Linking CXX executable release/arrow-csv-writer-benchmark
-[450/475] Linking CXX executable release/arrow-csv-parser-benchmark
-[451/475] Linking CXX executable release/arrow-acero-aggregate-benchmark
-[452/475] Linking CXX executable release/arrow-acero-asof-join-benchmark
-[453/475] Linking CXX executable release/arrow-acero-expression-benchmark
-[454/475] Linking CXX executable release/arrow-acero-project-benchmark
-[455/475] Linking CXX executable release/arrow-acero-hash-join-benchmark
-[456/475] Linking CXX executable release/arrow-acero-filter-benchmark
-[457/475] Linking CXX executable release/arrow-acero-tpch-benchmark
-[458/475] Linking CXX static library release/libarrow_dataset.a
-[459/475] Linking CXX executable release/arrow-filesystem-localfs-benchmark
-[460/475] Linking CXX executable release/arrow-ipc-read-write-benchmark
-[461/475] Linking CXX executable release/arrow-dataset-file-benchmark
-[462/475] Linking CXX executable release/arrow-dataset-scanner-benchmark
-[463/475] Linking CXX executable release/arrow-json-parser-benchmark
-[464/475] Building CXX object src/arrow/compute/kernels/CMakeFiles/arrow_compute_kernels_testing.dir/Unity/unity_0_cxx.cxx.o
-[465/475] Linking CXX executable release/parquet-bloom-filter-benchmark
+[445/475] Linking CXX executable release/arrow-csv-converter-benchmark
+[446/475] Building CXX object src/arrow/compute/kernels/CMakeFiles/arrow_compute_kernels_testing.dir/Unity/unity_0_cxx.cxx.o
+[447/475] Linking CXX executable release/arrow-utf8-util-benchmark
+[448/475] Linking CXX executable release/arrow-value-parsing-benchmark
+[449/475] Linking CXX executable release/arrow-csv-parser-benchmark
+[450/475] Linking CXX executable release/arrow-csv-writer-benchmark
+[451/475] Linking CXX executable release/arrow-acero-asof-join-benchmark
+[452/475] Building CXX object src/parquet/CMakeFiles/parquet-encoding-benchmark.dir/Unity/unity_0_cxx.cxx.o
+[453/475] Linking CXX executable release/arrow-acero-filter-benchmark
+[454/475] Linking CXX executable release/arrow-acero-hash-join-benchmark
+[455/475] Linking CXX executable release/arrow-acero-aggregate-benchmark
+[456/475] Linking CXX executable release/arrow-acero-expression-benchmark
+[457/475] Linking CXX executable release/arrow-acero-project-benchmark
+[458/475] Linking CXX executable release/arrow-acero-tpch-benchmark
+[459/475] Linking CXX static library release/libarrow_dataset.a
+[460/475] Linking CXX executable release/arrow-dataset-file-benchmark
+[461/475] Linking CXX executable release/arrow-filesystem-localfs-benchmark
+[462/475] Linking CXX executable release/arrow-json-parser-benchmark
+[463/475] Linking CXX executable release/arrow-ipc-read-write-benchmark
+[464/475] Linking CXX executable release/parquet-bloom-filter-benchmark
+[465/475] Linking CXX executable release/arrow-dataset-scanner-benchmark
 [466/475] Linking CXX executable release/parquet-column-reader-benchmark
-[467/475] Linking CXX executable release/parquet-encoding-benchmark
-[468/475] Linking CXX executable release/parquet-column-io-benchmark
-[469/475] Linking CXX executable release/parquet-metadata-benchmark
-[470/475] Linking CXX executable release/parquet-level-conversion-benchmark
-[471/475] Linking CXX executable release/parquet-page-index-benchmark
+[467/475] Linking CXX executable release/parquet-column-io-benchmark
+[468/475] Linking CXX executable release/parquet-metadata-benchmark
+[469/475] Linking CXX executable release/parquet-page-index-benchmark
+[470/475] Linking CXX executable release/parquet-encoding-benchmark
+[471/475] Linking CXX executable release/parquet-level-conversion-benchmark
 [472/475] Linking CXX executable release/parquet-arrow-size-stats-benchmark
 [473/475] Building CXX object src/parquet/CMakeFiles/parquet-arrow-reader-writer-benchmark.dir/Unity/unity_0_cxx.cxx.o
 [474/475] Linking CXX executable release/parquet-arrow-reader-writer-benchmark
 [475/475] Building CXX object src/arrow/dataset/CMakeFiles/arrow_dataset_testing.dir/Unity/unity_0_cxx.cxx.o
-2026-06-11T03:19:04+00:00
-Running /tmp/arrow-archery-79edvwkw/WORKSPACE/build/release/parquet-arrow-reader-writer-benchmark
-Run on (4 X 3242.49 MHz CPU s)
+2026-06-12T01:31:38+00:00
+Running /tmp/arrow-archery-fobawdej/WORKSPACE/build/release/parquet-arrow-reader-writer-benchmark
+Run on (4 X 2870.5 MHz CPU s)
 CPU Caches:
   L1 Data 32 KiB (x2)
   L1 Instruction 32 KiB (x2)
-  L2 Unified 512 KiB (x2)
+  L2 Unified 1024 KiB (x2)
   L3 Unified 32768 KiB (x1)
-Load Average: 6.09, 7.23, 6.15
+Load Average: 7.91, 8.21, 6.42
 ***WARNING*** Library was built as DEBUG. Timings may be affected.
 -----------------------------------------------------------------------------------------
 Benchmark                               Time             CPU   Iterations UserCounters...
 -----------------------------------------------------------------------------------------
-BM_ReadStructColumn/0             1681563 ns      1681342 ns          417 bytes_per_second=6.96988Gi/s items_per_second=623.654M/s
-BM_ReadStructColumn/1             8105493 ns      8104528 ns           88 bytes_per_second=1.44595Gi/s items_per_second=129.382M/s
-BM_ReadStructColumn/50           11564566 ns     11562906 ns           60 bytes_per_second=1.01348Gi/s items_per_second=90.6845M/s
-BM_ReadStructColumn/99            4629996 ns      4626136 ns          137 bytes_per_second=2.53316Gi/s items_per_second=226.663M/s
-BM_ReadStructOfStructColumn/0     3712862 ns      3712400 ns          194 bytes_per_second=6.3133Gi/s items_per_second=282.452M/s
-BM_ReadStructOfStructColumn/1    18529541 ns     18527628 ns           36 bytes_per_second=1.265Gi/s items_per_second=56.5953M/s
-BM_ReadStructOfStructColumn/50   18141225 ns     18139566 ns           39 bytes_per_second=1.29207Gi/s items_per_second=57.806M/s
-BM_ReadStructOfStructColumn/99   10161242 ns     10159599 ns           70 bytes_per_second=2.30693Gi/s items_per_second=103.21M/s
-BM_ReadStructOfListColumn/0      16658099 ns     16655829 ns           42 bytes_per_second=720.468Mi/s items_per_second=62.9555M/s
-BM_ReadStructOfListColumn/1      19201034 ns     19196373 ns           36 bytes_per_second=625.118Mi/s items_per_second=54.6237M/s
-BM_ReadStructOfListColumn/50     26488030 ns     26410985 ns           26 bytes_per_second=454.356Mi/s items_per_second=39.7023M/s
-BM_ReadStructOfListColumn/99     11633349 ns     11631965 ns           57 bytes_per_second=1.00746Gi/s items_per_second=90.1461M/s
-BM_ReadListOfStructColumn/0      13917145 ns     13915146 ns           50 bytes_per_second=862.37Mi/s items_per_second=75.355M/s
-BM_ReadListOfStructColumn/1      17580135 ns     17579180 ns           40 bytes_per_second=682.626Mi/s items_per_second=59.6487M/s
-BM_ReadListOfStructColumn/50     20691277 ns     20687575 ns           34 bytes_per_second=580.058Mi/s items_per_second=50.6863M/s
-BM_ReadListOfStructColumn/99     10401486 ns     10399425 ns           68 bytes_per_second=1.12687Gi/s items_per_second=100.83M/s
+BM_ReadStructColumn/0             1495687 ns      1495458 ns          467 bytes_per_second=7.83623Gi/s items_per_second=701.174M/s
+BM_ReadStructColumn/1             8027818 ns      8026743 ns           86 bytes_per_second=1.45996Gi/s items_per_second=130.635M/s
+BM_ReadStructColumn/50           11241784 ns     11240148 ns           62 bytes_per_second=1.04258Gi/s items_per_second=93.2885M/s
+BM_ReadStructColumn/99            4484263 ns      4483773 ns          157 bytes_per_second=2.61359Gi/s items_per_second=233.86M/s
+BM_ReadStructOfStructColumn/0     3173918 ns      3173272 ns          218 bytes_per_second=7.38591Gi/s items_per_second=330.44M/s
+BM_ReadStructOfStructColumn/1    18856684 ns     18853264 ns           37 bytes_per_second=1.24315Gi/s items_per_second=55.6177M/s
+BM_ReadStructOfStructColumn/50   18211071 ns     18208180 ns           38 bytes_per_second=1.2872Gi/s items_per_second=57.5882M/s
+BM_ReadStructOfStructColumn/99    9817160 ns      9815958 ns           70 bytes_per_second=2.38769Gi/s items_per_second=106.824M/s
+BM_ReadStructOfListColumn/0      17355939 ns     17353462 ns           40 bytes_per_second=691.505Mi/s items_per_second=60.4246M/s
+BM_ReadStructOfListColumn/1      20418788 ns     20416300 ns           34 bytes_per_second=587.766Mi/s items_per_second=51.3597M/s
+BM_ReadStructOfListColumn/50     27791898 ns     27785910 ns           25 bytes_per_second=431.874Mi/s items_per_second=37.7377M/s
+BM_ReadStructOfListColumn/99     12592815 ns     12591855 ns           55 bytes_per_second=952.997Mi/s items_per_second=83.2741M/s
+BM_ReadListOfStructColumn/0      15139594 ns     15137474 ns           46 bytes_per_second=792.735Mi/s items_per_second=69.2702M/s
+BM_ReadListOfStructColumn/1      18883220 ns     18880044 ns           37 bytes_per_second=635.592Mi/s items_per_second=55.5389M/s
+BM_ReadListOfStructColumn/50     22096117 ns     22093442 ns           32 bytes_per_second=543.148Mi/s items_per_second=47.461M/s
+BM_ReadListOfStructColumn/99     11235808 ns     11233049 ns           63 bytes_per_second=1.04324Gi/s items_per_second=93.3474M/s
