@@ -14,7 +14,8 @@
 # Inbuilt modules
 import os
 import subprocess
-import timeit
+import time
+import gc
 import sys
 import sqlite3
 
@@ -163,22 +164,28 @@ def read_file(file_name: str, multi: bool = False) -> list[float]:
         Timeit object: results of reading the file
     """
 
-    code = f"pa.parquet.read_table('{file_name}', use_threads={multi})"
+    list_of_times = []
 
-    if EVICT is True:
-        list_of_times = []
-        for _ in range(RUNS):
-            list_of_times.extend(
-                timeit.repeat(
-                    stmt=code, setup="import pyarrow as pa", repeat=1, number=1
-                )
+    for _ in range(RUNS):
+        # 1. Start the ultra-high resolution clock
+        start_time = time.perf_counter()
+
+        # 2. Execute the read natively (no string eval)
+        table = pa.parquet.read_table(file_name, use_threads=multi)
+
+        # 3. Stop the clock
+        run_time = time.perf_counter() - start_time
+        list_of_times.append(run_time)
+
+        # 4. Explicitly destroy the massive object in RAM
+        del table
+        gc.collect()
+
+        # 5. Evict from OS cache if simulating an SSD read
+        if EVICT is True:
+            subprocess.run(
+                ["vmtouch", "-e", file_name], check=True, stdout=subprocess.DEVNULL
             )
-            subprocess.run(["vmtouch", "-e", f"{file_name}"])
-        return list_of_times
-
-    list_of_times = timeit.repeat(
-        stmt=code, setup="import pyarrow as pa", repeat=RUNS, number=1
-    )
 
     return list_of_times
 
