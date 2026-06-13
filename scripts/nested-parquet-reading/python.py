@@ -34,7 +34,7 @@ NESTED = True
 FLAT = True
 MULTI = True
 SINGLE = True
-RUNS = 1000
+RUNS = 10
 COMPRESSION = 0
 
 COMPRESSION_ALGORITHMS = ["SNAPPY", "ZSTD", "GZIP", "BROTLI", "LZ4", "NONE"]
@@ -150,6 +150,9 @@ def unload_file_in_ram() -> None:
     subprocess.run("kill $(cat vmtouch.pid)", shell=True)
 
 
+EVICT = False
+
+
 def read_file(file_name: str, multi: bool = False) -> list[float]:
     """
     Read the given file and return the `timeit` result.
@@ -163,6 +166,17 @@ def read_file(file_name: str, multi: bool = False) -> list[float]:
 
     code = f"pa.parquet.read_table('{file_name}', use_threads={multi})"
 
+    if EVICT is True:
+        list_of_times = []
+        for _ in range(RUNS):
+            list_of_times.extend(
+                timeit.repeat(
+                    stmt=code, setup="import pyarrow as pa", repeat=1, number=1
+                )
+            )
+            subprocess.run(["vmtouch", "-e", f"{file_name}"])
+        return list_of_times
+
     list_of_times = timeit.repeat(
         stmt=code, setup="import pyarrow as pa", repeat=RUNS, number=1
     )
@@ -174,12 +188,18 @@ def save_to_db(data: list) -> None:
     """
     Saves the data to a sqtlie3 database
     """
-    con = sqlite3.connect(f"{PYARROW_VERSION}-{CONFIG}.db")
+    global CONFIG
+    if os.getenv("PYARROW_RUN_ALL") == "1":
+        CONFIG = "ALL"
+
+    con = sqlite3.connect("benchmarks.db")
     cur = con.cursor()
 
     # To create a table
     create_table_query = """
     CREATE TABLE IF NOT EXISTS times(
+        file_loc TEXT,
+        branch TEXT,
         file_order INTEGER,
         n INTEGER,
         b INTEGER,
@@ -192,22 +212,24 @@ def save_to_db(data: list) -> None:
     cur.execute(create_table_query)
 
     insert_table_query = Template("""INSERT INTO times VALUES
-    ($f, $n, $b, $nest, $multi, $comp, $t)
+    ($file_loc, $branch, $f, $n, $b, $nest, $multi, $comp, $t)
     """)
 
     for d in data:
-        for t in d[6]:
-            nest_val = 1 if d[3] else 0
-            mult_val = 1 if d[4] else 0
+        for t in d[8]:
+            nest_val = 1 if d[5] else 0
+            mult_val = 1 if d[6] else 0
             cur.execute(
                 insert_table_query.substitute(
                     {
-                        "f": d[0],
-                        "n": d[1],
-                        "b": d[2],
+                        "file_order": d[0],
+                        "branch": d[1],
+                        "f": d[2],
+                        "n": d[3],
+                        "b": d[4],
                         "nest": nest_val,
                         "multi": mult_val,
-                        "comp": f"'{d[5]}'",
+                        "comp": f"'{d[7]}'",
                         "t": t,
                     }
                 )
@@ -233,6 +255,7 @@ if __name__ == "__main__":
     # demo_workflow()
     # Just an identifier used to name the database file
     PYARROW_VERSION = sys.argv[1]
+    branch = PYARROW_VERSION
 
     # DEBUG
     # print(PYARROW_VERSION)
@@ -257,6 +280,17 @@ if __name__ == "__main__":
         compressions = COMPRESSION_ALGORITHMS
     else:
         compressions.append(COMPRESSION_ALGORITHMS[COMPRESSION])
+
+    file_location = []
+
+    if os.getenv("PYARROW_RUN_ALL") == "1":
+        FILE_ORDER_END = 7
+        FILE_ORDER_START = 1
+        compressions = COMPRESSION_ALGORITHMS
+        nested_config = [True, False]
+        multi_config = [True, False]
+        file_location = ["RAM", "SSD"]
+
     for current_compression in compressions:
         for file_order in range(FILE_ORDER_START, FILE_ORDER_END + 1):
             for N in range(file_order):
@@ -268,21 +302,29 @@ if __name__ == "__main__":
                         n, b, nested=nested, compression=current_compression
                     )
                     file_name = "nested.parquet" if nested else "flat.parquet"
-                    load_file_in_ram(file_name)
-                    for multi in multi_config:
-                        times = read_file(file_name, multi)
-                        data.append(
-                            [
-                                file_order,
-                                n,
-                                b,
-                                nested,
-                                multi,
-                                current_compression,
-                                times,
-                            ]
-                        )
-                    unload_file_in_ram()
+                    for file_loc in file_location:
+                        if file_loc == "RAM":
+                            EVICT = False
+                            load_file_in_ram(file_name)
+                        else:
+                            EVICT = True
+                        for multi in multi_config:
+                            times = read_file(file_name, multi)
+                            data.append(
+                                [
+                                    file_loc,
+                                    branch,
+                                    file_order,
+                                    n,
+                                    b,
+                                    nested,
+                                    multi,
+                                    current_compression,
+                                    times,
+                                ]
+                            )
+                        if EVICT is False:
+                            unload_file_in_ram()
                     clean_parquet_file()
 
     save_to_db(data)

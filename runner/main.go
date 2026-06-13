@@ -53,14 +53,15 @@ func runWorkflow(branch string, db string) {
 func main() {
 	fmt.Println("PyArrow helper - GSoC 26")
 
-	branch := os.Getenv("PYARROW_OPENASTRONOMY_BENCHMARK_BRANCH")
+	// branch := os.Getenv("PYARROW_OPENASTRONOMY_BENCHMARK_BRANCH")
+	os.Setenv("PYARROW_RUN_ALL", "1")
 
-	switch branch {
-	case "OPTIMIZED":
-		runWorkflow("parquet-reader-multithreaded-for-list-struct", "OPTIMIZED")
-	case "MAIN":
-		runWorkflow("main", "main")
-	}
+	// switch branch {
+	// case "OPTIMIZED":
+	runWorkflow("parquet-reader-multithreaded-for-list-struct", "OPTIMIZED")
+	// case "MAIN":
+	runWorkflow("main", "main")
+	// }
 
 	// notebooksDir := "../notebook"
 	// if err := os.MkdirAll(notebooksDir, 0o755); err != nil {

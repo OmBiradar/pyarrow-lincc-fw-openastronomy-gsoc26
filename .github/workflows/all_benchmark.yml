@@ -1,0 +1,66 @@
+name: all_benchmark
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+  workflow_dispatch: # Allows you to manually trigger this long-running test
+
+permissions:
+  contents: write
+  pull-requests: write
+  actions: write
+
+env:
+  CCACHE_DIR: ${{ github.workspace }}/.ccache
+  CCACHE_MAXSIZE: 8G
+  CCACHE_COMPRESS: "true"
+  GH_TOKEN: ${{ github.token }}
+  CACHE_BRANCH: ${{ github.head_ref || github.ref_name }}
+  PYARROW_RUN_ALL: "1" # Explicitly triggers the exhaustive matrix in your Python script
+
+jobs:
+  run_all_and_commit:
+    if: "!contains(github.event.head_commit.message, '[skip-all-bench]')"
+    name: Exhaustive Benchmark Execution
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          # Explicitly checkout the branch so we can push commits back to it
+          ref: ${{ github.head_ref || github.ref_name }}
+
+      - name: System setup
+        run: |
+          # Update packages
+          sudo apt-get update
+          # Required packages
+          sudo apt-get install -y ccache ninja-build libsnappy-dev libbenchmark-dev vmtouch golang
+
+      - name: Restore and Clean cache
+        uses: ./.github/actions/manage-cache
+        with:
+          cache_branch: ${{ env.CACHE_BRANCH }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Run the golang automated runner
+        run: |
+          cd runner
+          sudo bash -c "ulimit -l \$(grep MemTotal /proc/meminfo | awk '{print \$2}') &&  go run ."
+
+      - name: Commit and push database files
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          
+          # Stage any newly created or modified .db files
+          git add "**/*.db"
+          
+          # Check if there are actual changes to commit
+          if ! git diff-index --quiet HEAD; then
+            git commit -m "chore: auto-update exhaustive benchmark database [skip ci]"
+            git push
+          else
+            echo "No database changes detected. Skipping commit."
+          fi
