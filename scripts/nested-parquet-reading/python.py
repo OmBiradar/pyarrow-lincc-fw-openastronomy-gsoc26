@@ -17,7 +17,6 @@ import subprocess
 import timeit
 import sys
 import sqlite3
-from string import Template
 
 # External modules
 from nested_pandas.datasets import generate_data
@@ -211,31 +210,31 @@ def save_to_db(data: list) -> None:
     """
     cur.execute(create_table_query)
 
-    insert_table_query = Template("""INSERT INTO times VALUES
-    ($file_loc, $branch, $f, $n, $b, $nest, $multi, $comp, $t)
-    """)
+    insert_table_query = """
+    INSERT INTO times VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+    """
 
     for d in data:
         for t in d[8]:
             nest_val = 1 if d[5] else 0
             mult_val = 1 if d[6] else 0
-            cur.execute(
-                insert_table_query.substitute(
-                    {
-                        "file_order": d[0],
-                        "branch": d[1],
-                        "f": d[2],
-                        "n": d[3],
-                        "b": d[4],
-                        "nest": nest_val,
-                        "multi": mult_val,
-                        "comp": f"'{d[7]}'",
-                        "t": t,
-                    }
-                )
-            )
 
+            cur.execute(
+                insert_table_query,
+                (
+                    d[0],  # file_loc
+                    d[1],  # branch
+                    d[2],  # file_order
+                    d[3],  # n
+                    d[4],  # b
+                    nest_val,  # nest
+                    mult_val,  # multi
+                    d[7],  # comp ("ZSTD", etc)
+                    t,  # time
+                ),
+            )
     con.commit()
+    con.close()
 
 
 def demo_workflow():
