@@ -58,9 +58,9 @@ func main() {
 
 	// switch branch {
 	// case "OPTIMIZED":
-	runWorkflow("parquet-reader-multithreaded-for-list-struct", "OPTIMIZED")
+	runWorkflow("parallel-read-for-Structs", "OPTIMIZED")
 	// case "MAIN":
-	runWorkflow("main", "main")
+	runWorkflow("main", "MAIN")
 	// }
 
 	// notebooksDir := "../notebook"
