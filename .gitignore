@@ -1,3 +1,4 @@
 *.parquet
 .ipynb_checkpoints/
 runner_files/
+testing-arrow/
