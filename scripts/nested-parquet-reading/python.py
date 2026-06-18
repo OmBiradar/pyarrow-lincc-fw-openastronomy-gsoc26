@@ -9,8 +9,6 @@
 #   * https://linuxvox.com/blog/what-is-a-pid-file-and-what-does-it-contain/
 #
 
-# TODO: Update to have all 7 compression algorithms
-
 # Inbuilt modules
 import os
 import subprocess
